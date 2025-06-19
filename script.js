@@ -1,25 +1,128 @@
-// Comuni della provincia di Catania
-const comuni = [
-    'Catania', 'Acireale', 'Adrano', 'Belpasso', 'Biancavilla', 'Bronte',
-    'Caltagirone', 'Camporotondo Etneo', 'Castel di Iudica', 'Fiumefreddo di Sicilia',
-    'Giarre', 'Grammichele', 'Gravina di Catania', 'Licodia Eubea', 'Linguaglossa',
-    'Mascalucia', 'Milo', 'Mineo', 'Misterbianco', 'Motta Sant\'Anastasia',
-    'Nicolosi', 'Palagonia', 'Paterno', 'Pedara', 'Piedimonte Etneo',
-    'Ragalna', 'Ramacca', 'Randazzo', 'Riposto', 'San Cono', 'San Giovanni la Punta',
-    'San Gregorio di Catania', 'San Pietro Clarenza', 'Sant\'Agata li Battiati',
-    'Sant\'Alfio', 'Santa Maria di Licodia', 'Santa Venerina', 'Scordia',
-    'Trecastagni', 'Tremestieri Etneo', 'Valverde', 'Viagrande', 'Vizzini', 'Zafferana Etnea'
-];
+// Navigation and Page Management
+class SgomberoApp {
+    constructor() {
+        this.currentPage = 'home';
+        this.currentSlug = null;
+        this.init();
+    }
 
-// Page content data
-const pageContent = {
-    home: {
-        title: 'Sgombero Gratuito Catania - Servizio Professionale',
-        content: `
+    init() {
+        this.setupNavigation();
+        this.setupModals();
+        this.setupSettings();
+        this.loadPage('home');
+        this.populateComuni();
+    }
+
+    setupNavigation() {
+        // Handle navigation clicks
+        document.addEventListener('click', (e) => {
+            const navLink = e.target.closest('[data-page]');
+            if (navLink) {
+                e.preventDefault();
+                const page = navLink.dataset.page;
+                const slug = navLink.dataset.slug;
+                this.loadPage(page, slug);
+                
+                // Update active states
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                if (!slug) {
+                    navLink.classList.add('active');
+                }
+            }
+        });
+
+        // Handle dropdown toggles
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.closest('.nav-dropdown');
+                const menu = dropdown.querySelector('.dropdown-menu');
+                
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                    if (otherMenu !== menu) {
+                        otherMenu.classList.remove('show');
+                    }
+                });
+                
+                menu.classList.toggle('show');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-dropdown')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        });
+    }
+
+    populateComuni() {
+        const comuni = [
+            'Catania', 'Acireale', 'Adrano', 'Belpasso', 'Biancavilla',
+            'Bronte', 'Caltagirone', 'Camporotondo Etneo', 'Castel di Judica',
+            'Giarre', 'Gravina di Catania', 'Mascalucia', 'Misterbianco',
+            'Paternò', 'Pedara', 'Randazzo', 'Riposto', 'San Giovanni la Punta',
+            'San Pietro Clarenza', 'Sant\'Agata li Battiati', 'Trecastagni',
+            'Tremestieri Etneo', 'Valverde', 'Viagrande', 'Zafferana Etnea'
+        ];
+
+        const comuniGrid = document.getElementById('comuni-grid');
+        if (comuniGrid) {
+            comuniGrid.innerHTML = comuni.map(comune => 
+                `<a href="#" class="dropdown-item" data-page="comune" data-slug="${comune.toLowerCase().replace(/[^a-z0-9]/g, '-')}" data-comune="${comune}">
+                    ${comune}
+                </a>`
+            ).join('');
+        }
+    }
+
+    loadPage(page, slug = null) {
+        this.currentPage = page;
+        this.currentSlug = slug;
+        
+        const mainContent = document.getElementById('main-content');
+        
+        switch(page) {
+            case 'home':
+                mainContent.innerHTML = this.getHomePage();
+                break;
+            case 'servizio':
+                mainContent.innerHTML = this.getServizioPage(slug);
+                break;
+            case 'comune':
+                const comune = document.querySelector(`[data-slug="${slug}"]`)?.dataset.comune;
+                mainContent.innerHTML = this.getComunePage(comune);
+                break;
+            case 'faq':
+                mainContent.innerHTML = this.getFAQPage();
+                break;
+            case 'contatti':
+                mainContent.innerHTML = this.getContattiPage();
+                break;
+            default:
+                mainContent.innerHTML = this.getHomePage();
+        }
+
+        // Setup page-specific functionality
+        this.setupPageFunctionality();
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+
+    getHomePage() {
+        return `
+            <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-content">
                     <h1>Sgombero Gratuito a Catania</h1>
-                    <p>Servizio professionale di sgombero appartamenti, cantine e locali commerciali. Ritiriamo la tua merce in cambio del servizio gratuito.</p>
+                    <p>Servizio professionale di sgombero appartamenti, cantine e locali commerciali. <strong>Completamente gratuito</strong> in cambio di oggetti di valore.</p>
                     
                     <a href="tel:3490073264" class="hero-phone">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -29,28 +132,29 @@ const pageContent = {
                     </a>
                     
                     <div class="hero-actions">
-                        <a href="#" class="btn btn-outline" data-page="servizio" data-slug="sgombero">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9,22 9,12 15,12 15,22"/>
-                            </svg>
-                            Sgombero Gratuito
-                        </a>
-                        <a href="#" class="btn btn-secondary" data-page="contatti">
+                        <a href="#" class="btn btn-outline" data-page="contatti">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                             </svg>
-                            Preventivo Gratuito
+                            Richiedi Preventivo Gratuito
+                        </a>
+                        <a href="#" class="btn btn-outline" data-page="servizio" data-slug="sgombero">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                            Scopri Come Funziona
                         </a>
                     </div>
                 </div>
             </section>
 
+            <!-- Services Section -->
             <section class="section section-light">
                 <div class="container">
                     <div class="section-header">
                         <h2>I Nostri Servizi Professionali</h2>
-                        <p>Oltre 15 anni di esperienza nel settore degli sgomberi e traslochi a Catania e provincia</p>
+                        <p>Oltre 15 anni di esperienza nel settore con attrezzature specializzate e personale qualificato</p>
                     </div>
                     
                     <div class="cards-grid">
@@ -62,45 +166,113 @@ const pageContent = {
                                 </svg>
                             </div>
                             <h3>Sgombero Gratuito</h3>
-                            <p>Sgomberiamo appartamenti, cantine e locali commerciali gratuitamente in cambio della merce recuperabile. Servizio rapido e professionale.</p>
+                            <p>Svuotiamo appartamenti, cantine e locali commerciali completamente gratis in cambio di oggetti di valore. Servizio rapido e professionale.</p>
                             <a href="#" class="card-link" data-page="servizio" data-slug="sgombero">Scopri di più →</a>
                         </div>
                         
                         <div class="card">
                             <div class="card-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
-                                    <path d="M15 18H9"/>
-                                    <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
-                                    <circle cx="17" cy="18" r="2"/>
-                                    <circle cx="7" cy="18" r="2"/>
+                                    <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+                                    <path d="M9 22v-4h6v4"/>
+                                    <path d="M8 6h.01"/>
+                                    <path d="M16 6h.01"/>
+                                    <path d="M12 6h.01"/>
+                                    <path d="M12 10h.01"/>
+                                    <path d="M12 14h.01"/>
+                                    <path d="M16 10h.01"/>
+                                    <path d="M16 14h.01"/>
+                                    <path d="M8 10h.01"/>
+                                    <path d="M8 14h.01"/>
                                 </svg>
                             </div>
-                            <h3>Trasporti Professionali</h3>
-                            <p>Servizio di trasporto merci con furgoni attrezzati e personale qualificato. Trasporti sicuri in tutta la provincia di Catania.</p>
+                            <h3>Trasporti Specializzati</h3>
+                            <p>Trasportiamo mobili e oggetti voluminosi con attrezzature professionali. Scale aeree per piani alti e accessi difficili.</p>
                             <a href="#" class="card-link" data-page="servizio" data-slug="trasporto">Scopri di più →</a>
                         </div>
                         
                         <div class="card">
                             <div class="card-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/>
-                                    <path d="M8 5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2H8V5z"/>
+                                    <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
+                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                                 </svg>
                             </div>
                             <h3>Traslochi Completi</h3>
-                            <p>Traslochi residenziali e commerciali con imballaggio, trasporto e montaggio. Servizio completo chiavi in mano.</p>
+                            <p>Servizio completo di trasloco con imballaggio, trasporto e sistemazione. Personale esperto e assicurazione inclusa.</p>
                             <a href="#" class="card-link" data-page="servizio" data-slug="trasloco">Scopri di più →</a>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Equipment Section with Images -->
+            <section class="section section-gray">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Attrezzature Professionali</h2>
+                        <p>Utilizziamo solo equipaggiamenti specializzati per garantire sicurezza ed efficienza</p>
+                    </div>
+                    
+                    <div class="equipment-grid">
+                        <div class="equipment-item">
+                            <img src="public/IMG-20250619-WA0016.jpg" alt="Camion professionale per sgomberi">
+                            <h3>Camion Attrezzati</h3>
+                            <p>Flotta di camion professionali con sponde idrauliche per il carico sicuro di mobili e oggetti voluminosi.</p>
+                        </div>
+                        
+                        <div class="equipment-item">
+                            <img src="public/IMG-20250619-WA0018.jpg" alt="Scala aerea per piani alti">
+                            <h3>Scale Aeree Specializzate</h3>
+                            <p>Attrezzature per raggiungere balconi e finestre ai piani alti, ideali per trasporti difficili e sgomberi complessi.</p>
+                        </div>
+                        
+                        <div class="equipment-item">
+                            <img src="public/IMG-20250619-WA0015.jpg" alt="Operazioni di sgombero professionale">
+                            <h3>Operazioni Sicure</h3>
+                            <p>Personale qualificato e procedure di sicurezza certificate per ogni tipo di intervento, anche in spazi ristretti.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process Section -->
+            <section class="section section-light">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Come Funziona il Nostro Servizio</h2>
+                        <p>Un processo semplice e trasparente per il tuo sgombero gratuito</p>
+                    </div>
+                    
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Contatto Iniziale</h3>
+                            <p>Chiamaci o compila il form. Ti risponderemo entro 24 ore per fissare un sopralluogo gratuito.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Sopralluogo Gratuito</h3>
+                            <p>Valutiamo gli oggetti presenti e concordiamo modalità e tempi dell'intervento.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Sgombero Professionale</h3>
+                            <p>Interveniamo con le nostre attrezzature specializzate, lasciando il locale perfettamente pulito.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
             <section class="section section-gray">
                 <div class="container">
                     <div class="section-header">
                         <h2>Perché Scegliere Sgombero Catania</h2>
-                        <p>La professionalità e l'esperienza che fanno la differenza</p>
+                        <p>La professionalità che fa la differenza</p>
                     </div>
                     
                     <div class="features-grid">
@@ -108,483 +280,430 @@ const pageContent = {
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12,6 12,12 16,14"/>
+                                    <path d="M12 6v6l4 2"/>
                                 </svg>
                             </div>
                             <h3>Servizio Rapido</h3>
-                            <p>Interveniamo entro 24-48 ore dalla chiamata</p>
+                            <p>Interveniamo entro 24-48 ore dalla richiesta</p>
                         </div>
                         
                         <div class="feature">
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M9 12l2 2 4-4"/>
-                                    <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z"/>
-                                    <path d="M3 12v7c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-7"/>
+                                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
                                 </svg>
                             </div>
-                            <h3>Attrezzature Professionali</h3>
-                            <p>Utilizziamo scale aeree e mezzi specializzati</p>
-                        </div>
-                        
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="8.5" cy="7" r="4"/>
-                                    <path d="M20 8v6"/>
-                                    <path d="M23 11h-6"/>
-                                </svg>
-                            </div>
-                            <h3>Personale Qualificato</h3>
-                            <p>Team esperto e assicurato per ogni tipo di intervento</p>
+                            <h3>Completamente Gratuito</h3>
+                            <p>Nessun costo per il cliente, solo valore recuperato</p>
                         </div>
                         
                         <div class="feature">
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                    <path d="M9 12l2 2 4-4"/>
                                 </svg>
                             </div>
-                            <h3>Servizio Assicurato</h3>
-                            <p>Copertura assicurativa completa su tutti i lavori</p>
+                            <h3>Assicurati e Legali</h3>
+                            <p>Smaltimento rifiuti a norma di legge</p>
                         </div>
                         
                         <div class="feature">
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                    <path d="M2 17l10 5 10-5"/>
-                                    <path d="M2 12l10 5 10-5"/>
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                                 </svg>
                             </div>
-                            <h3>Smaltimento Legale</h3>
-                            <p>Smaltimento rifiuti secondo normative vigenti</p>
+                            <h3>Personale Qualificato</h3>
+                            <p>Team esperto con oltre 15 anni di esperienza</p>
                         </div>
                         
                         <div class="feature">
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 6h18"/>
-                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
-                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
-                                    <line x1="10" y1="11" x2="10" y2="17"/>
-                                    <line x1="14" y1="11" x2="14" y2="17"/>
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
                                 </svg>
                             </div>
-                            <h3>Pulizia Finale</h3>
-                            <p>Lasciamo gli ambienti puliti e pronti all'uso</p>
+                            <h3>Tutta la Provincia</h3>
+                            <p>Operiamo in tutti i comuni di Catania</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                                    <circle cx="12" cy="13" r="3"/>
+                                </svg>
+                            </div>
+                            <h3>Attrezzature Speciali</h3>
+                            <p>Scale aeree e mezzi per ogni situazione</p>
                         </div>
                     </div>
                 </div>
             </section>
+        `;
+    }
 
+    getServizioPage(slug) {
+        const servizi = {
+            'sgombero': {
+                title: 'Sgombero Gratuito',
+                subtitle: 'Il nostro servizio principale: sgombero completamente gratuito',
+                image: 'public/IMG-20250619-WA0016.jpg',
+                content: `
+                    <div class="service-content">
+                        <div class="service-image">
+                            <img src="public/IMG-20250619-WA0016.jpg" alt="Servizio di sgombero gratuito con camion professionale">
+                        </div>
+                        <div class="service-text">
+                            <h3>Come Funziona il Servizio Gratuito</h3>
+                            <p>Il nostro modello di business unico ci permette di offrire sgomberi completamente gratuiti. Recuperiamo il valore dagli oggetti che hanno ancora un mercato, permettendoti di liberare i tuoi spazi senza alcun costo.</p>
+                            
+                            <h4>Cosa Sgomberiamo Gratuitamente:</h4>
+                            <ul>
+                                <li><strong>Appartamenti completi</strong> - Mobili, elettrodomestici, oggetti personali</li>
+                                <li><strong>Cantine e soffitte</strong> - Anche con accesso difficile</li>
+                                <li><strong>Locali commerciali</strong> - Uffici, negozi, magazzini</li>
+                                <li><strong>Garage e box auto</strong> - Liberazione completa degli spazi</li>
+                            </ul>
+                            
+                            <h4>Il Nostro Processo:</h4>
+                            <ol>
+                                <li><strong>Sopralluogo gratuito</strong> - Valutiamo gli oggetti presenti</li>
+                                <li><strong>Accordo trasparente</strong> - Concordiamo cosa tenere e cosa lasciare</li>
+                                <li><strong>Sgombero professionale</strong> - Con le nostre attrezzature specializzate</li>
+                                <li><strong>Pulizia finale</strong> - Lasciamo il locale perfettamente pulito</li>
+                            </ol>
+                        </div>
+                    </div>
+                `
+            },
+            'trasporto': {
+                title: 'Trasporti Specializzati',
+                subtitle: 'Trasporti professionali con attrezzature per ogni situazione',
+                image: 'public/IMG-20250619-WA0018.jpg',
+                content: `
+                    <div class="service-content">
+                        <div class="service-image">
+                            <img src="public/IMG-20250619-WA0018.jpg" alt="Scala aerea professionale per trasporti ai piani alti">
+                        </div>
+                        <div class="service-text">
+                            <h3>Trasporti con Attrezzature Specializzate</h3>
+                            <p>Disponiamo di scale aeree professionali e attrezzature specializzate per raggiungere qualsiasi piano, anche in situazioni complesse dove le scale condominiali sono troppo strette.</p>
+                            
+                            <h4>Le Nostre Specializzazioni:</h4>
+                            <ul>
+                                <li><strong>Scale aeree fino a 20 metri</strong> - Per balconi e finestre ai piani alti</li>
+                                <li><strong>Trasporti voluminosi</strong> - Mobili, elettrodomestici, pianoforti</li>
+                                <li><strong>Accessi difficili</strong> - Scale strette, cortili interni</li>
+                                <li><strong>Carichi pesanti</strong> - Con attrezzature di sollevamento</li>
+                            </ul>
+                            
+                            <h4>Vantaggi del Nostro Servizio:</h4>
+                            <ul>
+                                <li>Personale specializzato e assicurato</li>
+                                <li>Attrezzature certificate e sicure</li>
+                                <li>Preventivi gratuiti e trasparenti</li>
+                                <li>Interventi rapidi su tutta la provincia</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            'trasloco': {
+                title: 'Traslochi Completi',
+                subtitle: 'Servizio completo di trasloco con personale qualificato',
+                image: 'public/IMG-20250619-WA0015.jpg',
+                content: `
+                    <div class="service-content">
+                        <div class="service-image">
+                            <img src="public/IMG-20250619-WA0015.jpg" alt="Operazioni di trasloco professionale con personale qualificato">
+                        </div>
+                        <div class="service-text">
+                            <h3>Traslochi Professionali Completi</h3>
+                            <p>Organizziamo traslochi completi con un servizio chiavi in mano. Dal sopralluogo iniziale alla sistemazione finale, ci occupiamo di ogni dettaglio per rendere il tuo trasloco semplice e senza stress.</p>
+                            
+                            <h4>Servizi Inclusi:</h4>
+                            <ul>
+                                <li><strong>Sopralluogo e preventivo gratuito</strong></li>
+                                <li><strong>Imballaggio professionale</strong> - Con materiali di qualità</li>
+                                <li><strong>Smontaggio e rimontaggio mobili</strong></li>
+                                <li><strong>Trasporto assicurato</strong> - Con mezzi adeguati</li>
+                                <li><strong>Sistemazione nella nuova casa</strong></li>
+                            </ul>
+                            
+                            <h4>Tipologie di Trasloco:</h4>
+                            <ul>
+                                <li><strong>Residenziali</strong> - Appartamenti, ville, case</li>
+                                <li><strong>Commerciali</strong> - Uffici, negozi, aziende</li>
+                                <li><strong>Parziali</strong> - Solo alcuni mobili o stanze</li>
+                                <li><strong>Internazionali</strong> - Con documentazione doganale</li>
+                            </ul>
+                            
+                            <div class="service-cta">
+                                <a href="tel:3490073264" class="btn btn-primary">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                    Chiama per Preventivo Gratuito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        const servizio = servizi[slug] || servizi['sgombero'];
+        
+        return `
             <section class="section section-light">
                 <div class="container">
                     <div class="section-header">
-                        <h2>I Nostri Lavori in Azione</h2>
-                        <p>Guarda le nostre attrezzature professionali all'opera</p>
+                        <h1>${servizio.title}</h1>
+                        <p>${servizio.subtitle}</p>
                     </div>
                     
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="/IMG-20250619-WA0015.jpg" alt="Sgombero professionale con furgone attrezzato" loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Sgombero Appartamento</h3>
-                                <p>Utilizziamo furgoni professionali per il trasporto sicuro della merce</p>
+                    ${servizio.content}
+                    
+                    <div class="service-contact">
+                        <h3>Richiedi Informazioni</h3>
+                        <p>Contattaci per un preventivo gratuito e senza impegno</p>
+                        <div class="hero-actions">
+                            <a href="tel:3490073264" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                Chiama Ora: 349 007 3264
+                            </a>
+                            <a href="#" class="btn btn-secondary" data-page="contatti">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                Richiedi Preventivo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
+    getComunePage(comune) {
+        return `
+            <section class="section section-light">
+                <div class="container">
+                    <div class="section-header">
+                        <h1>Sgombero Gratuito a ${comune}</h1>
+                        <p>Servizio professionale di sgombero e trasporti specializzato per ${comune} e dintorni</p>
+                    </div>
+                    
+                    <div class="comune-content">
+                        <div class="comune-services">
+                            <h2>I Nostri Servizi a ${comune}</h2>
+                            
+                            <div class="cards-grid">
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <polyline points="9,22 9,12 15,12 15,22"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Sgombero Appartamenti</h3>
+                                    <p>Sgomberiamo appartamenti, case e ville a ${comune} completamente gratis. Servizio rapido e professionale con personale qualificato.</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+                                            <path d="M9 22v-4h6v4"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Trasporti Specializzati</h3>
+                                    <p>Trasporti con scale aeree e attrezzature professionali per raggiungere qualsiasi piano a ${comune}, anche in situazioni complesse.</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
+                                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Traslochi Completi</h3>
+                                    <p>Organizziamo traslochi completi da e per ${comune} con servizio chiavi in mano e personale esperto.</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="gallery-item">
-                            <img src="/IMG-20250619-WA0018.jpg" alt="Scale aeree professionali per sgomberi ai piani alti" loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Scale Aeree Specializzate</h3>
-                                <p>Attrezzature professionali per raggiungere balconi e piani alti in sicurezza</p>
+                        <div class="comune-info">
+                            <h2>Perché Sceglierci a ${comune}</h2>
+                            <div class="features-grid">
+                                <div class="feature">
+                                    <div class="feature-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M12 6v6l4 2"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Intervento Rapido</h3>
+                                    <p>Raggiungiamo ${comune} entro 24-48 ore dalla chiamata</p>
+                                </div>
+                                
+                                <div class="feature">
+                                    <div class="feature-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Conoscenza Locale</h3>
+                                    <p>Conosciamo bene ${comune} e le sue caratteristiche</p>
+                                </div>
+                                
+                                <div class="feature">
+                                    <div class="feature-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 12l2 2 4-4"/>
+                                            <circle cx="12" cy="12" r="10"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Servizio Garantito</h3>
+                                    <p>Qualità e professionalità certificate a ${comune}</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="gallery-item">
-                            <img src="/IMG-20250619-WA0016.jpg" alt="Operazioni di sgombero con scala telescopica" loading="lazy">
-                            <div class="gallery-overlay">
-                                <h3>Accesso Difficile</h3>
-                                <p>Risolviamo anche le situazioni più complesse con le nostre attrezzature</p>
+                        <div class="comune-contact">
+                            <h2>Contattaci per ${comune}</h2>
+                            <p>Siamo pronti ad intervenire a ${comune} per qualsiasi esigenza di sgombero o trasporto</p>
+                            
+                            <div class="hero-actions">
+                                <a href="tel:3490073264" class="btn btn-primary">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                    Chiama per ${comune}: 349 007 3264
+                                </a>
+                                <a href="#" class="btn btn-secondary" data-page="contatti">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                    Preventivo Gratuito
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        `
-    },
-    
-    servizio: {
-        sgombero: {
-            title: 'Sgombero Gratuito - Servizio Professionale',
-            content: `
-                <section class="hero">
-                    <div class="hero-content">
-                        <h1>Sgombero Gratuito a Catania</h1>
-                        <p>Sgomberiamo il tuo appartamento, cantina o locale commerciale gratuitamente in cambio della merce recuperabile. Servizio professionale con attrezzature specializzate.</p>
-                        
-                        <a href="tel:3490073264" class="hero-phone">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            Chiama Ora: 349 007 3264
-                        </a>
-                    </div>
-                </section>
+        `;
+    }
 
-                <section class="section section-light">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2>Come Funziona il Nostro Sgombero Gratuito</h2>
-                            <p>Un servizio win-win: tu liberi lo spazio, noi recuperiamo la merce utile</p>
-                        </div>
-                        
-                        <div class="process-steps">
-                            <div class="step">
-                                <div class="step-number">1</div>
-                                <h3>Sopralluogo Gratuito</h3>
-                                <p>Veniamo a valutare la merce presente e ti forniamo un preventivo dettagliato</p>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">2</div>
-                                <h3>Accordo Trasparente</h3>
-                                <p>Se la merce recuperabile copre i costi, il servizio è completamente gratuito</p>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">3</div>
-                                <h3>Sgombero Professionale</h3>
-                                <p>Interveniamo con attrezzature specializzate e personale qualificato</p>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">4</div>
-                                <h3>Pulizia Finale</h3>
-                                <p>Lasciamo l'ambiente pulito e pronto per il nuovo utilizzo</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    getFAQPage() {
+        const faqs = [
+            {
+                question: "Come funziona il servizio di sgombero gratuito?",
+                answer: "Il nostro servizio è completamente gratuito perché recuperiamo il valore dagli oggetti che hanno ancora un mercato. Facciamo un sopralluogo gratuito, valutiamo cosa c'è di interessante e concordiamo l'intervento. Tu non paghi nulla e noi ci occupiamo di tutto: sgombero, pulizia e smaltimento a norma di legge."
+            },
+            {
+                question: "Quali oggetti vi interessano per rendere lo sgombero gratuito?",
+                answer: "Ci interessano mobili in buono stato, elettrodomestici funzionanti, oggetti d'antiquariato, libri, quadri, ceramiche, argenteria, e qualsiasi oggetto che abbia ancora un valore di mercato. Durante il sopralluogo valutiamo tutto insieme."
+            },
+            {
+                question: "Quanto tempo ci vuole per organizzare uno sgombero?",
+                answer: "Generalmente riusciamo ad intervenire entro 24-48 ore dalla richiesta. Per situazioni urgenti possiamo organizzarci anche in giornata. Il sopralluogo è sempre gratuito e senza impegno."
+            },
+            {
+                question: "Operate in tutti i comuni della provincia di Catania?",
+                answer: "Sì, operiamo in tutti i comuni della provincia di Catania: da Catania città fino ai paesi dell'Etna, della costa e dell'entroterra. Abbiamo mezzi e personale per raggiungere qualsiasi località."
+            },
+            {
+                question: "Cosa succede se non ci sono oggetti di valore?",
+                answer: "Se durante il sopralluogo non troviamo oggetti sufficienti per coprire i costi, possiamo comunque fare lo sgombero a tariffe molto competitive. In ogni caso il sopralluogo è sempre gratuito e senza impegno."
+            },
+            {
+                question: "Siete assicurati e autorizzati?",
+                answer: "Sì, siamo completamente assicurati per danni a terzi e abbiamo tutte le autorizzazioni necessarie per il trasporto e lo smaltimento dei rifiuti. Rilasciamo sempre la documentazione per lo smaltimento a norma di legge."
+            },
+            {
+                question: "Potete raggiungere piani alti senza ascensore?",
+                answer: "Assolutamente sì! Abbiamo scale aeree professionali che ci permettono di raggiungere balconi e finestre fino al 6° piano. È una delle nostre specializzazioni per situazioni dove le scale condominiali sono troppo strette."
+            },
+            {
+                question: "Fate anche traslochi completi?",
+                answer: "Sì, oltre agli sgomberi facciamo anche traslochi completi con servizio chiavi in mano: imballaggio, trasporto, smontaggio e rimontaggio mobili. Preventivo sempre gratuito."
+            },
+            {
+                question: "Come posso richiedere un preventivo?",
+                answer: "Puoi chiamarci direttamente al 349 007 3264 oppure compilare il form di contatto sul sito. Ti ricontatteremo entro poche ore per fissare il sopralluogo gratuito."
+            },
+            {
+                question: "Lavorate anche nei weekend?",
+                answer: "Sì, lavoriamo anche nei weekend per venire incontro alle esigenze dei clienti. Siamo flessibili sugli orari e cerchiamo sempre di adattarci alle vostre necessità."
+            }
+        ];
 
-                <section class="section section-gray">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2>Cosa Sgomberiamo</h2>
-                        </div>
-                        
-                        <div class="cards-grid">
-                            <div class="card">
-                                <div class="card-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                        <polyline points="9,22 9,12 15,12 15,22"/>
-                                    </svg>
-                                </div>
-                                <h3>Appartamenti</h3>
-                                <p>Sgombero completo di abitazioni, inclusi mobili, elettrodomestici e oggetti personali</p>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M3 21h18"/>
-                                        <path d="M5 21V7l8-4v18"/>
-                                        <path d="M19 21V11l-6-4"/>
-                                    </svg>
-                                </div>
-                                <h3>Cantine e Soffitte</h3>
-                                <p>Liberazione di spazi di deposito con recupero di oggetti di valore</p>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                                    </svg>
-                                </div>
-                                <h3>Uffici e Negozi</h3>
-                                <p>Sgombero di locali commerciali con smaltimento di arredi e attrezzature</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section section-light">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2>Le Nostre Attrezzature Professionali</h2>
-                            <p>Utilizziamo mezzi specializzati per ogni tipo di intervento</p>
-                        </div>
-                        
-                        <div class="equipment-grid">
-                            <div class="equipment-item">
-                                <img src="/IMG-20250619-WA0018.jpg" alt="Scale aeree professionali" loading="lazy">
-                                <h3>Scale Aeree</h3>
-                                <p>Per raggiungere balconi e finestre ai piani alti in totale sicurezza</p>
-                            </div>
-                            
-                            <div class="equipment-item">
-                                <img src="/IMG-20250619-WA0015.jpg" alt="Furgoni attrezzati per trasporti" loading="lazy">
-                                <h3>Furgoni Attrezzati</h3>
-                                <p>Mezzi di trasporto professionali per il carico sicuro della merce</p>
-                            </div>
-                            
-                            <div class="equipment-item">
-                                <img src="/IMG-20250619-WA0016.jpg" alt="Scale telescopiche per accessi difficili" loading="lazy">
-                                <h3>Scale Telescopiche</h3>
-                                <p>Soluzioni per accessi difficili e spazi ristretti</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            `
-        },
-        
-        trasporto: {
-            title: 'Trasporti Professionali - Catania e Provincia',
-            content: `
-                <section class="hero">
-                    <div class="hero-content">
-                        <h1>Trasporti Professionali</h1>
-                        <p>Servizio di trasporto merci affidabile e sicuro in tutta la provincia di Catania. Furgoni attrezzati e personale specializzato.</p>
-                        
-                        <a href="tel:3490073264" class="hero-phone">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            Preventivo: 349 007 3264
-                        </a>
-                    </div>
-                </section>
-
-                <section class="section section-light">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2>I Nostri Servizi di Trasporto</h2>
-                        </div>
-                        
-                        <div class="cards-grid">
-                            <div class="card">
-                                <div class="card-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
-                                        <path d="M15 18H9"/>
-                                        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
-                                        <circle cx="17" cy="18" r="2"/>
-                                        <circle cx="7" cy="18" r="2"/>
-                                    </svg>
-                                </div>
-                                <h3>Trasporto Mobili</h3>
-                                <p>Trasporto sicuro di mobili e arredi con imballaggio professionale</p>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21"/>
-                                        <line x1="12" y1="17" x2="12" y2="21"/>
-                                    </svg>
-                                </div>
-                                <h3>Elettrodomestici</h3>
-                                <p>Trasporto specializzato di elettrodomestici grandi e piccoli</p>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/>
-                                        <path d="M8 5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2H8V5z"/>
-                                    </svg>
-                                </div>
-                                <h3>Merci Varie</h3>
-                                <p>Trasporto di qualsiasi tipo di merce con massima cura</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            `
-        },
-        
-        trasloco: {
-            title: 'Traslochi Completi - Servizio Chiavi in Mano',
-            content: `
-                <section class="hero">
-                    <div class="hero-content">
-                        <h1>Traslochi Completi</h1>
-                        <p>Servizio di trasloco completo chiavi in mano: imballaggio, trasporto, montaggio e sistemazione. Traslochi residenziali e commerciali.</p>
-                        
-                        <a href="tel:3490073264" class="hero-phone">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            Preventivo: 349 007 3264
-                        </a>
-                    </div>
-                </section>
-
-                <section class="section section-light">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2>Servizio Trasloco Completo</h2>
-                        </div>
-                        
-                        <div class="process-steps">
-                            <div class="step">
-                                <div class="step-number">1</div>
-                                <h3>Sopralluogo e Preventivo</h3>
-                                <p>Valutiamo il volume e la complessità del trasloco</p>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">2</div>
-                                <h3>Imballaggio Professionale</h3>
-                                <p>Proteggiamo tutti i tuoi beni con materiali di qualità</p>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">3</div>
-                                <h3>Trasporto Sicuro</h3>
-                                <p>Trasportiamo tutto con la massima cura</p>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">4</div>
-                                <h3>Montaggio e Sistemazione</h3>
-                                <p>Rimontiamo e sistemiamo tutto nella nuova casa</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            `
-        }
-    },
-    
-    faq: {
-        title: 'Domande Frequenti - FAQ',
-        content: `
+        return `
             <section class="section section-light">
                 <div class="container">
                     <div class="section-header">
                         <h1>Domande Frequenti</h1>
-                        <p>Trova le risposte alle domande più comuni sui nostri servizi</p>
+                        <p>Tutte le risposte che cerchi sui nostri servizi di sgombero e trasporti</p>
                     </div>
                     
                     <div class="faq-list">
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                Come funziona il servizio di sgombero gratuito?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
-                                </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Il nostro servizio di sgombero gratuito funziona attraverso il recupero della merce di valore presente nell'immobile. Dopo un sopralluogo gratuito, valutiamo se la merce recuperabile (mobili, elettrodomestici, oggetti di antiquariato, ecc.) può coprire i costi del servizio. Se sì, lo sgombero è completamente gratuito per te.
+                        ${faqs.map((faq, index) => `
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    ${faq.question}
+                                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6,9 12,15 18,9"/>
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>${faq.answer}</p>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                Quali tipi di immobili sgomberate?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="faq-contact">
+                        <h2>Non hai trovato la risposta che cercavi?</h2>
+                        <p>Contattaci direttamente per qualsiasi domanda specifica</p>
+                        <div class="hero-actions">
+                            <a href="tel:3490073264" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                 </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Sgomberiamo appartamenti, case, cantine, soffitte, garage, uffici, negozi e locali commerciali. Interveniamo anche in situazioni complesse come balconi ai piani alti grazie alle nostre attrezzature specializzate.
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                In quanto tempo intervenite?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
+                                Chiama Ora: 349 007 3264
+                            </a>
+                            <a href="#" class="btn btn-secondary" data-page="contatti">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                                 </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Generalmente interveniamo entro 24-48 ore dalla chiamata per il sopralluogo. Una volta concordato l'intervento, possiamo procedere con lo sgombero nel giro di pochi giorni, a seconda della complessità del lavoro.
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                Cosa succede se la merce non copre i costi?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
-                                </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Se la merce recuperabile non copre completamente i costi del servizio, ti forniremo un preventivo trasparente per la differenza. Potrai decidere se procedere o meno, senza alcun impegno.
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                Siete assicurati?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
-                                </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Sì, siamo completamente assicurati. Tutti i nostri interventi sono coperti da polizza assicurativa per danni a terzi e responsabilità civile, garantendoti la massima tranquillità.
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                Come smaltite i rifiuti?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
-                                </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Smaltimento tutti i rifiuti secondo le normative vigenti, utilizzando centri di raccolta autorizzati. Separiamo i materiali riciclabili e ci occupiamo di tutto il processo burocratico necessario.
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                Operate solo a Catania?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
-                                </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Operiamo in tutta la provincia di Catania, inclusi tutti i comuni limitrofi come Acireale, Adrano, Belpasso, Biancavilla, Bronte, Caltagirone, Giarre, Paternò, Misterbianco e molti altri.
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                Il sopralluogo è davvero gratuito?
-                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6,9 12,15 18,9"/>
-                                </svg>
-                            </button>
-                            <div class="faq-answer">
-                                Sì, il sopralluogo è completamente gratuito e senza impegno. Veniamo a valutare la situazione, ti forniamo un preventivo dettagliato e tu decidi liberamente se procedere o meno.
-                            </div>
+                                Scrivi un Messaggio
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
-        `
-    },
-    
-    contatti: {
-        title: 'Contatti - Sgombero Catania',
-        content: `
+        `;
+    }
+
+    getContattiPage() {
+        return `
             <section class="section section-light">
                 <div class="container">
                     <div class="section-header">
                         <h1>Contattaci</h1>
-                        <p>Siamo a tua disposizione per qualsiasi informazione o preventivo gratuito</p>
+                        <p>Siamo sempre disponibili per preventivi gratuiti e consulenze</p>
                     </div>
                     
                     <div class="contact-grid">
@@ -598,7 +717,7 @@ const pageContent = {
                                 <div>
                                     <h3>Telefono</h3>
                                     <p><a href="tel:3490073264">349 007 3264</a></p>
-                                    <small>Disponibili 7 giorni su 7</small>
+                                    <small>Disponibile 7 giorni su 7, dalle 8:00 alle 20:00</small>
                                 </div>
                             </div>
                             
@@ -611,8 +730,8 @@ const pageContent = {
                                 </div>
                                 <div>
                                     <h3>Area di Servizio</h3>
-                                    <p>Catania e tutta la provincia</p>
-                                    <small>Interventi rapidi in 24-48 ore</small>
+                                    <p>Catania e Provincia</p>
+                                    <small>Tutti i comuni della provincia di Catania</small>
                                 </div>
                             </div>
                             
@@ -620,45 +739,72 @@ const pageContent = {
                                 <div class="contact-icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"/>
-                                        <polyline points="12,6 12,12 16,14"/>
+                                        <path d="M12 6v6l4 2"/>
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3>Orari</h3>
-                                    <p>Lun-Dom: 8:00 - 20:00</p>
-                                    <small>Emergenze anche fuori orario</small>
+                                    <h3>Tempi di Risposta</h3>
+                                    <p>24-48 ore</p>
+                                    <small>Interventi rapidi, anche in giornata per urgenze</small>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Sopralluogo</h3>
+                                    <p>Sempre Gratuito</p>
+                                    <small>Valutazione senza impegno e preventivo trasparente</small>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="contact-form">
-                            <h3>Richiedi un Preventivo Gratuito</h3>
+                            <h3>Richiedi Preventivo Gratuito</h3>
                             <form id="contact-form">
                                 <div class="form-group">
-                                    <label class="form-label">Nome e Cognome</label>
+                                    <label class="form-label">Nome e Cognome *</label>
                                     <input type="text" class="form-input" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label">Telefono</label>
+                                    <label class="form-label">Telefono *</label>
                                     <input type="tel" class="form-input" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label">Comune</label>
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Comune *</label>
                                     <select class="form-select" required>
                                         <option value="">Seleziona il comune</option>
-                                        ${comuni.map(comune => `<option value="${comune}">${comune}</option>`).join('')}
+                                        <option value="catania">Catania</option>
+                                        <option value="acireale">Acireale</option>
+                                        <option value="adrano">Adrano</option>
+                                        <option value="belpasso">Belpasso</option>
+                                        <option value="biancavilla">Biancavilla</option>
+                                        <option value="bronte">Bronte</option>
+                                        <option value="caltagirone">Caltagirone</option>
+                                        <option value="altro">Altro comune</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label">Tipo di Servizio</label>
+                                    <label class="form-label">Tipo di Servizio *</label>
                                     <select class="form-select" required>
                                         <option value="">Seleziona il servizio</option>
                                         <option value="sgombero">Sgombero Gratuito</option>
                                         <option value="trasporto">Trasporto</option>
                                         <option value="trasloco">Trasloco</option>
+                                        <option value="altro">Altro</option>
                                     </select>
                                 </div>
                                 
@@ -669,8 +815,7 @@ const pageContent = {
                                 
                                 <button type="submit" class="btn btn-primary" style="width: 100%;">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                        <polyline points="22,6 12,13 2,6"/>
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                                     </svg>
                                     Invia Richiesta
                                 </button>
@@ -679,144 +824,81 @@ const pageContent = {
                     </div>
                 </div>
             </section>
-        `
+        `;
     }
-};
 
-// Theme management
-let currentTheme = localStorage.getItem('theme') || 'light';
-let glassEffect = localStorage.getItem('glassEffect') === 'true';
-
-function applyTheme() {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    
-    if (currentTheme === 'custom') {
-        const customBg = localStorage.getItem('customBg') || '#ffffff';
-        const customText = localStorage.getItem('customText') || '#000000';
-        const customButton = localStorage.getItem('customButton') || '#007AFF';
-        
-        document.documentElement.style.setProperty('--custom-bg', customBg);
-        document.documentElement.style.setProperty('--custom-text', customText);
-        document.documentElement.style.setProperty('--custom-button', customButton);
-    }
-    
-    if (glassEffect) {
-        document.querySelector('.navbar').classList.add('glass');
-        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.add('glass'));
-        document.querySelectorAll('.modal-content').forEach(content => content.classList.add('glass'));
-    } else {
-        document.querySelector('.navbar').classList.remove('glass');
-        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('glass'));
-        document.querySelectorAll('.modal-content').forEach(content => content.classList.remove('glass'));
-    }
-}
-
-// Navigation and routing
-function loadPage(page, slug = null) {
-    const mainContent = document.getElementById('main-content');
-    let content;
-    
-    if (page === 'servizio' && slug) {
-        content = pageContent.servizio[slug];
-        document.title = content.title;
-    } else {
-        content = pageContent[page];
-        document.title = content.title;
-    }
-    
-    if (content) {
-        mainContent.innerHTML = content.content;
-        mainContent.classList.add('fade-in-up');
-        
-        // Update active nav link
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-        const activeLink = document.querySelector(`[data-page="${page}"]`);
-        if (activeLink) activeLink.classList.add('active');
-        
-        // Initialize page-specific functionality
-        if (page === 'faq') {
-            initializeFAQ();
-        } else if (page === 'contatti') {
-            initializeContactForm();
-        }
-        
-        // Scroll to top
-        window.scrollTo(0, 0);
-    }
-}
-
-// FAQ functionality
-function initializeFAQ() {
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            // Close all FAQ items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
+    setupPageFunctionality() {
+        // Setup FAQ toggles
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.closest('.faq-item');
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
             });
-            
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
         });
-    });
-}
 
-// Contact form functionality
-function initializeContactForm() {
-    const form = document.getElementById('contact-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Create WhatsApp message
-            const message = `Ciao! Vorrei richiedere un preventivo per:
-            
-Nome: ${data.nome || 'Non specificato'}
-Telefono: ${data.telefono || 'Non specificato'}
-Comune: ${data.comune || 'Non specificato'}
-Servizio: ${data.servizio || 'Non specificato'}
-Descrizione: ${data.descrizione || 'Non specificata'}`;
-            
-            const whatsappUrl = `https://wa.me/3490073264?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
+        // Setup contact form
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Grazie per la richiesta! Ti contatteremo entro 24 ore.');
+            });
+        }
+    }
+
+    setupModals() {
+        // Auth modal
+        const authModal = document.getElementById('auth-modal');
+        const userBtn = document.getElementById('user-btn');
+        const closeAuth = document.getElementById('close-auth');
+
+        userBtn?.addEventListener('click', () => {
+            authModal.classList.add('active');
+            this.loadAuthContent();
+        });
+
+        closeAuth?.addEventListener('click', () => {
+            authModal.classList.remove('active');
+        });
+
+        // Settings modal
+        const settingsModal = document.getElementById('settings-modal');
+        const settingsBtn = document.getElementById('settings-btn');
+        const closeSettings = document.getElementById('close-settings');
+
+        settingsBtn?.addEventListener('click', () => {
+            settingsModal.classList.add('active');
+            this.loadSettingsContent();
+        });
+
+        closeSettings?.addEventListener('click', () => {
+            settingsModal.classList.remove('active');
+        });
+
+        // Close modals on backdrop click
+        [authModal, settingsModal].forEach(modal => {
+            modal?.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
         });
     }
-}
 
-// Modal functionality
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Auth modal content
-function loadAuthContent(type) {
-    const authContent = document.getElementById('auth-content');
-    const authTitle = document.getElementById('auth-title');
-    
-    if (type === 'login') {
-        authTitle.textContent = 'Accedi';
+    loadAuthContent() {
+        const authContent = document.getElementById('auth-content');
         authContent.innerHTML = `
-            <form id="login-form">
+            <form id="auth-form">
                 <div class="form-group">
                     <label class="form-label">Email</label>
                     <input type="email" class="form-input" required>
@@ -825,173 +907,126 @@ function loadAuthContent(type) {
                     <label class="form-label">Password</label>
                     <input type="password" class="form-input" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Accedi</button>
-                <button type="button" class="btn btn-outline" style="width: 100%;" onclick="loadAuthContent('register')">Non hai un account? Registrati</button>
-            </form>
-        `;
-    } else {
-        authTitle.textContent = 'Registrati';
-        authContent.innerHTML = `
-            <form id="register-form">
-                <div class="form-group">
-                    <label class="form-label">Nome</label>
-                    <input type="text" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-input" required>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Registrati</button>
-                <button type="button" class="btn btn-outline" style="width: 100%;" onclick="loadAuthContent('login')">Hai già un account? Accedi</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">
+                    Accedi
+                </button>
+                <button type="button" class="btn btn-outline" style="width: 100%;">
+                    Registrati
+                </button>
             </form>
         `;
     }
-}
 
-// Settings modal content
-function loadSettingsContent() {
-    const settingsContent = document.getElementById('settings-content');
-    settingsContent.innerHTML = `
-        <div class="settings-section">
-            <h3>Tema</h3>
-            <div class="theme-options">
-                <div class="theme-option ${currentTheme === 'light' ? 'active' : ''}" onclick="changeTheme('light')">
-                    <div class="theme-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"/>
-                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                        </svg>
+    loadSettingsContent() {
+        const settingsContent = document.getElementById('settings-content');
+        settingsContent.innerHTML = `
+            <div class="settings-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <div class="theme-option active" data-theme="light">
+                        <div class="theme-icon">☀️</div>
+                        <div>Chiaro</div>
                     </div>
-                    <div>Chiaro</div>
-                </div>
-                <div class="theme-option ${currentTheme === 'dark' ? 'active' : ''}" onclick="changeTheme('dark')">
-                    <div class="theme-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                        </svg>
+                    <div class="theme-option" data-theme="dark">
+                        <div class="theme-icon">🌙</div>
+                        <div>Scuro</div>
                     </div>
-                    <div>Scuro</div>
-                </div>
-                <div class="theme-option ${currentTheme === 'custom' ? 'active' : ''}" onclick="changeTheme('custom')">
-                    <div class="theme-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="13.5" cy="6.5" r=".5"/>
-                            <circle cx="17.5" cy="10.5" r=".5"/>
-                            <circle cx="8.5" cy="7.5" r=".5"/>
-                            <circle cx="6.5" cy="12.5" r=".5"/>
-                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
-                        </svg>
+                    <div class="theme-option" data-theme="custom">
+                        <div class="theme-icon">🎨</div>
+                        <div>Personalizzato</div>
                     </div>
-                    <div>Personalizzato</div>
                 </div>
             </div>
-            
-            ${currentTheme === 'custom' ? `
+
+            <div class="settings-section" id="custom-colors" style="display: none;">
+                <h3>Colori Personalizzati</h3>
                 <div class="color-input-group">
-                    <label class="form-label">Colore Sfondo</label>
-                    <input type="color" class="color-input" value="${localStorage.getItem('customBg') || '#ffffff'}" onchange="updateCustomColor('bg', this.value)">
+                    <label class="form-label">Sfondo</label>
+                    <input type="color" class="color-input" value="#ffffff">
                 </div>
                 <div class="color-input-group">
-                    <label class="form-label">Colore Testo</label>
-                    <input type="color" class="color-input" value="${localStorage.getItem('customText') || '#000000'}" onchange="updateCustomColor('text', this.value)">
+                    <label class="form-label">Testo</label>
+                    <input type="color" class="color-input" value="#000000">
                 </div>
                 <div class="color-input-group">
-                    <label class="form-label">Colore Pulsanti</label>
-                    <input type="color" class="color-input" value="${localStorage.getItem('customButton') || '#007AFF'}" onchange="updateCustomColor('button', this.value)">
+                    <label class="form-label">Pulsanti</label>
+                    <input type="color" class="color-input" value="#007AFF">
                 </div>
-            ` : ''}
-        </div>
-        
-        <div class="settings-section">
-            <h3>Effetti</h3>
-            <div class="form-group">
-                <label class="form-label">Effetto Vetro</label>
-                <div class="toggle-switch ${glassEffect ? 'active' : ''}" onclick="toggleGlassEffect()"></div>
             </div>
-        </div>
-    `;
+
+            <div class="settings-section">
+                <h3>Effetti</h3>
+                <div class="form-group">
+                    <label class="form-label">Effetto Vetro</label>
+                    <div class="toggle-switch active" data-setting="glass"></div>
+                </div>
+            </div>
+        `;
+
+        this.setupSettings();
+    }
+
+    setupSettings() {
+        // Theme selection
+        document.querySelectorAll('.theme-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                
+                const theme = option.dataset.theme;
+                document.documentElement.setAttribute('data-theme', theme);
+                
+                const customColors = document.getElementById('custom-colors');
+                if (theme === 'custom') {
+                    customColors.style.display = 'block';
+                } else {
+                    customColors.style.display = 'none';
+                }
+            });
+        });
+
+        // Color inputs
+        document.querySelectorAll('.color-input').forEach(input => {
+            input.addEventListener('change', (e) => {
+                const property = e.target.previousElementSibling.textContent.toLowerCase();
+                const value = e.target.value;
+                
+                switch(property) {
+                    case 'sfondo':
+                        document.documentElement.style.setProperty('--custom-bg', value);
+                        break;
+                    case 'testo':
+                        document.documentElement.style.setProperty('--custom-text', value);
+                        break;
+                    case 'pulsanti':
+                        document.documentElement.style.setProperty('--custom-button', value);
+                        break;
+                }
+            });
+        });
+
+        // Toggle switches
+        document.querySelectorAll('.toggle-switch').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                toggle.classList.toggle('active');
+                
+                const setting = toggle.dataset.setting;
+                if (setting === 'glass') {
+                    const isActive = toggle.classList.contains('active');
+                    document.querySelectorAll('.navbar, .dropdown-menu, .modal-content').forEach(el => {
+                        if (isActive) {
+                            el.classList.add('glass');
+                        } else {
+                            el.classList.remove('glass');
+                        }
+                    });
+                }
+            });
+        });
+    }
 }
 
-function changeTheme(theme) {
-    currentTheme = theme;
-    localStorage.setItem('theme', theme);
-    applyTheme();
-    loadSettingsContent();
-}
-
-function updateCustomColor(type, color) {
-    localStorage.setItem(`custom${type.charAt(0).toUpperCase() + type.slice(1)}`, color);
-    applyTheme();
-}
-
-function toggleGlassEffect() {
-    glassEffect = !glassEffect;
-    localStorage.setItem('glassEffect', glassEffect);
-    applyTheme();
-    loadSettingsContent();
-}
-
-// Initialize app
+// Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
-    // Apply saved theme
-    applyTheme();
-    
-    // Populate comuni dropdown
-    const comuniGrid = document.getElementById('comuni-grid');
-    if (comuniGrid) {
-        comuniGrid.innerHTML = comuni.map(comune => 
-            `<a href="#" class="dropdown-item" data-page="comune" data-slug="${comune.toLowerCase().replace(/\s+/g, '-')}">${comune}</a>`
-        ).join('');
-    }
-    
-    // Load home page
-    loadPage('home');
-    
-    // Event listeners
-    document.addEventListener('click', (e) => {
-        // Navigation links
-        if (e.target.matches('[data-page]')) {
-            e.preventDefault();
-            const page = e.target.dataset.page;
-            const slug = e.target.dataset.slug;
-            loadPage(page, slug);
-        }
-        
-        // Modal triggers
-        if (e.target.matches('#user-btn')) {
-            loadAuthContent('login');
-            openModal('auth-modal');
-        }
-        
-        if (e.target.matches('#settings-btn')) {
-            loadSettingsContent();
-            openModal('settings-modal');
-        }
-        
-        // Modal close buttons
-        if (e.target.matches('#close-auth') || e.target.closest('#close-auth')) {
-            closeModal('auth-modal');
-        }
-        
-        if (e.target.matches('#close-settings') || e.target.closest('#close-settings')) {
-            closeModal('settings-modal');
-        }
-        
-        // Close modal on backdrop click
-        if (e.target.matches('.modal')) {
-            closeModal(e.target.id);
-        }
-    });
-    
-    // Close modals on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal('auth-modal');
-            closeModal('settings-modal');
-        }
-    });
+    new SgomberoApp();
 });
