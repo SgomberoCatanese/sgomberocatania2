@@ -1202,3 +1202,64 @@ main {
 .banner-cta:hover {
     background-color: #005bb5;
 }
+
+#crono-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crono-popup-content {
+    background: white;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+    font-family: 'Inter', sans-serif;
+}
+
+.crono-popup-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #111;
+}
+
+.crono-popup-content p {
+    font-size: 16px;
+    color: #444;
+}
+
+.popup-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.visit-btn {
+    background: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.close-btn {
+    background: #ddd;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: normal;
+    flex: 1;
+    cursor: pointer;
+}
