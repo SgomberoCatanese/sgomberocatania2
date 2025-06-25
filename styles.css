@@ -1159,3 +1159,38 @@ main {
 .text-right { text-align: right; }
 .hidden { display: none !important; }
 .visible { display: block !important; }
+
+.cronoshop-banner {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+.cronoshop-banner a {
+    color: #00aced;
+    text-decoration: none;
+}
+
+.cronoshop-banner a:hover {
+    text-decoration: underline;
+}
+
+.cronoshop-banner .banner-cta {
+    display: block;
+    margin-top: 6px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #0073e6;
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 8px;
+}
