@@ -1263,3 +1263,21 @@ main {
     flex: 1;
     cursor: pointer;
 }
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe5d;
+}
