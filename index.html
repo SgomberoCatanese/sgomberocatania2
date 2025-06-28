@@ -3,165 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="STR Sgomberi - Servizio di sgombero gratuito in cambio di merce a Catania e provincia. Trasporti e traslochi professionali.">
-    <meta name="keywords" content="sgombero gratis, Catania, trasporti, traslochi, sgombero appartamenti, STR Sgomberi">
+    
+    <!-- SEO Meta Tags -->
+    <title>STR Sgomberi Catania | Sgombero Gratuito, Trasporti e Traslochi Professionali</title>
+    <meta name="description" content="STR Sgomberi offre servizi di sgombero gratuito in cambio di merce, trasporti e traslochi professionali a Catania e provincia. Preventivi gratuiti, servizio rapido e affidabile.">
+    <meta name="keywords" content="sgombero gratis Catania, trasporti Catania, traslochi Catania, sgombero appartamenti, sgombero cantine, sgombero uffici, ritiro mobili usati, STR Sgomberi">
+    <meta name="author" content="STR Sgomberi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Italian">
+    <meta name="geo.region" content="IT-CT">
+    <meta name="geo.placename" content="Catania">
+    <meta name="geo.position" content="37.5079;15.0830">
+    <meta name="ICBM" content="37.5079, 15.0830">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="STR Sgomberi Catania | Sgombero Gratuito e Trasporti Professionali">
+    <meta property="og:description" content="Servizi di sgombero gratuito, trasporti e traslochi a Catania. Preventivi gratuiti e servizio professionale.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sgomberosicilia.it">
+    <meta property="og:image" content="https://www.sgomberosicilia.it/public/OIG1-removebg-preview_1_-removebg-preview.png">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="STR Sgomberi">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="STR Sgomberi Catania | Sgombero Gratuito e Trasporti">
+    <meta name="twitter:description" content="Servizi professionali di sgombero, trasporti e traslochi a Catania e provincia.">
+    <meta name="twitter:image" content="https://www.sgomberosicilia.it/public/OIG1-removebg-preview_1_-removebg-preview.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sgomberosicilia.it">
+    
+    <!-- Cache Control -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>STR Sgomberi - Servizio Professionale Catania</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-    <style>
-        .top-container {
-            position: sticky;
-            top: 0;
-            z-index: 9999;
+    <link rel="apple-touch-icon" href="public/OIG1-removebg-preview_1_-removebg-preview.png">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "STR Sgomberi",
+        "description": "Servizi professionali di sgombero gratuito, trasporti e traslochi a Catania e provincia",
+        "url": "https://www.sgomberosicilia.it",
+        "telephone": "+393497500613",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Catania",
+            "addressRegion": "Sicilia",
+            "addressCountry": "IT"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "37.5079",
+            "longitude": "15.0830"
+        },
+        "openingHours": "Mo-Sa 08:00-20:00",
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "37.5079",
+                "longitude": "15.0830"
+            },
+            "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servizi STR Sgomberi",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sgombero Gratuito",
+                        "description": "Servizio di sgombero gratuito in cambio di merce riutilizzabile"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Trasporti",
+                        "description": "Servizi di trasporto professionale per privati e aziende"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Traslochi",
+                        "description": "Traslochi completi per abitazioni e uffici"
+                    }
+                }
+            ]
         }
-
-        .cronoshop-banner {
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            padding: 14px 20px;
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            line-height: 1.5;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .cronoshop-banner a {
-            color: #00aced;
-            text-decoration: none;
-        }
-
-        .cronoshop-banner a:hover {
-            text-decoration: underline;
-        }
-
-        .banner-cta {
-            display: inline-block;
-            background-color: #0073e6;
-            color: #fff;
-            padding: 6px 12px;
-            margin-top: 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .banner-cta:hover {
-            background-color: #005bb5;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #25D366;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin-left: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #1ebe5d;
-        }
-
-        .nav-logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: contain;
-        }
-    </style>
+    }
+    </script>
 </head>
 <body>
-
-    <div class="top-container">
-        <!-- Banner Cronoshop -->
-        <div class="cronoshop-banner">
-            <a href="http://cronoshop.eu" target="_blank" rel="noopener noreferrer">
-                <strong>Cronoshop - Offerte Amazon Esclusive</strong><br>
-                Scopri le migliori offerte Amazon. Link Utili. Gruppi WhatsApp. Categorie. Contatti. Social. 💥
-                <span class="banner-cta">VISITA ORA</span>
-            </a>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                    <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="nav-logo">
-                    <span class="nav-title">STR Sgomberi</span>
-                </div>
-
-                <div class="nav-menu">
-                    <a href="#" class="nav-link active" data-page="home">Home</a>
-                    <div class="nav-dropdown">
-                        <button class="nav-link dropdown-toggle">Servizi
-                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"/>
-                            </svg>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item" data-page="servizio" data-slug="sgombero">Sgombero Gratuito</a>
-                            <a href="#" class="dropdown-item" data-page="servizio" data-slug="trasporto">Trasporti</a>
-                            <a href="#" class="dropdown-item" data-page="servizio" data-slug="trasloco">Traslochi</a>
-                        </div>
-                    </div>
-                    <div class="nav-dropdown">
-                        <button class="nav-link dropdown-toggle">Dove Operiamo
-                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"/>
-                            </svg>
-                        </button>
-                        <div class="dropdown-menu comuni-menu">
-                            <div class="comuni-grid" id="comuni-grid"></div>
-                        </div>
-                    </div>
-                    <a href="#" class="nav-link" data-page="faq">FAQ</a>
-                    <a href="#" class="nav-link" data-page="contatti">Contatti</a>
-                </div>
-
-                <div class="nav-actions">
-                    <a href="tel:3497500613" class="phone-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        <span>349 750 0613</span>
-                    </a>
-
-                    <a href="https://wa.me/393497500613" target="_blank" class="whatsapp-btn" title="Chatta su WhatsApp">
-                        <svg viewBox="0 0 32 32" fill="currentColor" width="24" height="24">
-                            <path d="M19.11 17.47c-.3-.15-1.77-.87-2.05-.97-.27-.1-.46-.15-.65.15-.19.3-.75.97-.92 1.17-.17.2-.34.22-.63.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37 0-.52-.07-.15-.65-1.55-.9-2.13-.24-.58-.48-.5-.65-.5h-.56c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.5 1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.26.5 1.7.63.71.23 1.36.2 1.87.13.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM16 3a13 13 0 0 0-11.34 19.43L3 29l6.75-1.77A13 13 0 1 0 16 3zm0 23.4c-1.96 0-3.79-.57-5.33-1.55l-.38-.24-4.01 1.05 1.07-3.91-.25-.4a10.42 10.42 0 1 1 8.9 4.05z"/>
-                        </svg>
-                    </a>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="nav-logo">
+                <span class="nav-title">STR Sgomberi</span>
             </div>
-        </nav>
-    </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link active" data-page="home">Home</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">Servizi
+                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" data-page="servizio" data-slug="sgombero">Sgombero Gratuito</a>
+                        <a href="#" class="dropdown-item" data-page="servizio" data-slug="trasporto">Trasporti</a>
+                        <a href="#" class="dropdown-item" data-page="servizio" data-slug="trasloco">Traslochi</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">Dove Operiamo
+                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu comuni-menu">
+                        <div class="comuni-grid" id="comuni-grid"></div>
+                    </div>
+                </div>
+                <a href="#" class="nav-link" data-page="blog">Blog</a>
+                <a href="#" class="nav-link" data-page="chi-siamo">Chi Siamo</a>
+                <a href="#" class="nav-link" data-page="faq">FAQ</a>
+                <a href="#" class="nav-link" data-page="contatti">Contatti</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="tel:3497500613" class="phone-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>349 750 0613</span>
+                </a>
+
+                <a href="https://wa.me/393497500613" target="_blank" class="whatsapp-btn" title="Chatta su WhatsApp">
+                    <svg viewBox="0 0 32 32" fill="currentColor" width="24" height="24">
+                        <path d="M19.11 17.47c-.3-.15-1.77-.87-2.05-.97-.27-.1-.46-.15-.65.15-.19.3-.75.97-.92 1.17-.17.2-.34.22-.63.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37 0-.52-.07-.15-.65-1.55-.9-2.13-.24-.58-.48-.5-.65-.5h-.56c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.5 1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.26.5 1.7.63.71.23 1.36.2 1.87.13.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM16 3a13 13 0 0 0-11.34 19.43L3 29l6.75-1.77A13 13 0 1 0 16 3zm0 23.4c-1.96 0-3.79-.57-5.33-1.55l-.38-.24-4.01 1.05 1.07-3.91-.25-.4a10.42 10.42 0 1 1 8.9 4.05z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <main id="main-content">
         <!-- Content dynamically loaded -->
     </main>
 
+    <!-- Small Cronoshop Popup -->
+    <div id="cronoshop-small-popup" class="cronoshop-small-popup">
+        <div class="small-popup-content">
+            <button class="small-popup-close" id="small-popup-close">&times;</button>
+            <div class="small-popup-text">
+                <strong>Cronoshop</strong><br>
+                <small>Offerte Amazon</small>
+            </div>
+            <a href="https://cronoshop.eu" target="_blank" class="small-popup-btn">Visita</a>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="footer-logo">
-                <h3>STR Sgomberi</h3>
-                <p>Il tuo partner di fiducia per sgomberi, trasporti e traslochi a Catania e provincia.</p>
+                <h3>STR Sgomberi Catania</h3>
+                <p>Il tuo partner di fiducia per sgomberi gratuiti, trasporti e traslochi professionali a Catania e provincia. Servizio rapido, affidabile e conveniente.</p>
             </div>
             
             <div class="footer-contact">
@@ -193,16 +230,17 @@
                     <li><a href="#" data-page="servizio" data-slug="sgombero">Sgombero Gratuito</a></li>
                     <li><a href="#" data-page="servizio" data-slug="trasporto">Trasporti</a></li>
                     <li><a href="#" data-page="servizio" data-slug="trasloco">Traslochi</a></li>
+                    <li><a href="#" data-page="blog">Blog</a></li>
+                    <li><a href="#" data-page="chi-siamo">Chi Siamo</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 STR Sgomberi. Tutti i diritti riservati.</p>
+            <p>&copy; 2024 STR Sgomberi Catania. Tutti i diritti riservati. | <a href="sitemap.xml">Sitemap</a></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script src="main.js"></script>
 </body>
 </html>
