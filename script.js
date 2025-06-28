@@ -169,11 +169,11 @@ class Router {
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
             mainContent.innerHTML = `
-                <!-- Hero Section -->
-                <section class="hero">
+                <!-- Hero Section con sfondo Etna -->
+                <section class="hero hero-etna">
                     <div class="hero-content">
                         <h1>STR Sgomberi Catania</h1>
-                        <p>Sgomberi gratuiti, trasporti e traslochi professionali a Catania e provincia</p>
+                        <p>Leader negli sgomberi gratuiti, trasporti e traslochi professionali alle pendici dell'Etna dal 2015</p>
                         
                         <a href="tel:3497500613" class="hero-phone">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -198,8 +198,8 @@ class Router {
                 <section class="section section-light">
                     <div class="container">
                         <div class="section-header">
-                            <h2>I Nostri Servizi</h2>
-                            <p>Soluzioni complete per ogni esigenza di sgombero, trasporto e trasloco</p>
+                            <h2>I Nostri Servizi a Catania</h2>
+                            <p>Soluzioni complete per ogni esigenza di sgombero, trasporto e trasloco nel territorio etneo</p>
                         </div>
                         
                         <div class="cards-grid">
@@ -210,8 +210,8 @@ class Router {
                                         <polyline points="9,22 9,12 15,12 15,22"/>
                                     </svg>
                                 </div>
-                                <h3>Sgombero Gratuito</h3>
-                                <p>Sgomberiamo gratuitamente case, uffici e cantine in cambio di merce riutilizzabile. Servizio rapido e professionale.</p>
+                                <h3>Sgombero Gratuito Catania</h3>
+                                <p>Sgomberiamo gratuitamente case, uffici e cantine a Catania in cambio di merce riutilizzabile. Servizio rapido e professionale nel territorio etneo.</p>
                                 <a href="#" class="card-link" data-page="servizio" data-slug="sgombero">Scopri di più →</a>
                             </div>
                             
@@ -225,8 +225,8 @@ class Router {
                                         <polyline points="10,9 9,9 8,9"/>
                                     </svg>
                                 </div>
-                                <h3>Trasporti</h3>
-                                <p>Servizi di trasporto sicuri e affidabili per merci, mobili ed elettrodomestici. Furgoni attrezzati e personale qualificato.</p>
+                                <h3>Trasporti Catania</h3>
+                                <p>Servizi di trasporto sicuri e affidabili per merci, mobili ed elettrodomestici a Catania. Furgoni attrezzati e personale qualificato per il territorio etneo.</p>
                                 <a href="#" class="card-link" data-page="servizio" data-slug="trasporto">Scopri di più →</a>
                             </div>
                             
@@ -238,8 +238,8 @@ class Router {
                                         <line x1="12" y1="22.08" x2="12" y2="12"/>
                                     </svg>
                                 </div>
-                                <h3>Traslochi</h3>
-                                <p>Traslochi completi per abitazioni e uffici. Imballaggio professionale, trasporto sicuro e montaggio mobili.</p>
+                                <h3>Traslochi Catania</h3>
+                                <p>Traslochi completi per abitazioni e uffici a Catania e provincia. Imballaggio professionale, trasporto sicuro e montaggio mobili nel territorio etneo.</p>
                                 <a href="#" class="card-link" data-page="servizio" data-slug="trasloco">Scopri di più →</a>
                             </div>
                         </div>
@@ -250,8 +250,8 @@ class Router {
                 <section class="section section-gray">
                     <div class="container">
                         <div class="section-header">
-                            <h2>Perché Scegliere STR Sgomberi</h2>
-                            <p>Professionalità, affidabilità e convenienza per tutti i tuoi progetti</p>
+                            <h2>Perché Scegliere STR Sgomberi a Catania</h2>
+                            <p>9 anni di esperienza, professionalità e affidabilità per tutti i tuoi progetti nel territorio etneo</p>
                         </div>
                         
                         <div class="features-grid">
@@ -262,8 +262,8 @@ class Router {
                                         <polyline points="12,6 12,12 16,14"/>
                                     </svg>
                                 </div>
-                                <h3>Servizio Rapido</h3>
-                                <p>Interventi programmabili anche in giornata con orari flessibili</p>
+                                <h3>Servizio Rapido a Catania</h3>
+                                <p>Interventi programmabili anche in giornata con orari flessibili in tutto il territorio etneo</p>
                             </div>
                             
                             <div class="feature">
@@ -274,7 +274,7 @@ class Router {
                                     </svg>
                                 </div>
                                 <h3>Preventivi Gratuiti</h3>
-                                <p>Valutazione gratuita e preventivi trasparenti senza sorprese</p>
+                                <p>Valutazione gratuita e preventivi trasparenti senza sorprese per clienti catanesi</p>
                             </div>
                             
                             <div class="feature">
@@ -284,7 +284,7 @@ class Router {
                                     </svg>
                                 </div>
                                 <h3>Qualità Garantita</h3>
-                                <p>Personale qualificato e attrezzature professionali per ogni intervento</p>
+                                <p>Personale qualificato e attrezzature professionali per ogni intervento a Catania</p>
                             </div>
                             
                             <div class="feature">
@@ -294,8 +294,8 @@ class Router {
                                         <circle cx="12" cy="10" r="3"/>
                                     </svg>
                                 </div>
-                                <h3>Copertura Totale</h3>
-                                <p>Serviamo Catania e tutti i comuni della provincia</p>
+                                <h3>Copertura Totale Etna</h3>
+                                <p>Serviamo Catania e tutti i comuni della provincia, dalle pendici dell'Etna alla costa</p>
                             </div>
                             
                             <div class="feature">
@@ -307,7 +307,7 @@ class Router {
                                     </svg>
                                 </div>
                                 <h3>Eco-Sostenibile</h3>
-                                <p>Massimizziamo il riutilizzo e il riciclo per rispettare l'ambiente</p>
+                                <p>Massimizziamo il riutilizzo e il riciclo per rispettare l'ambiente siciliano</p>
                             </div>
                             
                             <div class="feature">
@@ -319,8 +319,33 @@ class Router {
                                         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                                     </svg>
                                 </div>
-                                <h3>Assistenza Clienti</h3>
-                                <p>Supporto dedicato e comunicazione costante durante tutto il processo</p>
+                                <h3>Assistenza Clienti Catania</h3>
+                                <p>Supporto dedicato e comunicazione costante durante tutto il processo per clienti catanesi</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Local SEO Section -->
+                <section class="section section-light">
+                    <div class="container">
+                        <div class="local-seo-section">
+                            <h2>STR Sgomberi: Leader negli Sgomberi a Catania dal 2015</h2>
+                            <p>Da oltre 9 anni serviamo Catania e provincia con servizi di sgombero gratuito, trasporti e traslochi professionali. La nostra esperienza nel territorio etneo ci permette di offrire soluzioni personalizzate per ogni esigenza, dalle pendici dell'Etna fino alla costa ionica.</p>
+                            
+                            <div class="local-features">
+                                <div class="local-feature">
+                                    <h3>🏔️ Conosciamo il Territorio Etneo</h3>
+                                    <p>Operiamo in tutti i comuni della provincia di Catania, dalle pendici dell'Etna fino alla costa ionica, con oltre 2000 interventi completati.</p>
+                                </div>
+                                <div class="local-feature">
+                                    <h3>🚛 Logistica Ottimizzata per Catania</h3>
+                                    <p>I nostri percorsi sono studiati per raggiungere ogni zona di Catania nel minor tempo possibile, anche nelle aree più difficili del territorio etneo.</p>
+                                </div>
+                                <div class="local-feature">
+                                    <h3>♻️ Rete Locale Catanese</h3>
+                                    <p>Collaboriamo con centri di riciclo e associazioni benefiche del territorio catanese per massimizzare il riutilizzo degli oggetti sgomberati.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -330,8 +355,8 @@ class Router {
                 <section class="section section-light">
                     <div class="container">
                         <div class="cta-section">
-                            <h2>Hai Bisogno di un Preventivo?</h2>
-                            <p>Contattaci per una valutazione gratuita e scopri come possiamo aiutarti</p>
+                            <h2>Hai Bisogno di uno Sgombero a Catania?</h2>
+                            <p>Contattaci per una valutazione gratuita e scopri come possiamo aiutarti con i nostri servizi professionali nel territorio etneo</p>
                             <div class="cta-buttons">
                                 <a href="tel:3497500613" class="btn btn-primary">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -356,63 +381,63 @@ class Router {
     loadServicePage(slug) {
         const services = {
             'sgombero': {
-                title: 'Sgombero Gratuito',
-                description: 'Servizio di sgombero gratuito in cambio di merce riutilizzabile',
+                title: 'Sgombero Gratuito a Catania',
+                description: 'Servizio di sgombero gratuito in cambio di merce riutilizzabile nel territorio etneo',
                 content: `
                     <div class="service-content">
                         <div class="service-image">
-                            <img src="https://images.pexels.com/photos/7464230/pexels-photo-7464230.jpeg" alt="Sgombero Gratuito">
+                            <img src="https://images.pexels.com/photos/7464230/pexels-photo-7464230.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Sgombero Gratuito Catania" loading="lazy">
                         </div>
                         <div class="service-text">
-                            <h3>Sgombero Gratuito a Catania</h3>
-                            <p>STR Sgomberi offre un servizio innovativo di sgombero completamente gratuito quando la merce presente ha un valore che copre i costi dell'operazione. Questo approccio sostenibile ci permette di offrire un servizio conveniente mentre promuoviamo il riutilizzo e il riciclo.</p>
+                            <h3>Sgombero Gratuito a Catania e Provincia</h3>
+                            <p>STR Sgomberi offre un servizio innovativo di sgombero completamente gratuito a Catania quando la merce presente ha un valore che copre i costi dell'operazione. Questo approccio sostenibile ci permette di offrire un servizio conveniente mentre promuoviamo il riutilizzo e il riciclo nel territorio etneo.</p>
                             
-                            <h4>Come Funziona</h4>
+                            <h4>Come Funziona il Nostro Servizio a Catania</h4>
                             <ol>
-                                <li><strong>Sopralluogo Gratuito:</strong> Valutiamo la merce presente nell'immobile</li>
+                                <li><strong>Sopralluogo Gratuito:</strong> Valutiamo la merce presente nell'immobile a Catania</li>
                                 <li><strong>Preventivo Trasparente:</strong> Ti comunichiamo se il servizio può essere gratuito</li>
                                 <li><strong>Sgombero Professionale:</strong> Rimuoviamo tutto con cura e professionalità</li>
                                 <li><strong>Pulizia Finale:</strong> Lasciamo l'ambiente pulito e pronto</li>
                             </ol>
                             
-                            <h4>Cosa Sgomberiamo</h4>
+                            <h4>Cosa Sgomberiamo a Catania</h4>
                             <ul>
-                                <li>Appartamenti e case</li>
-                                <li>Uffici e negozi</li>
-                                <li>Cantine e soffitte</li>
-                                <li>Garage e magazzini</li>
-                                <li>Locali commerciali</li>
+                                <li>Appartamenti e case nel centro di Catania</li>
+                                <li>Uffici e negozi in città</li>
+                                <li>Cantine e soffitte nelle zone etnee</li>
+                                <li>Garage e magazzini in provincia</li>
+                                <li>Locali commerciali a Catania</li>
                             </ul>
                         </div>
                     </div>
                 `
             },
             'trasporto': {
-                title: 'Trasporti',
-                description: 'Servizi di trasporto sicuri e affidabili per ogni esigenza',
+                title: 'Trasporti a Catania',
+                description: 'Servizi di trasporto sicuri e affidabili per ogni esigenza nel territorio etneo',
                 content: `
                     <div class="service-content">
                         <div class="service-image">
-                            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg" alt="Servizi di Trasporto">
+                            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Servizi di Trasporto Catania" loading="lazy">
                         </div>
                         <div class="service-text">
-                            <h3>Trasporti Professionali</h3>
-                            <p>Offriamo servizi di trasporto completi per privati e aziende, con furgoni attrezzati e personale qualificato per garantire la massima sicurezza della tua merce.</p>
+                            <h3>Trasporti Professionali a Catania</h3>
+                            <p>Offriamo servizi di trasporto completi per privati e aziende a Catania, con furgoni attrezzati e personale qualificato per garantire la massima sicurezza della tua merce nel territorio etneo.</p>
                             
-                            <h4>I Nostri Servizi di Trasporto</h4>
+                            <h4>I Nostri Servizi di Trasporto a Catania</h4>
                             <ul>
-                                <li>Trasporto mobili ed elettrodomestici</li>
-                                <li>Ritiro e consegna merci</li>
-                                <li>Trasporti per negozi e uffici</li>
-                                <li>Servizi di facchinaggio</li>
-                                <li>Trasporti urgenti in giornata</li>
+                                <li>Trasporto mobili ed elettrodomestici in città</li>
+                                <li>Ritiro e consegna merci a Catania e provincia</li>
+                                <li>Trasporti per negozi e uffici catanesi</li>
+                                <li>Servizi di facchinaggio nel territorio etneo</li>
+                                <li>Trasporti urgenti in giornata a Catania</li>
                             </ul>
                             
-                            <h4>Vantaggi del Nostro Servizio</h4>
+                            <h4>Vantaggi del Nostro Servizio a Catania</h4>
                             <ul>
                                 <li><strong>Sicurezza:</strong> Imballaggio professionale e fissaggio sicuro</li>
                                 <li><strong>Puntualità:</strong> Rispettiamo sempre gli orari concordati</li>
-                                <li><strong>Flessibilità:</strong> Orari adattabili alle tue esigenze</li>
+                                <li><strong>Flessibilità:</strong> Orari adattabili alle tue esigenze catanesi</li>
                                 <li><strong>Assicurazione:</strong> Copertura completa per la tua tranquillità</li>
                             </ul>
                         </div>
@@ -420,33 +445,33 @@ class Router {
                 `
             },
             'trasloco': {
-                title: 'Traslochi',
-                description: 'Traslochi completi per abitazioni e uffici',
+                title: 'Traslochi a Catania',
+                description: 'Traslochi completi per abitazioni e uffici nel territorio etneo',
                 content: `
                     <div class="service-content">
                         <div class="service-image">
-                            <img src="https://images.pexels.com/photos/7464005/pexels-photo-7464005.jpeg" alt="Servizi di Trasloco">
+                            <img src="https://images.pexels.com/photos/7464005/pexels-photo-7464005.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Servizi di Trasloco Catania" loading="lazy">
                         </div>
                         <div class="service-text">
-                            <h3>Traslochi Completi</h3>
-                            <p>Gestiamo ogni aspetto del tuo trasloco, dall'imballaggio al montaggio dei mobili nella nuova destinazione. Un servizio completo per rendere il tuo trasloco semplice e senza stress.</p>
+                            <h3>Traslochi Completi a Catania</h3>
+                            <p>Gestiamo ogni aspetto del tuo trasloco a Catania, dall'imballaggio al montaggio dei mobili nella nuova destinazione. Un servizio completo per rendere il tuo trasloco nel territorio etneo semplice e senza stress.</p>
                             
-                            <h4>Servizi Inclusi</h4>
+                            <h4>Servizi Inclusi nei Traslochi a Catania</h4>
                             <ul>
-                                <li>Sopralluogo e preventivo gratuito</li>
+                                <li>Sopralluogo e preventivo gratuito a Catania</li>
                                 <li>Imballaggio professionale</li>
                                 <li>Smontaggio e rimontaggio mobili</li>
-                                <li>Trasporto sicuro e assicurato</li>
-                                <li>Posizionamento nella nuova casa</li>
+                                <li>Trasporto sicuro e assicurato nel territorio etneo</li>
+                                <li>Posizionamento nella nuova casa a Catania</li>
                                 <li>Pulizia finale (su richiesta)</li>
                             </ul>
                             
-                            <h4>Tipologie di Trasloco</h4>
+                            <h4>Tipologie di Trasloco a Catania</h4>
                             <ul>
-                                <li><strong>Traslochi Residenziali:</strong> Per case e appartamenti</li>
-                                <li><strong>Traslochi Uffici:</strong> Per aziende e studi professionali</li>
+                                <li><strong>Traslochi Residenziali:</strong> Per case e appartamenti a Catania</li>
+                                <li><strong>Traslochi Uffici:</strong> Per aziende e studi professionali catanesi</li>
                                 <li><strong>Traslochi Parziali:</strong> Solo alcuni ambienti o oggetti specifici</li>
-                                <li><strong>Traslochi Internazionali:</strong> Verso altre città e regioni</li>
+                                <li><strong>Traslochi Interprovinciali:</strong> Da e verso Catania</li>
                             </ul>
                         </div>
                     </div>
@@ -460,7 +485,7 @@ class Router {
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
             mainContent.innerHTML = `
-                <section class="hero">
+                <section class="hero hero-etna">
                     <div class="hero-content">
                         <h1>${service.title}</h1>
                         <p>${service.description}</p>
@@ -472,8 +497,8 @@ class Router {
                         ${service.content}
                         
                         <div class="service-cta">
-                            <h3>Richiedi un Preventivo Gratuito</h3>
-                            <p>Contattaci per una valutazione personalizzata delle tue esigenze</p>
+                            <h3>Richiedi un Preventivo Gratuito a Catania</h3>
+                            <p>Contattaci per una valutazione personalizzata delle tue esigenze nel territorio etneo</p>
                             <div class="cta-buttons">
                                 <a href="tel:3497500613" class="btn btn-primary">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -499,18 +524,18 @@ class Router {
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
             mainContent.innerHTML = `
-                <section class="hero">
+                <section class="hero hero-etna">
                     <div class="hero-content">
                         <h1>Dove Operiamo</h1>
-                        <p>Serviamo Catania e tutti i comuni della provincia con i nostri servizi professionali</p>
+                        <p>Serviamo Catania e tutti i comuni della provincia con i nostri servizi professionali nel territorio etneo</p>
                     </div>
                 </section>
 
                 <section class="section section-light">
                     <div class="container">
                         <div class="section-header">
-                            <h2>La Nostra Area di Servizio</h2>
-                            <p>STR Sgomberi opera in tutta la provincia di Catania, garantendo lo stesso livello di professionalità e qualità in ogni comune</p>
+                            <h2>La Nostra Area di Servizio nel Territorio Etneo</h2>
+                            <p>STR Sgomberi opera in tutta la provincia di Catania, garantendo lo stesso livello di professionalità e qualità in ogni comune del territorio etneo</p>
                         </div>
                         
                         <div class="cards-grid">
@@ -523,7 +548,7 @@ class Router {
                                         </svg>
                                     </div>
                                     <h3>${comune}</h3>
-                                    <p>Servizi di sgombero, trasporti e traslochi disponibili</p>
+                                    <p>Servizi di sgombero, trasporti e traslochi disponibili nel territorio etneo</p>
                                     <a href="#" class="card-link" data-page="comune" data-slug="${comune.toLowerCase().replace(/\s+/g, '-').replace(/'/g, '')}">Scopri di più →</a>
                                 </div>
                             `).join('')}
@@ -537,38 +562,38 @@ class Router {
     loadFaqPage() {
         const faqs = [
             {
-                question: "Come funziona il servizio di sgombero gratuito?",
-                answer: "Valutiamo la merce presente nell'immobile e se il valore degli oggetti riutilizzabili copre i costi dell'operazione, offriamo il servizio gratuitamente. Questo ci permette di promuovere il riutilizzo e offrire un servizio conveniente."
+                question: "Come funziona il servizio di sgombero gratuito a Catania?",
+                answer: "Valutiamo la merce presente nell'immobile a Catania e se il valore degli oggetti riutilizzabili copre i costi dell'operazione, offriamo il servizio gratuitamente. Questo ci permette di promuovere il riutilizzo e offrire un servizio conveniente nel territorio etneo."
             },
             {
-                question: "In quanto tempo potete intervenire?",
-                answer: "Generalmente riusciamo a programmare un intervento entro 24-48 ore dalla richiesta. Per urgenze, offriamo anche servizi in giornata con un piccolo sovrapprezzo."
+                question: "In quanto tempo potete intervenire a Catania?",
+                answer: "Generalmente riusciamo a programmare un intervento a Catania entro 24-48 ore dalla richiesta. Per urgenze nel territorio etneo, offriamo anche servizi in giornata con un piccolo sovrapprezzo."
             },
             {
-                question: "Cosa succede agli oggetti sgomberati?",
-                answer: "Gli oggetti in buone condizioni vengono riutilizzati o donati a organizzazioni benefiche. I materiali riciclabili vengono portati ai centri di raccolta appropriati. Solo ciò che non può essere recuperato viene smaltito."
+                question: "Cosa succede agli oggetti sgomberati a Catania?",
+                answer: "Gli oggetti in buone condizioni vengono riutilizzati o donati a organizzazioni benefiche catanesi. I materiali riciclabili vengono portati ai centri di raccolta del territorio etneo. Solo ciò che non può essere recuperato viene smaltito."
             },
             {
-                question: "Fornite preventivi gratuiti?",
-                answer: "Sì, tutti i nostri preventivi sono completamente gratuiti e senza impegno. Effettuiamo sopralluoghi per valutare accuratamente le vostre esigenze."
+                question: "Fornite preventivi gratuiti a Catania?",
+                answer: "Sì, tutti i nostri preventivi sono completamente gratuiti e senza impegno. Effettuiamo sopralluoghi per valutare accuratamente le vostre esigenze nel territorio catanese."
             },
             {
-                question: "Siete assicurati?",
-                answer: "Sì, tutti i nostri interventi sono coperti da assicurazione per danni a terzi e per la merce trasportata, garantendo la massima tranquillità ai nostri clienti."
+                question: "Siete assicurati per gli interventi a Catania?",
+                answer: "Sì, tutti i nostri interventi a Catania sono coperti da assicurazione per danni a terzi e per la merce trasportata, garantendo la massima tranquillità ai nostri clienti catanesi."
             },
             {
-                question: "Lavorate anche nei weekend?",
-                answer: "Sì, offriamo servizi anche nei weekend e nei giorni festivi per adattarci alle vostre esigenze, con orari flessibili concordabili."
+                question: "Lavorate anche nei weekend a Catania?",
+                answer: "Sì, offriamo servizi anche nei weekend e nei giorni festivi per adattarci alle esigenze dei clienti catanesi, con orari flessibili concordabili nel territorio etneo."
             }
         ];
 
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
             mainContent.innerHTML = `
-                <section class="hero">
+                <section class="hero hero-etna">
                     <div class="hero-content">
                         <h1>Domande Frequenti</h1>
-                        <p>Trova le risposte alle domande più comuni sui nostri servizi</p>
+                        <p>Trova le risposte alle domande più comuni sui nostri servizi a Catania</p>
                     </div>
                 </section>
 
@@ -592,7 +617,7 @@ class Router {
                         
                         <div class="faq-contact">
                             <h2>Non hai trovato la risposta che cercavi?</h2>
-                            <p>Contattaci direttamente per qualsiasi domanda o chiarimento</p>
+                            <p>Contattaci direttamente per qualsiasi domanda o chiarimento sui nostri servizi a Catania</p>
                             <div class="cta-buttons">
                                 <a href="tel:3497500613" class="btn btn-primary">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -618,10 +643,10 @@ class Router {
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
             mainContent.innerHTML = `
-                <section class="hero">
+                <section class="hero hero-etna">
                     <div class="hero-content">
                         <h1>Contatti</h1>
-                        <p>Mettiti in contatto con noi per preventivi gratuiti e informazioni</p>
+                        <p>Mettiti in contatto con noi per preventivi gratuiti e informazioni sui servizi a Catania</p>
                     </div>
                 </section>
 
@@ -665,7 +690,7 @@ class Router {
                                     <div>
                                         <h3>Area di Servizio</h3>
                                         <p>Catania e Provincia</p>
-                                        <small>Serviamo tutti i comuni della provincia di Catania</small>
+                                        <small>Serviamo tutti i comuni della provincia di Catania nel territorio etneo</small>
                                     </div>
                                 </div>
                                 
