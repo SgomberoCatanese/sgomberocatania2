@@ -102,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-heading);
   font-weight: 600;
   margin-bottom: var(--space-4);
+  color: var(--text-primary);
 }
 
 h1 { font-size: 2.5rem; font-weight: 800; }
@@ -139,7 +140,7 @@ a:hover {
   background-color: var(--bg-secondary);
 }
 
-/* Navigation */
+/* Navigation - OTTIMIZZATA */
 .navbar {
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-light);
@@ -156,22 +157,22 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 64px; /* Ridotto da 70px */
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2); /* Ridotto da space-3 */
 }
 
 .nav-logo {
-  height: 40px;
+  height: 32px; /* Ridotto da 40px */
   width: auto;
 }
 
 .nav-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem; /* Ridotto da 1.25rem */
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -179,7 +180,7 @@ a:hover {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-4); /* Ridotto da space-6 */
 }
 
 .nav-link {
@@ -194,6 +195,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--space-1);
+  font-size: 0.875rem; /* Ridotto */
 }
 
 .nav-link:hover,
@@ -213,8 +215,8 @@ a:hover {
 }
 
 .dropdown-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px; /* Ridotto da 16px */
+  height: 14px;
   transition: transform var(--transition-fast);
 }
 
@@ -252,6 +254,7 @@ a:hover {
   border-radius: 6px;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  font-size: 0.875rem;
 }
 
 .dropdown-item:hover,
@@ -266,24 +269,24 @@ a:hover {
   overflow-y: auto;
 }
 
-/* Navigation Actions - Ottimizzato per essere più compatto */
+/* Navigation Actions - COMPATTA */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-2); /* Ridotto da space-4 a space-2 */
+  gap: var(--space-2);
 }
 
 .dark-mode-toggle {
   background: none;
   border: 1px solid var(--border-medium);
-  border-radius: 8px;
+  border-radius: 6px; /* Ridotto da 8px */
   padding: var(--space-2);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px; /* Ridotto da 40px */
+  height: 36px;
   transition: all var(--transition-fast);
   color: var(--text-secondary);
 }
@@ -294,8 +297,8 @@ a:hover {
 }
 
 .dark-mode-toggle svg {
-  width: 18px;
-  height: 18px;
+  width: 16px; /* Ridotto da 18px */
+  height: 16px;
 }
 
 .dark-mode-toggle .moon-icon {
@@ -315,11 +318,12 @@ body.dark-mode .dark-mode-toggle .moon-icon {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-3); /* Ridotto padding */
-  border-radius: 8px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 6px; /* Ridotto da 8px */
   font-weight: 500;
   transition: all var(--transition-fast);
-  font-size: 0.875rem; /* Ridotto font size */
+  font-size: 0.875rem;
+  height: 36px; /* Altezza fissa */
 }
 
 .phone-btn {
@@ -344,15 +348,15 @@ body.dark-mode .dark-mode-toggle .moon-icon {
 
 .phone-btn svg,
 .whatsapp-btn svg {
-  width: 18px; /* Ridotto da 20px */
-  height: 18px;
+  width: 16px; /* Ridotto da 18px */
+  height: 16px;
 }
 
 /* Mobile Menu */
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px; /* Ridotto da 4px */
   background: none;
   border: none;
   cursor: pointer;
@@ -360,7 +364,7 @@ body.dark-mode .dark-mode-toggle .moon-icon {
 }
 
 .mobile-menu-btn span {
-  width: 24px;
+  width: 20px; /* Ridotto da 24px */
   height: 2px;
   background-color: var(--text-primary);
   transition: all var(--transition-fast);
@@ -398,12 +402,14 @@ body.dark-mode .dark-mode-toggle .moon-icon {
   font-weight: 900;
   margin-bottom: var(--space-6);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--white);
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: var(--space-4);
+  color: var(--white);
 }
 
 .hero-highlight {
@@ -446,13 +452,13 @@ body.dark-mode .dark-mode-toggle .moon-icon {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--white);
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--primary-color);
 }
 
 .cta-buttons {
@@ -464,30 +470,40 @@ body.dark-mode .dark-mode-toggle .moon-icon {
 }
 
 /* Grid Systems */
+.services-grid,
 .zones-grid,
-.stats-grid {
+.stats-grid,
+.comuni-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-6);
   margin: var(--space-8) 0;
 }
 
+.service-card,
 .zone-item,
-.stat-item {
+.stat-item,
+.comune-card {
   background-color: var(--bg-primary);
   padding: var(--space-6);
   border-radius: 12px;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
+  text-decoration: none;
+  color: inherit;
 }
 
+.service-card:hover,
 .zone-item:hover,
-.stat-item:hover {
+.stat-item:hover,
+.comune-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
 }
 
-.zone-item h4 {
+.service-card h3,
+.zone-item h4,
+.comune-card h4 {
   color: var(--primary-color);
   margin-bottom: var(--space-3);
   font-size: 1.125rem;
@@ -536,7 +552,8 @@ body.dark-mode .dark-mode-toggle .moon-icon {
 }
 
 /* Contact Section */
-.contact-section {
+.contact-section,
+.cta-section {
   background-color: var(--bg-primary);
   padding: var(--space-8);
   border-radius: 12px;
@@ -545,9 +562,24 @@ body.dark-mode .dark-mode-toggle .moon-icon {
   margin: var(--space-12) 0;
 }
 
-.contact-section h3 {
+.contact-section h3,
+.cta-section h3 {
   color: var(--primary-color);
   margin-bottom: var(--space-4);
+}
+
+/* Sections specifiche */
+.stats-section,
+.comuni-section {
+  margin: var(--space-16) 0;
+  text-align: center;
+}
+
+.view-all-comuni {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
 }
 
 /* Footer */
@@ -898,7 +930,7 @@ body.dark-mode .footer {
   .phone-btn,
   .whatsapp-btn {
     padding: var(--space-2);
-    min-width: 40px;
+    min-width: 36px;
     justify-content: center;
   }
   
@@ -919,8 +951,10 @@ body.dark-mode .footer {
     flex-direction: column;
   }
   
+  .services-grid,
   .zones-grid,
-  .stats-grid {
+  .stats-grid,
+  .comuni-grid {
     grid-template-columns: 1fr;
   }
   
