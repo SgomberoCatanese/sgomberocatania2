@@ -20,14 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile menu toggle
+    // Mobile menu toggle - FIXED
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navMenu = document.getElementById('nav-menu');
     
     if (mobileMenuBtn && navMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle active classes
             navMenu.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
+            
+            // Toggle body scroll
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
         
         // Close mobile menu when clicking outside
@@ -35,9 +46,48 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!mobileMenuBtn.contains(event.target) && !navMenu.contains(event.target)) {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('.nav-link, .dropdown-item');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
     }
+    
+    // Dropdown functionality for mobile
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const dropdown = this.parentElement;
+                const menu = dropdown.querySelector('.dropdown-menu');
+                
+                // Close other dropdowns
+                dropdownToggles.forEach(otherToggle => {
+                    if (otherToggle !== this) {
+                        const otherDropdown = otherToggle.parentElement;
+                        const otherMenu = otherDropdown.querySelector('.dropdown-menu');
+                        otherDropdown.classList.remove('active');
+                        if (otherMenu) otherMenu.style.display = 'none';
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+                if (menu) {
+                    menu.style.display = dropdown.classList.contains('active') ? 'block' : 'none';
+                }
+            }
+        });
+    });
     
     // Cronoshop popup functionality
     const cronoshopPopup = document.getElementById('cronoshop-small-popup');
