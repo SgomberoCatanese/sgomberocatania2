@@ -4,159 +4,186 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://www.sgomberosicilia.it/</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:30:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/index.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-29T10:30:00+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/sgombero-gratuito-catania.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-29T10:25:00+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/trasporti-catania.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-29T10:25:00+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.sgomberosicilia.it/sgombero-case.html</loc>
+  <lastmod>2024-12-29T10:20:00+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.sgomberosicilia.it/sgombero-capannoni.html</loc>
+  <lastmod>2024-12-29T10:20:00+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.sgomberosicilia.it/sgombero-uffici.html</loc>
+  <lastmod>2024-12-29T10:20:00+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.sgomberosicilia.it/sgombero-garage.html</loc>
+  <lastmod>2024-12-29T10:20:00+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.sgomberosicilia.it/ritiro-mobili-usati-catania.html</loc>
+  <lastmod>2024-12-29T10:20:00+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.sgomberosicilia.it/smaltimento-catania.html</loc>
+  <lastmod>2024-12-29T10:20:00+00:00</lastmod>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/catania.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/acireale.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/giarre.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/paterno.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/adrano.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/belpasso.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/mascalucia.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/gravina_di_catania.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/san_giovanni_la_punta.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/tremestieri_etneo.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/santagata_li_battiati.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/valverde.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/aci_catena.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/aci_santantonio.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/viagrande.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/zafferana_etnea.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/nicolosi.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/pedara.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/trecastagni.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/aci_castello.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/san_gregorio_di_catania.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/camporotondo_etneo.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
+  <lastmod>2024-12-29T10:15:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/blog.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-29T10:10:00+00:00</lastmod>
+  <priority>0.75</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/chi-siamo.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-29T10:10:00+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/faq.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-29T10:10:00+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>https://www.sgomberosicilia.it/contatti.html</loc>
-  <lastmod>2025-06-29T01:47:56+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-29T10:10:00+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
-
 
 </urlset>
