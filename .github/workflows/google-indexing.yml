@@ -16,5 +16,5 @@ jobs:
 
       - uses: robingenz/action-google-indexing@v1.0.0
         with:
-          siteUrl: 'https://sgomberosicilia.it'
+          siteUrl: 'https://www.sgomberosicilia.it'
           gcpServiceAccountKey: ${{ secrets.GCP_SA_KEY }}
