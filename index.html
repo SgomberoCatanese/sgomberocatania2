@@ -183,6 +183,40 @@
                 </ul>
             </div>
         </section>
+        
+        <!-- Rotazione immagini carusel style section -->
+        <section class="carousel-section">
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <img src="public/FB_IMG_1751329946558.jpg" alt="Sgombero garage Catania">
+        <p class="carousel-caption">Sgombero garage a Catania con recupero mobili</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="public/FB_IMG_1751329950718.jpg" alt="Trasloco Adrano">
+        <p class="carousel-caption">Trasloco completo ad Adrano in giornata</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="public/FB_IMG_1751329954415.jpg" alt="Sgombero cantina Nicolosi">
+        <p class="carousel-caption">Cantina svuotata a Nicolosi con smaltimento</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="public/FB_IMG_1751329960789.jpg" alt="Ritiro mobili Mascalucia">
+        <p class="carousel-caption">Ritiro cucine usate a Mascalucia</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="public/FB_IMG_1751329966898.jpg" alt="Sgombero commerciale">
+        <p class="carousel-caption">Sgombero locale commerciale in centro</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="public/IMG-20250619-WA0015.jpg" alt="Trasloco familiare Catania">
+        <p class="carousel-caption">Trasloco familiare in zona Canalicchio</p>
+      </div>
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+        </section>
 
         <!-- Services Section -->
         <section class="section section-light">
@@ -433,5 +467,35 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  let currentIndex = 0;
+
+  function updateSlides() {
+    slides.forEach((slide, index) => {
+      slide.classList.remove('active');
+      if (index === currentIndex) {
+        slide.classList.add('active');
+      }
+    });
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlides();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlides();
+  });
+
+  // inizializza
+  updateSlides();
+    </script>
 </body>
 </html>
