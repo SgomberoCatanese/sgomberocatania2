@@ -47,21 +47,22 @@
             
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-
-         /* Navigation - OTTIMIZZATA */
+         /* Navigation - Stile iOS Uniforme */
 .navbar {
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-light);
+  background-color: var(--system-background-secondary);
+  border-bottom: 1px solid var(--separator-color);
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-4);
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +72,7 @@
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 10px;
 }
 
 .nav-logo {
@@ -82,34 +83,34 @@
 .nav-title {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--label-primary);
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: 20px;
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: var(--label-secondary);
   font-weight: 500;
-  padding: var(--space-2) var(--space-3);
-  border-radius: 6px;
-  transition: all var(--transition-fast);
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: var(--space-1);
-  font-size: 0.875rem;
+  gap: 6px;
+  font-size: 0.9rem;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--primary-color);
-  background-color: var(--bg-tertiary);
+  color: var(--ios-blue);
+  background-color: var(--system-background-tertiary);
 }
 
 .nav-dropdown {
@@ -119,13 +120,13 @@
 .dropdown-toggle {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 6px;
 }
 
 .dropdown-icon {
   width: 14px;
   height: 14px;
-  transition: transform var(--transition-fast);
+  transition: transform 0.3s;
 }
 
 .nav-dropdown:hover .dropdown-icon {
@@ -136,16 +137,16 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-2);
-  min-width: 200px;
+  background-color: var(--system-background-secondary);
+  border: 1px solid var(--separator-color);
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  min-width: 220px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
-  transition: all var(--transition-fast);
+  transition: all 0.3s ease;
   z-index: 1001;
 }
 
@@ -157,139 +158,63 @@
 
 .dropdown-item {
   display: block;
-  padding: var(--space-2) var(--space-3);
-  color: var(--text-secondary);
-  border-radius: 6px;
-  transition: all var(--transition-fast);
+  padding: 10px 20px;
+  color: var(--label-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   white-space: nowrap;
-  font-size: 0.875rem;
 }
 
 .dropdown-item:hover,
 .dropdown-item.active {
-  color: var(--primary-color);
-  background-color: var(--bg-tertiary);
+  background-color: var(--system-background-tertiary);
+  color: var(--ios-blue);
 }
 
 .comuni-menu {
-  min-width: 250px;
   max-height: 400px;
   overflow-y: auto;
 }
 
-/* Navigation Actions - COMPATTA */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-}
-
-.dark-mode-toggle {
-  background: none;
-  border: 1px solid var(--border-medium);
-  border-radius: 6px;
-  padding: var(--space-2);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  transition: all var(--transition-fast);
-  color: var(--text-secondary);
-}
-
-.dark-mode-toggle:hover {
-  background-color: var(--bg-tertiary);
-  border-color: var(--border-dark);
-}
-
-.dark-mode-toggle svg {
-  width: 16px;
-  height: 16px;
-}
-
-.dark-mode-toggle .moon-icon {
-  display: none;
-}
-
-body.dark-mode .dark-mode-toggle .sun-icon {
-  display: none;
-}
-
-body.dark-mode .dark-mode-toggle .moon-icon {
-  display: block;
+  gap: 10px;
 }
 
 .phone-btn,
 .whatsapp-btn {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  border-radius: 6px;
-  font-weight: 500;
-  transition: all var(--transition-fast);
-  font-size: 0.875rem;
-  height: 36px;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
 .phone-btn {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: var(--ios-blue);
 }
 
 .phone-btn:hover {
-  background-color: var(--primary-hover);
-  color: var(--white);
+  background-color: var(--ios-blue-light);
 }
 
 .whatsapp-btn {
   background-color: #25d366;
-  color: var(--white);
 }
 
 .whatsapp-btn:hover {
   background-color: #20ba5a;
-  color: var(--white);
 }
 
-.phone-btn svg,
-.whatsapp-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Mobile Menu - FIXED */
 .mobile-menu-btn {
   display: none;
-  flex-direction: column;
-  gap: 3px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--space-2);
-  z-index: 1002;
-}
-
-.mobile-menu-btn span {
-  width: 20px;
-  height: 2px;
-  background-color: var(--text-primary);
-  transition: all var(--transition-fast);
-  transform-origin: center;
-}
-
-.mobile-menu-btn.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mobile-menu-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.mobile-menu-btn.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
 }
 
         /* RESET E STILI DI BASE */
