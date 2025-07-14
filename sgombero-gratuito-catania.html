@@ -47,176 +47,7 @@
             
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-         /* Navigation - Stile iOS Uniforme */
-.navbar {
-  background-color: var(--system-background-secondary);
-  border-bottom: 1px solid var(--separator-color);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo {
-  height: 32px;
-  width: auto;
-}
-
-.nav-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--label-primary);
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-link {
-  color: var(--label-secondary);
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--ios-blue);
-  background-color: var(--system-background-tertiary);
-}
-
-.nav-dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.dropdown-icon {
-  width: 14px;
-  height: 14px;
-  transition: transform 0.3s;
-}
-
-.nav-dropdown:hover .dropdown-icon {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--system-background-secondary);
-  border: 1px solid var(--separator-color);
-  border-radius: 12px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  padding: 10px 0;
-  min-width: 220px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  transition: all 0.3s ease;
-  z-index: 1001;
-}
-
-.nav-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-item {
-  display: block;
-  padding: 10px 20px;
-  color: var(--label-secondary);
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.dropdown-item:hover,
-.dropdown-item.active {
-  background-color: var(--system-background-tertiary);
-  color: var(--ios-blue);
-}
-
-.comuni-menu {
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.phone-btn,
-.whatsapp-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.phone-btn {
-  background-color: var(--ios-blue);
-}
-
-.phone-btn:hover {
-  background-color: var(--ios-blue-light);
-}
-
-.whatsapp-btn {
-  background-color: #25d366;
-}
-
-.whatsapp-btn:hover {
-  background-color: #20ba5a;
-}
-
-.mobile-menu-btn {
-  display: none;
-}
-
+                       
         /* RESET E STILI DI BASE */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -775,14 +606,222 @@
             font-weight: 700;
             border: 3px solid var(--system-background);
         }
-        
+/*
+================================================================================
+DESIGN SYSTEM v8 - NAVBAR PREMIUM iOS
+================================================================================
+- Autore: Gemini
+- Revisione: Applicazione dell'effetto "vetro liquido" e rifinitura degli
+  elementi interattivi per allinearsi al design premium di iOS.
+      
+/* Navigation - Stile iOS Uniforme con Effetto Vetro */
+.navbar {
+    /* MODIFICA CHIAVE: Sfondo semi-trasparente per attivare l'effetto blur */
+    background-color: var(--header-material);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    
+    border-bottom: 1px solid var(--separator-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    height: 32px;
+    width: auto;
+}
+
+.nav-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--label-primary);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--label-secondary);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--ios-blue);
+    background-color: var(--ios-gray-3);
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-icon {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px); /* Maggiore spaziatura */
+    left: 0;
+    
+    /* MODIFICA: Effetto vetro anche per il dropdown */
+    background-color: var(--dropdown-material);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+
+    border: 1px solid var(--ios-gray-3);
+    border-radius: 14px; /* Raggio più arrotondato */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Ombra più pronunciata e morbida */
+    padding: 8px; /* Padding interno per la card */
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1001;
+    list-style: none; /* Aggiunto per sicurezza */
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px; /* Padding migliorato */
+    color: var(--label-primary); /* Testo più scuro di default */
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-decoration: none; /* Aggiunto per sicurezza */
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+    background-color: var(--ios-blue);
+    color: #fff;
+    transform: scale(1.02);
+}
+
+.comuni-menu {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.phone-btn,
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px; /* Padding aumentato */
+    border-radius: 25px; /* Stile "pill" */
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #fff;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.phone-btn:hover, .whatsapp-btn:hover {
+    transform: translateY(-2px);
+}
+
+.phone-btn {
+    background-color: var(--ios-blue);
+}
+
+.phone-btn:hover {
+    background-color: var(--ios-blue-light);
+    box-shadow: 0 8px 20px rgba(0, 122, 255, 0.25);
+}
+
+.whatsapp-btn {
+    background-color: var(--ios-green);
+}
+
+.whatsapp-btn:hover {
+    background-color: #29e670;
+    box-shadow: 0 8px 20px rgba(52, 199, 89, 0.25);
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+/* Scrollbar personalizzata per il menu dei comuni */
+.comuni-menu::-webkit-scrollbar {
+    width: 6px;
+}
+.comuni-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+.comuni-menu::-webkit-scrollbar-thumb {
+    background-color: var(--ios-gray-4);
+    border-radius: 10px;
+}
+
+
     </style>
 </head>
 <body>
     <nav class="navbar">
     <div class="nav-container">
       <div class="nav-brand">
-        <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="nav-logo" />
+        <img src="https://www.sgomberocatania.it/wp-content/uploads/2025/07/logo_totally_white.webp" alt="STR Sgomberi Logo" class="nav-logo" />
         <span class="nav-title">STR Sgomberi</span>
       </div>
 
@@ -847,12 +886,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <span>349 750 0613</span>
+          <span>CHIAMA ORA</span>
         </a>
         <a href="https://wa.me/393497500613" target="_blank" class="whatsapp-btn">
           <svg viewBox="0 0 32 32" fill="currentColor" width="24" height="24">
             <path d="M19.11 17.47c-.3-.15-1.77-.87-2.05-.97-.27-.1-.46-.15-.65.15-.19.3-.75.97-.92 1.17-.17.2-.34.22-.63.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37 0-.52-.07-.15-.65-1.55-.9-2.13-.24-.58-.48-.5-.65-.5h-.56c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.5 1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.26.5 1.7.63.71.23 1.36.2 1.87.13.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM16 3a13 13 0 0 0-11.34 19.43L3 29l6.75-1.77A13 13 0 1 0 16 3zm0 23.4c-1.96 0-3.79-.57-5.33-1.55l-.38-.24-4.01 1.05 1.07-3.91-.25-.4a10.42 10.42 0 1 1 8.9 4.05z" />
           </svg>
+           <span>Whatsapp</span>
         </a>
       </div>
     </div>
