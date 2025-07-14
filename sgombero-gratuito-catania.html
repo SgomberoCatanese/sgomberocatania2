@@ -2,201 +2,1009 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Svuota Cantine Gratis Catania - Servizio STR Sgomberi</title>
+    <meta name="description" content="Servizio professionale di svuota cantine gratis a Catania. Un'esperienza interattiva per scoprire come liberare i tuoi spazi con STR Sgomberi.">
     
-    <!-- SEO Meta Tags Ottimizzati -->
-    <title>Sgombero Gratuito Catania | STR Sgomberi - Servizio Gratuito in Cambio di Merce Riutilizzabile</title>
-    <meta name="description" content="Sgombero gratuito a Catania in cambio di merce riutilizzabile. STR Sgomberi offre servizio completamente gratuito quando la merce ha valore. Oltre 2500 interventi nel territorio etneo. Preventivo gratuito 349 750 0613">
-    <meta name="keywords" content="sgombero gratuito Catania, sgombero gratis Catania, sgombero appartamenti Catania, sgombero case Catania, sgombero uffici Catania, sgombero cantine Catania, merce riutilizzabile Catania, STR Sgomberi Catania, sgombero sostenibile Catania">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Sgombero Gratuito Catania | STR Sgomberi">
-    <meta property="og:description" content="Servizio di sgombero completamente gratuito a Catania in cambio di merce riutilizzabile">
-    <meta property="og:url" content="https://www.sgomberosicilia.it/sgombero-gratuito-catania.html">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.sgomberosicilia.it/sgombero-gratuito-catania.html">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /*
+        ==========================================================================
+        DESIGN SYSTEM STILE iOS - Creato per STR Sgomberi
+        ==========================================================================
+        Questo CSS è stato scritto per emulare l'estetica di iOS, utilizzando
+        variabili, animazioni complesse e stili specifici per i componenti.
+        */
+
+        :root {
+            --ios-blue: #0A84FF;
+            --ios-blue-light: #64D2FF;
+            --ios-green: #30D158;
+            --ios-red: #FF453A;
+            --ios-orange: #FF9F0A;
+            --ios-yellow: #FFD60A;
+            --ios-indigo: #5E5CE6;
+            --ios-teal: #64D2FF;
+
+            --system-background: #000000;
+            --system-background-secondary: #1C1C1E;
+            --system-background-tertiary: #2C2C2E;
+
+            --label-primary: #FFFFFF;
+            --label-secondary: rgba(235, 235, 245, 0.6);
+            --label-tertiary: rgba(235, 235, 245, 0.3);
+            --label-quaternary: rgba(235, 235, 245, 0.18);
+
+            --fill-primary: rgba(120, 120, 128, 0.36);
+            --fill-secondary: rgba(120, 120, 128, 0.24);
+
+            --separator-color: rgba(84, 84, 88, 0.6);
+            --card-corner-radius: 20px;
+            --button-corner-radius: 12px;
+            
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* RESET E STILI DI BASE */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--system-background);
+            color: var(--label-primary);
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('assets/IMG-20250702-WA0019.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        /* CONTENITORE PRINCIPALE */
+        .page-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px 120px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        /* ANIMAZIONI */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(10, 132, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(10, 132, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(10, 132, 255, 0); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(20px);
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*
+        ----------------------------------------------------
+        COMPONENTI UI STILE iOS
+        ----------------------------------------------------
+        */
+
+        /* TITOLI */
+        .ios-main-title {
+            font-size: clamp(2.5rem, 10vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            text-align: center;
+            letter-spacing: -0.04em;
+            background: linear-gradient(145deg, var(--label-primary) 50%, var(--label-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .ios-section-title {
+            font-size: clamp(1.8rem, 7vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.03em;
+        }
+
+        .ios-section-subtitle {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            color: var(--label-secondary);
+            text-align: center;
+            margin-top: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            animation: fadeInUp 1s 0.2s ease-out backwards;
+        }
+
+        /* BOTTONI */
+        .ios-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: var(--button-corner-radius);
+            padding: 16px 24px;
+            cursor: pointer;
+            transition: transform 0.2s ease-out, background-color 0.2s;
+            -webkit-tap-highlight-color: transparent; /* Per mobile */
+        }
+        .ios-button:active {
+            transform: scale(0.96);
+        }
+        .ios-button.primary {
+            background-color: var(--ios-blue);
+            color: white;
+        }
+        .ios-button.secondary {
+            background-color: var(--fill-primary);
+            color: var(--label-primary);
+        }
+        .ios-button.cta {
+            animation: pulse 2s infinite;
+        }
+        .ios-button svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* CARDS */
+        .ios-card {
+            background-color: rgba(28, 28, 30, 0.8); /* #1C1C1E con trasparenza */
+            border-radius: var(--card-corner-radius);
+            padding: 25px;
+            border: 1px solid rgba(84, 84, 88, 0.5); /* --separator-color */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+        }
+        .ios-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+        }
+        
+        /* WIDGETS */
+        .ios-widget {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: rgba(44, 44, 46, 0.7); /* #2C2C2E con trasparenza */
+            border-radius: var(--card-corner-radius);
+            padding: 15px 20px;
+            border: 1px solid rgba(84, 84, 88, 0.5);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            width: fit-content;
+            margin: 20px auto 0 auto;
+            animation: fadeInUp 1s 0.4s ease-out backwards;
+        }
+        .ios-widget .icon {
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+        }
+        .ios-widget .text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .ios-widget .subtext {
+            font-size: 14px;
+            color: var(--label-secondary);
+        }
+
+        /* LISTE (stile Impostazioni) */
+        .ios-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .ios-list-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .ios-list-item:not(:last-child) {
+            border-bottom: 1px solid var(--separator-color);
+        }
+        .ios-list-item .icon-container {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            color: white;
+        }
+        .ios-list-item .icon-container svg {
+            width: 20px;
+            height: 20px;
+        }
+        .ios-list-item .text-content {
+            flex-grow: 1;
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .ios-list-item .chevron {
+            color: var(--label-tertiary);
+        }
+        .ios-list-item .chevron svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* SEGMENTED CONTROL */
+        .segmented-control {
+            display: flex;
+            background-color: var(--fill-secondary);
+            border-radius: 10px;
+            padding: 4px;
+            width: 100%;
+            margin-top: 25px;
+            position: relative;
+        }
+        .segmented-control input {
+            display: none;
+        }
+        .segmented-control label {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--label-secondary);
+            cursor: pointer;
+            transition: color 0.4s ease;
+            z-index: 2;
+        }
+        .segmented-control input:checked + label {
+            color: var(--label-primary);
+        }
+        .glider {
+            position: absolute;
+            top: 4px;
+            height: calc(100% - 8px);
+            background-color: var(--fill-primary);
+            border-radius: 8px;
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* GALLERY */
+        .ios-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            border-radius: var(--button-corner-radius);
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            aspect-ratio: 1 / 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* MODAL (per la gallery) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .modal-overlay.is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .modal-overlay.is-visible .modal-content {
+            transform: scale(1);
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: var(--card-corner-radius);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(44, 44, 46, 0.8);
+            border-radius: 50%;
+            border: 1px solid rgba(84, 84, 88, 0.5);
+            color: white;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .modal-close-btn:hover {
+            background-color: var(--ios-red);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* FAQ ACCORDION */
+        .faq-item {
+            border-bottom: 1px solid var(--separator-color);
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0), padding 0.5s ease;
+            color: var(--label-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .faq-answer p {
+            padding: 0 0 20px 0;
+        }
+        .faq-item.is-open .faq-answer {
+            max-height: 300px; /* Valore arbitrario, abbastanza grande */
+        }
+        .faq-item .chevron svg {
+             transition: transform 0.3s ease;
+        }
+        .faq-item.is-open .chevron svg {
+            transform: rotate(90deg);
+        }
+        
+        /* DYNAMIC ISLAND CTA */
+        .dynamic-island-container {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+        }
+        
+        .dynamic-island {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 220px;
+            height: 60px;
+            background-color: #111;
+            border-radius: 30px;
+            padding: 0 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+        }
+
+        .dynamic-island.expanded {
+            width: 350px;
+            height: 180px;
+            align-items: flex-start;
+            padding-top: 20px;
+            border-radius: 35px;
+            cursor: default;
+        }
+        
+        .island-content {
+            display: none;
+            width: 100%;
+        }
+        
+        .dynamic-island.expanded .island-content {
+            display: block;
+        }
+        
+        .dynamic-island .island-prompt {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--label-primary);
+            font-weight: 600;
+        }
+
+        .dynamic-island.expanded .island-prompt {
+            display: none;
+        }
+
+        .island-content input {
+            width: 100%;
+            background-color: var(--system-background-tertiary);
+            border: 1px solid var(--separator-color);
+            border-radius: 8px;
+            padding: 10px;
+            color: var(--label-primary);
+            margin-bottom: 10px;
+            font-family: var(--font-family);
+            font-size: 16px;
+        }
+
+        /* -------------------------------------------
+        STILI SPECIFICI DELLE SEZIONI
+        -------------------------------------------
+        */
+        #hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #why-us .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            #why-us .content-grid {
+                 grid-template-columns: 1fr 1fr;
+            }
+        }
+        #why-us .image-container img {
+            width: 100%;
+            border-radius: var(--card-corner-radius);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        #services .service-card {
+            border-radius: var(--card-corner-radius);
+            padding: 20px;
+            text-align: center;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #services .service-card:hover {
+            border-color: var(--ios-blue);
+            background-color: rgba(10, 132, 255, 0.1);
+        }
+        #services .service-card.active {
+            border-color: var(--ios-blue);
+            background-color: rgba(10, 132, 255, 0.2);
+            transform: scale(1.05);
+        }
+        #services .service-icon {
+            font-size: 3rem;
+        }
+        #services .service-details {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--separator-color);
+        }
+
+        #process .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        #process .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--separator-color);
+        }
+        #process .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        #process .timeline-item::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--ios-blue);
+            color: white;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            border: 3px solid var(--system-background);
+        }
+        
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="nav-logo">
-                <span class="nav-title">STR Sgomberi</span>
-            </div>
 
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <main class="page-container">
 
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">Servizi
-                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6,9 12,15 18,9"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="sgombero-gratuito-catania.html" class="dropdown-item active">Sgombero Gratuito</a>
-                        <a href="trasporti-catania.html" class="dropdown-item">Trasporti</a>
-                    </div>
+        <section id="hero" class="animate-on-scroll">
+            <h1 class="ios-main-title">
+                Svuota Cantine Gratis
+            </h1>
+            <p class="ios-section-subtitle">
+                Il servizio professionale a Catania e provincia per liberare i tuoi spazi. Semplice, rapido e a norma di legge, con l'affidabilità di STR Sgomberi.
+            </p>
+            
+            <div class="ios-widget" role="status">
+                <div class="icon" style="background-color: var(--ios-green);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.052-.143z" clip-rule="evenodd" /></svg>
                 </div>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">Dove Operiamo
-                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6,9 12,15 18,9"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu comuni-menu">
-                        <a href="catania.html" class="dropdown-item">Catania</a>
-                        <a href="acireale.html" class="dropdown-item">Acireale</a>
-                        <a href="giarre.html" class="dropdown-item">Giarre</a>
-                        <a href="paterno.html" class="dropdown-item">Paternò</a>
-                        <a href="adrano.html" class="dropdown-item">Adrano</a>
-                        <a href="belpasso.html" class="dropdown-item">Belpasso</a>
-                        <a href="mascalucia.html" class="dropdown-item">Mascalucia</a>
-                        <a href="gravina-di-catania.html" class="dropdown-item">Gravina di Catania</a>
-                    </div>
+                <div>
+                    <div class="text">Disponibilità Immediata</div>
+                    <div class="subtext">Contattaci Ora</div>
                 </div>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="chi-siamo.html" class="nav-link">Chi Siamo</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <a href="contatti.html" class="nav-link">Contatti</a>
             </div>
 
-            <div class="nav-actions">
-                <a href="tel:3497500613" class="phone-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                    <span>349 750 0613</span>
+            <div style="margin-top: 40px;">
+                <a href="tel:3497500613" class="ios-button primary cta">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" /></svg>
+                    <span>Chiama: 3497500613</span>
                 </a>
-                <a href="https://wa.me/393497500613" target="_blank" class="whatsapp-btn">
-                    <svg viewBox="0 0 32 32" fill="currentColor" width="24" height="24">
-                        <path d="M19.11 17.47c-.3-.15-1.77-.87-2.05-.97-.27-.1-.46-.15-.65.15-.19.3-.75.97-.92 1.17-.17.2-.34.22-.63.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37 0-.52-.07-.15-.65-1.55-.9-2.13-.24-.58-.48-.5-.65-.5h-.56c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.5 1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.26.5 1.7.63.71.23 1.36.2 1.87.13.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM16 3a13 13 0 0 0-11.34 19.43L3 29l6.75-1.77A13 13 0 1 0 16 3zm0 23.4c-1.96 0-3.79-.57-5.33-1.55l-.38-.24-4.01 1.05 1.07-3.91-.25-.4a10.42 10.42 0 1 1 8.9 4.05z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero hero-etna-improved">
-            <div class="hero-content">
-                <h1>Sgombero Gratuito a Catania</h1>
-                <h2 class="hero-subtitle">SERVIZIO COMPLETAMENTE GRATUITO<br><span class="hero-highlight">In Cambio di Merce Riutilizzabile</span></h2>
-                <p>Il primo e unico servizio di sgombero veramente gratuito a Catania. Quando la merce presente ha valore riutilizzabile, lo sgombero è completamente gratuito!</p>
             </div>
         </section>
 
-        <!-- Service Content -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="service-content-extended">
-                    <h2>Come Funziona il Nostro Sgombero Gratuito a Catania</h2>
-                    <p>STR Sgomberi ha rivoluzionato il concetto di sgombero a Catania introducendo un modello unico: <strong>sgombero completamente gratuito in cambio di merce riutilizzabile</strong>. Non è un trucco pubblicitario, ma il nostro modello di business sostenibile che ha già permesso a oltre 1800 famiglie catanesi di sgomberare gratuitamente.</p>
-                    
-                    <div class="process-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h3>Sopralluogo Gratuito</h3>
-                                <p>I nostri esperti valutatori si recano presso il tuo immobile a Catania per una valutazione professionale gratuita della merce presente.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h3>Valutazione Professionale</h3>
-                                <p>Analizziamo ogni oggetto per determinare il valore di riutilizzo nel mercato catanese: mobili, elettrodomestici, oggetti d'arte, libri, abbigliamento.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h3>Proposta Personalizzata</h3>
-                                <p>Se il valore della merce copre i costi, il servizio è <strong>completamente gratuito</strong>. Altrimenti, preventivo trasparente e conveniente.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>Sgombero Professionale</h3>
-                                <p>Eseguiamo lo sgombero con attrezzature professionali, lasciando l'ambiente perfettamente pulito e pronto per il nuovo utilizzo.</p>
-                            </div>
-                        </div>
+        <section id="why-us" class="animate-on-scroll">
+            <div class="content-grid">
+                <div class="text-content">
+                    <h2 class="ios-section-title" style="text-align: left;">La Tua Scelta di Fiducia</h2>
+                    <p style="color: var(--label-secondary); line-height: 1.6; margin-top: 15px; margin-bottom: 30px;">
+                        Affidarsi a STR Sgomberi significa scegliere un partner esperto. Gestiamo ogni fase dello sgombero, dalla valutazione gratuita allo smaltimento ecologico, con la massima professionalità.
+                    </p>
+                    <div class="ios-card" style="padding: 10px;">
+                        <ul class="ios-list">
+                            <li class="ios-list-item">
+                                <div class="icon-container" style="background-color: var(--ios-green);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                                <span class="text-content">Servizio Rapido</span>
+                                <div class="chevron">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+                                </div>
+                            </li>
+                            <li class="ios-list-item">
+                                <div class="icon-container" style="background-color: var(--ios-blue);">
+                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg>
+                                </div>
+                                <span class="text-content">Smaltimento Certificato</span>
+                                <div class="chevron">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+                                </div>
+                            </li>
+                            <li class="ios-list-item">
+                                <div class="icon-container" style="background-color: var(--ios-orange);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                                </div>
+                                <span class="text-content">Preventivo Gratuito</span>
+                                <div class="chevron">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-
-                    <div class="success-stats">
-                        <h3>I Nostri Risultati a Catania</h3>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <div class="stat-number">75%</div>
-                                <div class="stat-label">Sgomberi Gratuiti</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">2500+</div>
-                                <div class="stat-label">Interventi Completati</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">85%</div>
-                                <div class="stat-label">Materiali Recuperati</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">98%</div>
-                                <div class="stat-label">Clienti Soddisfatti</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cta-section">
-                        <h3>Richiedi la Tua Valutazione Gratuita</h3>
-                        <p>Scopri se il tuo sgombero può essere completamente gratuito. Valutazione senza impegno in tutta Catania e provincia.</p>
-                        <div class="cta-buttons">
-                            <a href="tel:3497500613" class="btn btn-primary">Chiama Ora: 349 750 0613</a>
-                            <a href="https://wa.me/393497500613" target="_blank" class="btn btn-secondary">WhatsApp</a>
-                        </div>
-                        <p><a href="https://sgomberocatania.it/sgombero-gratuito-dettagli" target="_blank" rel="noopener">Maggiori informazioni sul nostro servizio di sgombero gratuito</a></p>
-                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://www.sgomberocatania.it/wp-content/uploads/2024/07/IMG_20160904_111951-2-scaled.jpg" alt="Camion STR Sgomberi per sgomberi a Catania" class="animate-on-scroll">
                 </div>
             </div>
         </section>
+
+        <section id="services" class="animate-on-scroll">
+            <h2 class="ios-section-title" style="text-align:center;">Seleziona il Tuo Spazio</h2>
+            <p class="ios-section-subtitle">Scegli il tipo di locale da sgomberare per visualizzare i dettagli del servizio specifico.</p>
+            
+            <div class="ios-card">
+                 <div class="ios-gallery-grid" id="service-selector">
+                    <div class="service-card" data-service="cantine">
+                        <div class="service-icon">🏚️</div>
+                        <h3>Cantine e Garage</h3>
+                    </div>
+                     <div class="service-card" data-service="appartamenti">
+                        <div class="service-icon">🏠</div>
+                        <h3>Appartamenti</h3>
+                    </div>
+                     <div class="service-card" data-service="uffici">
+                        <div class="service-icon">🏢</div>
+                        <h3>Uffici e Negozi</h3>
+                    </div>
+                     <div class="service-card" data-service="altro">
+                        <div class="service-icon">📦</div>
+                        <h3>Altro</h3>
+                    </div>
+                </div>
+                
+                <div class="segmented-control" id="urgency-selector">
+                    <input type="radio" id="standard" name="urgency" value="standard" checked><label for="standard">Standard</label>
+                    <input type="radio" id="urgente" name="urgency" value="urgente"><label for="urgente">Urgente</label>
+                    <input type="radio" id="programmato" name="urgency" value="programmato"><label for="programmato">Programmato</label>
+                    <div class="glider"></div>
+                </div>
+                
+                <div id="service-details-container" style="margin-top: 30px; min-height: 100px; transition: all 0.5s ease;">
+                    </div>
+            </div>
+        </section>
+
+        <section id="process" class="animate-on-scroll">
+             <h2 class="ios-section-title" style="text-align:center;">Il Nostro Metodo in 4 Passi</h2>
+             <p class="ios-section-subtitle">Un processo chiaro e trasparente per garantirti la massima serenità.</p>
+
+             <div class="timeline" style="margin-top: 50px;">
+                 <div class="timeline-item animate-on-scroll" data-step="1">
+                     <div class="ios-card">
+                         <h3>Contatto e Valutazione</h3>
+                         <p style="color:var(--label-secondary); margin-top: 10px;">Chiamaci o scrivici. Ti faremo alcune domande per capire le tue esigenze e fornirti una prima stima, spesso già definitiva.</p>
+                     </div>
+                 </div>
+                 <div class="timeline-item animate-on-scroll" data-step="2">
+                      <div class="ios-card">
+                         <h3>Sopralluogo (se necessario)</h3>
+                         <p style="color:var(--label-secondary); margin-top: 10px;">Per situazioni complesse o grandi volumi, effettuiamo un sopralluogo gratuito per un preventivo preciso al centesimo.</p>
+                     </div>
+                 </div>
+                 <div class="timeline-item animate-on-scroll" data-step="3">
+                      <div class="ios-card">
+                         <h3>Sgombero Professionale</h3>
+                         <p style="color:var(--label-secondary); margin-top: 10px;">Il nostro team interviene nel giorno e orario concordato, operando con rapidità, discrezione e rispetto per i tuoi spazi.</p>
+                     </div>
+                 </div>
+                 <div class="timeline-item animate-on-scroll" data-step="4">
+                      <div class="ios-card">
+                         <h3>Smaltimento Ecologico</h3>
+                         <p style="color:var(--label-secondary); margin-top: 10px;">Tutto il materiale viene trasportato in discariche autorizzate. Ti forniamo il formulario di avvenuto smaltimento (FIR).</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <section id="gallery" class="animate-on-scroll">
+            <h2 class="ios-section-title" style="text-align:center;">I Nostri Lavori Recenti</h2>
+            <div class="ios-gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/IMG-20250629-WA0028.jpg" alt="Sgombero appartamento a Catania" loading="lazy">
+                    <div class="overlay">Sgombero Appartamento</div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/IMG-20250629-WA0029.jpg" alt="Trasporto mobili durante un trasloco a Catania" loading="lazy">
+                    <div class="overlay">Trasporto Mobili</div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/IMG-20250629-WA0030.jpg" alt="Sgombero cantina a Catania" loading="lazy">
+                     <div class="overlay">Sgombero Cantina</div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/IMG-20250629-WA0031.jpg" alt="Smaltimento rifiuti ingombranti" loading="lazy">
+                     <div class="overlay">Smaltimento Rifiuti</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="animate-on-scroll">
+            <h2 class="ios-section-title" style="text-align:center;">Domande Frequenti</h2>
+             <p class="ios-section-subtitle">Le risposte ai dubbi più comuni dei nostri clienti.</p>
+             <div class="ios-card" style="margin-top: 40px;">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Il servizio è davvero gratuito?</span>
+                            <div class="chevron">
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sì, il servizio di sgombero può essere gratuito se il materiale da ritirare ha un valore commerciale (es. mobili antichi, modernariato, oggetti rivendibili) che copre i costi del nostro intervento. La valutazione viene fatta gratuitamente e senza impegno.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Quali oggetti potete ritirare?</span>
+                            <div class="chevron">
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ritiriamo praticamente di tutto: mobili, elettrodomestici, vestiti, libri, macerie, rifiuti ingombranti, e materiali di risulta. Gestiamo ogni tipo di rifiuto nel rispetto delle normative vigenti.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Operate in tutta la provincia di Catania?</span>
+                            <div class="chevron">
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Assolutamente sì. Il nostro servizio copre l'intera città di Catania e tutti i comuni della provincia. Contattaci per verificare la disponibilità immediata nella tua zona.</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
     </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="footer-logo">
-                <h3>STR Sgomberi Catania</h3>
-                <p>Sgombero gratuito in cambio di merce riutilizzabile a Catania. <a href="https://sgomberocatania.it" target="_blank" rel="noopener">Visita il nostro sito specializzato</a> per maggiori dettagli.</p>
+    
+    <div class="modal-overlay" id="gallery-modal">
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Vista ingrandita del lavoro svolto">
+        </div>
+        <div class="modal-close-btn" id="modal-close">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </div>
+    </div>
+    
+    <div id="contact" class="dynamic-island-container">
+        <div class="dynamic-island" id="dynamic-island">
+            <div class="island-prompt">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+                <span>Richiedi Info</span>
             </div>
-            <div class="footer-contact">
-                <h4>Contatti</h4>
-                <div class="footer-contact-item">
-                    <a href="tel:3497500613">349 750 0613</a>
-                </div>
-            </div>
-            <div class="footer-services">
-                <h4>Servizi</h4>
-                <ul>
-                    <li><a href="sgombero-gratuito-catania.html">Sgombero Gratuito</a></li>
-                    <li><a href="trasporti-catania.html">Trasporti</a></li>
-                </ul>
+            <div class="island-content">
+                <form action="#" method="POST" id="island-form">
+                    <input type="text" name="name" placeholder="Il tuo nome" required>
+                    <input type="tel" name="phone" placeholder="Numero di telefono (3497500613)" required>
+                    <button type="submit" class="ios-button primary" style="width: 100%; padding: 10px;">Invia Richiesta</button>
+                </form>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="script.js"></script>
+
+    <script>
+    /*
+    ==========================================================================
+    JAVASCRIPT PER INTERATTIVITÀ STILE iOS
+    ==========================================================================
+    Gestisce le animazioni allo scroll, i componenti interattivi come
+    la galleria, l'accordion FAQ e il selettore di servizi.
+    */
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // ------------------------------------
+        // 1. ANIMAZIONI ON-SCROLL
+        // ------------------------------------
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        // ------------------------------------
+        // 2. GALLERY MODAL
+        // ------------------------------------
+        const galleryModal = document.getElementById('gallery-modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModalBtn = document.getElementById('modal-close');
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                modalImage.src = imgSrc;
+                galleryModal.classList.add('is-visible');
+            });
+        });
+
+        const closeModal = () => {
+            galleryModal.classList.remove('is-visible');
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                closeModal();
+            }
+        });
+        
+        // ------------------------------------
+        // 3. FAQ ACCORDION
+        // ------------------------------------
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const wasOpen = item.classList.contains('is-open');
+                faqItems.forEach(i => i.classList.remove('is-open'));
+                if (!wasOpen) {
+                    item.classList.add('is-open');
+                }
+            });
+        });
+        
+        // ------------------------------------
+        // 4. SELETTORE SERVIZI INTERATTIVO
+        // ------------------------------------
+        const serviceCards = document.querySelectorAll('.service-card');
+        const detailsContainer = document.getElementById('service-details-container');
+        
+        const serviceDetailsContent = {
+            cantine: `<h4>Sgombero Cantine e Garage</h4><p style="color:var(--label-secondary)">Liberiamo completamente cantine e garage da mobili vecchi, cianfrusaglie, e rifiuti di ogni tipo. Ci occupiamo anche della pulizia finale.</p>`,
+            appartamenti: `<h4>Sgombero Appartamenti Completo</h4><p style="color:var(--label-secondary)">Servizio "chiavi in mano" per appartamenti. Smontaggio mobili, imballaggio, trasporto e smaltimento certificato di tutto ciò che non serve più.</p>`,
+            uffici: `<h4>Sgombero Uffici e Negozi</h4><p style="color:var(--label-secondary)">Svuotiamo locali commerciali, uffici e magazzini, gestendo lo smaltimento di attrezzature elettroniche (RAEE), archivi e arredi.</p>`,
+            altro: `<h4>Sgomberi Personalizzati</h4><p style="color:var(--label-secondary)">Hai un'esigenza particolare? Soffitte, magazzini, terreni. Contattaci per una soluzione su misura per te.</p>`
+        };
+
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                serviceCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                
+                const serviceKey = card.dataset.service;
+                detailsContainer.style.opacity = 0;
+                setTimeout(() => {
+                    detailsContainer.innerHTML = serviceDetailsContent[serviceKey];
+                    detailsContainer.style.opacity = 1;
+                }, 300);
+            });
+        });
+        
+        // Attiva il primo di default
+        serviceCards[0].click();
+
+        // ------------------------------------
+        // 5. SEGMENTED CONTROL GLIDER
+        // ------------------------------------
+        const urgencyInputs = document.querySelectorAll('.segmented-control input');
+        const glider = document.querySelector('.glider');
+        
+        urgencyInputs.forEach((input, index) => {
+            input.addEventListener('change', () => {
+                const label = input.nextElementSibling;
+                const width = label.offsetWidth;
+                const position = label.offsetLeft;
+                glider.style.width = `${width}px`;
+                glider.style.transform = `translateX(${position}px)`;
+            });
+
+            if(input.checked) {
+                const label = input.nextElementSibling;
+                glider.style.width = `${label.offsetWidth}px`;
+                glider.style.transform = `translateX(${label.offsetLeft}px)`;
+            }
+        });
+        
+        // ------------------------------------
+        // 6. DYNAMIC ISLAND CTA
+        // ------------------------------------
+        const dynamicIsland = document.getElementById('dynamic-island');
+        const islandForm = document.getElementById('island-form');
+        let islandExpanded = false;
+
+        const expandIsland = () => {
+             if (!islandExpanded) {
+                dynamicIsland.classList.add('expanded');
+                islandExpanded = true;
+             }
+        };
+
+        const collapseIsland = () => {
+            if (islandExpanded) {
+                dynamicIsland.classList.remove('expanded');
+                islandExpanded = false;
+            }
+        };
+        
+        dynamicIsland.addEventListener('click', (e) => {
+            if (e.target === dynamicIsland || e.target.closest('.island-prompt')) {
+                expandIsland();
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!dynamicIsland.contains(e.target)) {
+                collapseIsland();
+            }
+        });
+
+        islandForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aggiungi qui la logica di invio form (es. AJAX)
+            alert('Richiesta inviata! Verrai contattato a breve al numero 3497500613.');
+            collapseIsland();
+            islandForm.reset();
+        });
+
+    });
+    </script>
 </body>
 </html>
