@@ -62,6 +62,21 @@
     }
     </script>
 
+    <!-- Favicon dinamico -->
+    <link rel="icon" type="image/png" href="https://www.sgomberocatania.it/wp-content/uploads/2025/08/logo.webp" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="https://www.sgomberocatania.it/wp-content/uploads/2025/08/Copilot_20250810_200903withoutbg2.webp" media="(prefers-color-scheme: dark)">
+    <script>
+      function setFavicon() {
+        const lightIcon = "https://www.sgomberocatania.it/wp-content/uploads/2025/08/logo.webp";
+        const darkIcon = "https://www.sgomberocatania.it/wp-content/uploads/2025/08/Copilot_20250810_200903withoutbg2.webp";
+        const favicon = document.querySelector('link[rel="icon"]');
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        favicon.href = isDark ? darkIcon : lightIcon;
+      }
+      setFavicon();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,7 +85,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+    <body>
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Navigazione principale">
         <div class="nav-container">
