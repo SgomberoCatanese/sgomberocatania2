@@ -12,8 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="blog.css">
-
     <style>
         /* Stili specifici per la pagina blog, come richiesto */
         .hero.hero-blog {
@@ -50,300 +48,7 @@
         .featured-article .blog-content {
             flex-grow: 1;
         }
-    </style>
-</head>
-<body>
-
-    <div class="background--blobs">
-        <div class="blob"></div>
-        <div class="blob"></div>
-        <div class="blob"></div>
-    </div>
-
-    <nav class="navbar glass-ui" role="navigation" aria-label="Navigazione principale">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="nav-logo-emoji">🌋</span>
-                <span class="nav-title">Sgombero Sicilia</span>
-            </div>
-
-            <div class="desktop-menu" id="desktop-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">Servizi</button>
-                    <div class="dropdown-menu glass-ui">
-                        <a href="sgombero-gratuito-catania.html" class="dropdown-item">Sgombero Gratuito</a>
-                        <a href="trasporti-catania.html" class="dropdown-item">Trasporti</a>
-                        <a href="ritiro-mobili-usati-catania.html" class="dropdown-item">Ritiro Mobili Usati</a>
-                    </div>
-                </div>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle" id="desktop-dove-operiamo">Dove Operiamo</button>
-                    <div class="dropdown-menu comuni-menu glass-ui">
-                        <a href="catania.html" class="dropdown-item">Catania</a>
-                        <a href="acireale.html" class="dropdown-item">Acireale</a>
-                        <a href="giarre.html" class="dropdown-item">Giarre</a>
-                        <a href="paterno.html" class="dropdown-item">Paternò</a>
-                        <a href="adrano.html" class="dropdown-item">Adrano</a>
-                        <a href="belpasso.html" class="dropdown-item">Belpasso</a>
-                        <a href="mascalucia.html" class="dropdown-item">Mascalucia</a>
-                        <a href="gravina_di_catania.html" class="dropdown-item">Gravina di Catania</a>
-                        <a href="san_giovanni_la_punta.html" class="dropdown-item">San Giovanni la Punta</a>
-                        <a href="tremestieri_etneo.html" class="dropdown-item">Tremestieri Etneo</a>
-                         <a href="santagata_li_battiati.html" class="dropdown-item">Sant'Agata li Battiati</a>
-                        <a href="valverde.html" class="dropdown-item">Valverde</a>
-                        <a href="aci_catena.html" class="dropdown-item">Aci Catena</a>
-                        <a href="aci_santantonio.html" class="dropdown-item">Aci Sant'Antonio</a>
-                        <a href="viagrande.html" class="dropdown-item">Viagrande</a>
-                        <a href="zafferana_etnea.html" class="dropdown-item">Zafferana Etnea</a>
-                        <a href="nicolosi.html" class="dropdown-item">Nicolosi</a>
-                        <a href="pedara.html" class="dropdown-item">Pedara</a>
-                        <a href="trecastagni.html" class="dropdown-item">Trecastagni</a>
-                        <a href="aci_castello.html" class="dropdown-item">Aci Castello</a>
-                        <a href="san_gregorio_di_catania.html" class="dropdown-item">San Gregorio di Catania</a>
-                        <a href="camporotondo_etneo.html" class="dropdown-item">Camporotondo Etneo</a>
-                    </div>
-                </div>
-                <a href="blog.html" class="nav-link active">Blog</a>
-                <a href="chi-siamo.html" class="nav-link">Chi Siamo</a>
-                <a href="contatti.html" class="nav-link">Contatti</a>
-            </div>
-
-            <div class="nav-actions">
-                <button class="icon-btn glass-ui dark-mode-toggle" id="dark-mode-toggle" aria-label="Attiva/Disattiva modalità scura">
-                    <span class="sun-icon">☀️</span>
-                    <span class="moon-icon">🌙</span>
-                </button>
-                <a href="tel:3497500613" class="phone-btn btn glass-ui">
-                    <span>📞</span>
-                    <span class="phone-text">349 750 0613</span>
-                </a>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Apri menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay-bg">
-        <div class="mobile-menu-wrapper">
-            <div class="mobile-menu-panel glass-ui" id="mobile-menu-main">
-                <div class="mobile-menu-quick-actions">
-                    <a href="index.html" class="quick-action-item"><span class="action-emoji">🏠</span><span class="action-text">Home</span></a>
-                    <a href="sgombero-gratuito-catania.html" class="quick-action-item"><span class="action-emoji">🆓</span><span class="action-text">Gratuito</span></a>
-                    <a href="trasporti-catania.html" class="quick-action-item"><span class="action-emoji">🚚</span><span class="action-text">Trasporti</span></a>
-                    <a href="contatti.html" class="quick-action-item"><span class="action-emoji">💬</span><span class="action-text">Contatti</span></a>
-                </div>
-                <div class="mobile-menu-links">
-                    <a href="sgombero-gratuito-catania.html" class="mobile-menu-item">Sgombero Gratuito</a>
-                    <a href="trasporti-catania.html" class="mobile-menu-item">Trasporti</a>
-                    <button class="mobile-menu-item" id="open-comuni-menu">Dove Operiamo &rarr;</button>
-                    <hr class="menu-divider">
-                    <a href="blog.html" class="mobile-menu-item">Blog</a>
-                    <a href="chi-siamo.html" class="mobile-menu-item">Chi Siamo</a>
-                    <a href="tel:3497500613" class="mobile-menu-item mobile-call-action">📞 Chiama Ora</a>
-                </div>
-            </div>
-            <div class="mobile-menu-panel glass-ui" id="mobile-menu-comuni">
-                <div class="mobile-menu-header">
-                    <button class="back-btn" id="back-to-main-menu">&larr; Indietro</button>
-                    <h4>Dove Operiamo</h4>
-                </div>
-                <div class="mobile-menu-links scrollable">
-                    <a href="catania.html" class="mobile-menu-item">Catania</a>
-                    <a href="acireale.html" class="mobile-menu-item">Acireale</a>
-                    <a href="giarre.html" class="mobile-menu-item">Giarre</a>
-                    <a href="paterno.html" class="mobile-menu-item">Paternò</a>
-                    <a href="adrano.html" class="mobile-menu-item">Adrano</a>
-                    <a href="belpasso.html" class="mobile-menu-item">Belpasso</a>
-                    <a href="mascalucia.html" class="mobile-menu-item">Mascalucia</a>
-                    <a href="gravina_di_catania.html" class="mobile-menu-item">Gravina di Catania</a>
-                    <a href="san_giovanni_la_punta.html" class="mobile-menu-item">San Giovanni la Punta</a>
-                    <a href="tremestieri_etneo.html" class="mobile-menu-item">Tremestieri Etneo</a>
-                    <a href="santagata_li_battiati.html" class="mobile-menu-item">Sant'Agata li Battiati</a>
-                    <a href="valverde.html" class="mobile-menu-item">Valverde</a>
-                    <a href="aci_catena.html" class="mobile-menu-item">Aci Catena</a>
-                    <a href="aci_santantonio.html" class="mobile-menu-item">Aci Sant'Antonio</a>
-                    <a href="viagrande.html" class="mobile-menu-item">Viagrande</a>
-                    <a href="zafferana_etnea.html" class="mobile-menu-item">Zafferana Etnea</a>
-                    <a href="nicolosi.html" class="mobile-menu-item">Nicolosi</a>
-                    <a href="pedara.html" class="mobile-menu-item">Pedara</a>
-                    <a href="trecastagni.html" class="mobile-menu-item">Trecastagni</a>
-                    <a href="aci_castello.html" class="mobile-menu-item">Aci Castello</a>
-                    <a href="san_gregorio_di_catania.html" class="mobile-menu-item">San Gregorio di Catania</a>
-                    <a href="camporotondo_etneo.html" class="mobile-menu-item">Camporotondo Etneo</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <main>
-        <section class="hero hero-blog">
-            <div class="hero-content">
-                <h1 class="hero-title">Blog & Guide</h1>
-                <p class="hero-subtitle">Consigli e guide professionali per sgomberi e traslochi nel territorio etneo.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="blog-grid">
-                    <article class="blog-card featured-article glass-ui">
-                        <div class="blog-image">
-                            <img src="https://images.pexels.com/photos/7464230/pexels-photo-7464230.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Organizzare uno sgombero gratuito a Catania">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span class="blog-category">Guida Completa</span>
-                                <span class="blog-date">15 Gennaio 2024</span>
-                            </div>
-                            <h3>Organizzare uno Sgombero Gratuito a Catania: La Guida Definitiva</h3>
-                            <p>Scopri passo dopo passo come trasformare il tuo sgombero in un'opportunità a costo zero, valorizzando la merce riutilizzabile nel tuo immobile.</p>
-                            <a href="#" class="btn-link">Leggi la guida &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card glass-ui">
-                        <div class="blog-image">
-                            <img src="https://images.pexels.com/photos/4246266/pexels-photo-4246266.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sgombero sostenibile a Catania">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><span class="blog-category">Sostenibilità</span><span class="blog-date">10 Gennaio 2024</span></div>
-                            <h3>Sgombero Sostenibile: Salvare l'85% dei Materiali dalla Discarica</h3>
-                            <p>Il nostro modello di economia circolare contribuisce a salvaguardare l'ambiente siciliano, trasformando i "rifiuti" in risorse.</p>
-                            <a href="#" class="btn-link">Scopri come &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card glass-ui">
-                        <div class="blog-image">
-                            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Trasporti sicuri nel territorio etneo">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><span class="blog-category">Trasporti</span><span class="blog-date">5 Gennaio 2024</span></div>
-                            <h3>Trasporti Sicuri sull'Etna: Tecniche per Ogni Sfida</h3>
-                            <p>Scopri le tecniche e le attrezzature che usiamo per garantire trasporti sicuri, dalle zone difficili del vulcano alla costa ionica.</p>
-                            <a href="#" class="btn-link">Leggi di più &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card glass-ui">
-                        <div class="blog-image">
-                            <img src="https://images.pexels.com/photos/4246119/pexels-photo-4246119.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Checklist per preparare la casa allo sgombero">
-                        </div>
-                        <div class="blog-content">
-                             <div class="blog-meta"><span class="blog-category">Preparazione</span><span class="blog-date">28 Dicembre 2023</span></div>
-                            <h3>Checklist per lo Sgombero: Come Preparare la Casa</h3>
-                            <p>Una buona preparazione è la chiave per uno sgombero efficiente e per massimizzare le possibilità che sia gratuito. Scarica la nostra guida.</p>
-                            <a href="#" class="btn-link">Vedi la checklist &rarr;</a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="newsletter-section glass-ui">
-                    <div class="newsletter-content">
-                        <h3>Rimani Aggiornato</h3>
-                        <p>Iscriviti per ricevere consigli utili, guide e offerte speciali sui nostri servizi a Catania e provincia.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="La tua email" class="glass-ui" required>
-                            <button type="submit" class="btn btn-primary glass-ui">Iscriviti</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer glass-ui">
-        <div class="container">
-            <p>&copy; 2024 Sgombero Sicilia Orientale. Tutti i diritti riservati.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    const body = document.body;
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay-bg');
-    const mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper'); // Wrapper for panels
-    const openComuniBtn = document.getElementById('open-comuni-menu');
-    const backToMainBtn = document.getElementById('back-to-main-menu');
-
-    // 1. Dark Mode Logic
-    function applyTheme(theme) {
-        body.classList.toggle('dark-mode', theme === 'dark');
-    }
-    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    applyTheme(savedTheme);
-    darkModeToggle.addEventListener('click', () => {
-        const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-        applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
-
-    // 2. Mobile Menu Logic (iOS Style with Submenu)
-    if (mobileMenuBtn && mobileMenuOverlay) {
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isActive = mobileMenuOverlay.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
-            body.style.overflow = isActive ? 'hidden' : '';
-        });
-
-        const closeMenu = () => {
-            mobileMenuBtn.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            body.style.overflow = '';
-            // Reset to main menu view when closing
-            if (mobileMenuWrapper) {
-                mobileMenuWrapper.classList.remove('show-comuni');
-            }
-        };
-
-        mobileMenuOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileMenuOverlay) closeMenu();
-        });
-
-        mobileMenuOverlay.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-        
-        // Submenu Navigation
-        if (openComuniBtn && backToMainBtn && mobileMenuWrapper) {
-            openComuniBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent menu from closing
-                mobileMenuWrapper.classList.add('show-comuni');
-            });
-            backToMainBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent menu from closing
-                mobileMenuWrapper.classList.remove('show-comuni');
-            });
-        }
-    }
-    
-    // 3. Navbar Scroll Effect
-    const navbar = document.querySelector('.navbar');
-    let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) navbar.classList.add('scrolled');
-        else navbar.classList.remove('scrolled');
-        
-        if (window.scrollY > lastScrollY && window.scrollY > 100) navbar.style.transform = 'translateY(-120%)';
-        else navbar.style.transform = 'translateY(0)';
-        
-        lastScrollY = window.scrollY;
-    }, { passive: true });
-
-    // Other functionalities (Carousel, Pop-up, etc.) remain the same
-});
-    </script>
-    <style>
-        /* =============================================
+           /* =============================================
    BLOG.CSS - Stili specifici per la pagina Blog
    ============================================= */
 
@@ -765,7 +470,296 @@ body.dark-mode .dropdown-item:hover { background: rgba(255, 255, 255, 0.1); }
 .footer-bottom { border-top: 1px solid var(--glass-border-light); padding-top: 2rem; margin-top: 2rem; }
 body.dark-mode .footer-bottom { border-top: 1px solid var(--glass-border-dark); }
     </style>
-      
+</head>
+<body>
 
+    <div class="background--blobs">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <nav class="navbar glass-ui" role="navigation" aria-label="Navigazione principale">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo-emoji">🌋</span>
+                <span class="nav-title">Sgombero Sicilia</span>
+            </div>
+
+            <div class="desktop-menu" id="desktop-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">Servizi</button>
+                    <div class="dropdown-menu glass-ui">
+                        <a href="sgombero-gratuito-catania.html" class="dropdown-item">Sgombero Gratuito</a>
+                        <a href="trasporti-catania.html" class="dropdown-item">Trasporti</a>
+                        <a href="ritiro-mobili-usati-catania.html" class="dropdown-item">Ritiro Mobili Usati</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" id="desktop-dove-operiamo">Dove Operiamo</button>
+                    <div class="dropdown-menu comuni-menu glass-ui">
+                        <a href="catania.html" class="dropdown-item">Catania</a>
+                        <a href="acireale.html" class="dropdown-item">Acireale</a>
+                        <a href="giarre.html" class="dropdown-item">Giarre</a>
+                        <a href="paterno.html" class="dropdown-item">Paternò</a>
+                        <a href="adrano.html" class="dropdown-item">Adrano</a>
+                        <a href="belpasso.html" class="dropdown-item">Belpasso</a>
+                        <a href="mascalucia.html" class="dropdown-item">Mascalucia</a>
+                        <a href="gravina_di_catania.html" class="dropdown-item">Gravina di Catania</a>
+                        <a href="san_giovanni_la_punta.html" class="dropdown-item">San Giovanni la Punta</a>
+                        <a href="tremestieri_etneo.html" class="dropdown-item">Tremestieri Etneo</a>
+                         <a href="santagata_li_battiati.html" class="dropdown-item">Sant'Agata li Battiati</a>
+                        <a href="valverde.html" class="dropdown-item">Valverde</a>
+                        <a href="aci_catena.html" class="dropdown-item">Aci Catena</a>
+                        <a href="aci_santantonio.html" class="dropdown-item">Aci Sant'Antonio</a>
+                        <a href="viagrande.html" class="dropdown-item">Viagrande</a>
+                        <a href="zafferana_etnea.html" class="dropdown-item">Zafferana Etnea</a>
+                        <a href="nicolosi.html" class="dropdown-item">Nicolosi</a>
+                        <a href="pedara.html" class="dropdown-item">Pedara</a>
+                        <a href="trecastagni.html" class="dropdown-item">Trecastagni</a>
+                        <a href="aci_castello.html" class="dropdown-item">Aci Castello</a>
+                        <a href="san_gregorio_di_catania.html" class="dropdown-item">San Gregorio di Catania</a>
+                        <a href="camporotondo_etneo.html" class="dropdown-item">Camporotondo Etneo</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="chi-siamo.html" class="nav-link">Chi Siamo</a>
+                <a href="contatti.html" class="nav-link">Contatti</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="icon-btn glass-ui dark-mode-toggle" id="dark-mode-toggle" aria-label="Attiva/Disattiva modalità scura">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <a href="tel:3497500613" class="phone-btn btn glass-ui">
+                    <span>📞</span>
+                    <span class="phone-text">349 750 0613</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Apri menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay-bg">
+        <div class="mobile-menu-wrapper">
+            <div class="mobile-menu-panel glass-ui" id="mobile-menu-main">
+                <div class="mobile-menu-quick-actions">
+                    <a href="index.html" class="quick-action-item"><span class="action-emoji">🏠</span><span class="action-text">Home</span></a>
+                    <a href="sgombero-gratuito-catania.html" class="quick-action-item"><span class="action-emoji">🆓</span><span class="action-text">Gratuito</span></a>
+                    <a href="trasporti-catania.html" class="quick-action-item"><span class="action-emoji">🚚</span><span class="action-text">Trasporti</span></a>
+                    <a href="contatti.html" class="quick-action-item"><span class="action-emoji">💬</span><span class="action-text">Contatti</span></a>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="sgombero-gratuito-catania.html" class="mobile-menu-item">Sgombero Gratuito</a>
+                    <a href="trasporti-catania.html" class="mobile-menu-item">Trasporti</a>
+                    <button class="mobile-menu-item" id="open-comuni-menu">Dove Operiamo &rarr;</button>
+                    <hr class="menu-divider">
+                    <a href="blog.html" class="mobile-menu-item">Blog</a>
+                    <a href="chi-siamo.html" class="mobile-menu-item">Chi Siamo</a>
+                    <a href="tel:3497500613" class="mobile-menu-item mobile-call-action">📞 Chiama Ora</a>
+                </div>
+            </div>
+            <div class="mobile-menu-panel glass-ui" id="mobile-menu-comuni">
+                <div class="mobile-menu-header">
+                    <button class="back-btn" id="back-to-main-menu">&larr; Indietro</button>
+                    <h4>Dove Operiamo</h4>
+                </div>
+                <div class="mobile-menu-links scrollable">
+                    <a href="catania.html" class="mobile-menu-item">Catania</a>
+                    <a href="acireale.html" class="mobile-menu-item">Acireale</a>
+                    <a href="giarre.html" class="mobile-menu-item">Giarre</a>
+                    <a href="paterno.html" class="mobile-menu-item">Paternò</a>
+                    <a href="adrano.html" class="mobile-menu-item">Adrano</a>
+                    <a href="belpasso.html" class="mobile-menu-item">Belpasso</a>
+                    <a href="mascalucia.html" class="mobile-menu-item">Mascalucia</a>
+                    <a href="gravina_di_catania.html" class="mobile-menu-item">Gravina di Catania</a>
+                    <a href="san_giovanni_la_punta.html" class="mobile-menu-item">San Giovanni la Punta</a>
+                    <a href="tremestieri_etneo.html" class="mobile-menu-item">Tremestieri Etneo</a>
+                    <a href="santagata_li_battiati.html" class="mobile-menu-item">Sant'Agata li Battiati</a>
+                    <a href="valverde.html" class="mobile-menu-item">Valverde</a>
+                    <a href="aci_catena.html" class="mobile-menu-item">Aci Catena</a>
+                    <a href="aci_santantonio.html" class="mobile-menu-item">Aci Sant'Antonio</a>
+                    <a href="viagrande.html" class="mobile-menu-item">Viagrande</a>
+                    <a href="zafferana_etnea.html" class="mobile-menu-item">Zafferana Etnea</a>
+                    <a href="nicolosi.html" class="mobile-menu-item">Nicolosi</a>
+                    <a href="pedara.html" class="mobile-menu-item">Pedara</a>
+                    <a href="trecastagni.html" class="mobile-menu-item">Trecastagni</a>
+                    <a href="aci_castello.html" class="mobile-menu-item">Aci Castello</a>
+                    <a href="san_gregorio_di_catania.html" class="mobile-menu-item">San Gregorio di Catania</a>
+                    <a href="camporotondo_etneo.html" class="mobile-menu-item">Camporotondo Etneo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero hero-blog">
+            <div class="hero-content">
+                <h1 class="hero-title">Blog & Guide</h1>
+                <p class="hero-subtitle">Consigli e guide professionali per sgomberi e traslochi nel territorio etneo.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="blog-grid">
+                    <article class="blog-card featured-article glass-ui">
+                        <div class="blog-image">
+                            <img src="https://images.pexels.com/photos/7464230/pexels-photo-7464230.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Organizzare uno sgombero gratuito a Catania">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Guida Completa</span>
+                                <span class="blog-date">15 Gennaio 2024</span>
+                            </div>
+                            <h3>Organizzare uno Sgombero Gratuito a Catania: La Guida Definitiva</h3>
+                            <p>Scopri passo dopo passo come trasformare il tuo sgombero in un'opportunità a costo zero, valorizzando la merce riutilizzabile nel tuo immobile.</p>
+                            <a href="#" class="btn-link">Leggi la guida &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card glass-ui">
+                        <div class="blog-image">
+                            <img src="https://images.pexels.com/photos/4246266/pexels-photo-4246266.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sgombero sostenibile a Catania">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span class="blog-category">Sostenibilità</span><span class="blog-date">10 Gennaio 2024</span></div>
+                            <h3>Sgombero Sostenibile: Salvare l'85% dei Materiali dalla Discarica</h3>
+                            <p>Il nostro modello di economia circolare contribuisce a salvaguardare l'ambiente siciliano, trasformando i "rifiuti" in risorse.</p>
+                            <a href="#" class="btn-link">Scopri come &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card glass-ui">
+                        <div class="blog-image">
+                            <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Trasporti sicuri nel territorio etneo">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span class="blog-category">Trasporti</span><span class="blog-date">5 Gennaio 2024</span></div>
+                            <h3>Trasporti Sicuri sull'Etna: Tecniche per Ogni Sfida</h3>
+                            <p>Scopri le tecniche e le attrezzature che usiamo per garantire trasporti sicuri, dalle zone difficili del vulcano alla costa ionica.</p>
+                            <a href="#" class="btn-link">Leggi di più &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card glass-ui">
+                        <div class="blog-image">
+                            <img src="https://images.pexels.com/photos/4246119/pexels-photo-4246119.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Checklist per preparare la casa allo sgombero">
+                        </div>
+                        <div class="blog-content">
+                             <div class="blog-meta"><span class="blog-category">Preparazione</span><span class="blog-date">28 Dicembre 2023</span></div>
+                            <h3>Checklist per lo Sgombero: Come Preparare la Casa</h3>
+                            <p>Una buona preparazione è la chiave per uno sgombero efficiente e per massimizzare le possibilità che sia gratuito. Scarica la nostra guida.</p>
+                            <a href="#" class="btn-link">Vedi la checklist &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="newsletter-section glass-ui">
+                    <div class="newsletter-content">
+                        <h3>Rimani Aggiornato</h3>
+                        <p>Iscriviti per ricevere consigli utili, guide e offerte speciali sui nostri servizi a Catania e provincia.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="La tua email" class="glass-ui" required>
+                            <button type="submit" class="btn btn-primary glass-ui">Iscriviti</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer glass-ui">
+        <div class="container">
+            <p>&copy; 2024 Sgombero Sicilia Orientale. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const body = document.body;
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay-bg');
+    const mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper'); // Wrapper for panels
+    const openComuniBtn = document.getElementById('open-comuni-menu');
+    const backToMainBtn = document.getElementById('back-to-main-menu');
+
+    // 1. Dark Mode Logic
+    function applyTheme(theme) {
+        body.classList.toggle('dark-mode', theme === 'dark');
+    }
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(savedTheme);
+    darkModeToggle.addEventListener('click', () => {
+        const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    // 2. Mobile Menu Logic (iOS Style with Submenu)
+    if (mobileMenuBtn && mobileMenuOverlay) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = mobileMenuOverlay.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            body.style.overflow = isActive ? 'hidden' : '';
+        });
+
+        const closeMenu = () => {
+            mobileMenuBtn.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            body.style.overflow = '';
+            // Reset to main menu view when closing
+            if (mobileMenuWrapper) {
+                mobileMenuWrapper.classList.remove('show-comuni');
+            }
+        };
+
+        mobileMenuOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) closeMenu();
+        });
+
+        mobileMenuOverlay.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Submenu Navigation
+        if (openComuniBtn && backToMainBtn && mobileMenuWrapper) {
+            openComuniBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent menu from closing
+                mobileMenuWrapper.classList.add('show-comuni');
+            });
+            backToMainBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent menu from closing
+                mobileMenuWrapper.classList.remove('show-comuni');
+            });
+        }
+    }
+    
+    // 3. Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        
+        if (window.scrollY > lastScrollY && window.scrollY > 100) navbar.style.transform = 'translateY(-120%)';
+        else navbar.style.transform = 'translateY(0)';
+        
+        lastScrollY = window.scrollY;
+    }, { passive: true });
+
+    // Other functionalities (Carousel, Pop-up, etc.) remain the same
+});
+    </script>
 </body>
 </html>
