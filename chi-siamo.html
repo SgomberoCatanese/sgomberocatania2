@@ -4,225 +4,533 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags Ottimizzati per Chi Siamo -->
-    <title>Chi Siamo - Sgombero Sicilia Orientale | La Nostra Storia e Rete di Partner</title>
+    <title>Chi Siamo - Sgombero Sicilia Orientale | Design Rinnovato</title>
     <meta name="description" content="Scopri la storia di Sgombero Sicilia e la nostra rete di partner specializzati in Catania, Siracusa, Ragusa e Messina. Anni di esperienza nel coordinamento di servizi di sgombero professionali.">
-    <meta name="keywords" content="chi siamo sgombero sicilia, storia sgomberi sicilia orientale, rete partner sgomberi, sgombero catania storia, esperienza sgomberi sicilia">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Chi Siamo - Sgombero Sicilia Orientale">
-    <meta property="og:description" content="La storia della nostra rete di specialisti in sgomberi per la Sicilia orientale">
-    <meta property="og:url" content="https://www.sgomberosicilia.it/chi-siamo.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.sgomberosicilia.it/chi-siamo.html">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* =============================================
+           DESIGN SYSTEM & VARIABLES (LIQUID GLASS THEME V4.1)
+           ============================================= */
+        :root {
+          --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          
+          /* Light Theme */
+          --bg-light: #f0f2f5;
+          --text-light: #1c1c1e;
+          --glass-bg-light: rgba(255, 255, 255, 0.5);
+          --glass-border-light: rgba(255, 255, 255, 0.7);
+          --shadow-light: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+          --primary-color: #007aff;
+          --primary-hover: #0056b3;
+          --secondary-color: #30d158;
+          --secondary-hover: #28a745;
+
+          /* Dark Theme */
+          --bg-dark: #121212;
+          --text-dark: #f0f2f5;
+          --glass-bg-dark: rgba(28, 28, 30, 0.5);
+          --glass-border-dark: rgba(60, 60, 67, 0.4);
+          --shadow-dark: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+          /* Universal */
+          --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+          --transition-medium: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* =============================================
+           BASE & THEME SETUP
+           ============================================= */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+          font-family: var(--font-sans);
+          background-color: var(--bg-light);
+          color: var(--text-light);
+          transition: background-color var(--transition-medium), color var(--transition-medium);
+          position: relative;
+          overflow-x: hidden;
+        }
+        body.dark-mode { background-color: var(--bg-dark); color: var(--text-dark); }
+
+        .background--blobs {
+          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+          overflow: hidden; z-index: -1; filter: blur(120px); opacity: 0.4;
+          transition: opacity var(--transition-medium);
+        }
+        body.dark-mode .background--blobs { opacity: 0.2; }
+        .blob { position: absolute; border-radius: 50%; will-change: transform; }
+        .blob:nth-child(1) { width: 40vw; height: 40vw; background: #ff7e5f; top: 5vh; left: 5vw; animation: move 20s infinite alternate; }
+        .blob:nth-child(2) { width: 50vw; height: 50vw; background: var(--primary-color); bottom: 10vh; right: 10vw; animation: move 25s infinite alternate-reverse; }
+        .blob:nth-child(3) { width: 30vw; height: 30vw; background: var(--secondary-color); top: 50%; left: 50%; transform: translate(-50%, -50%); animation: move 15s infinite alternate; }
+        @keyframes move {
+          from { transform: translate(0, 0) rotate(0deg) scale(1); }
+          to { transform: translate(10vw, -10vh) rotate(180deg) scale(1.2); }
+        }
+
+        /* =============================================
+           GLASSMORPHISM & UI ELEMENTS
+           ============================================= */
+        .glass-ui {
+          background: var(--glass-bg-light);
+          -webkit-backdrop-filter: blur(25px) saturate(180%);
+          backdrop-filter: blur(25px) saturate(180%);
+          border: 1px solid var(--glass-border-light);
+          box-shadow: var(--shadow-light);
+          transition: background var(--transition-medium), border var(--transition-medium), box-shadow var(--transition-medium);
+        }
+        body.dark-mode .glass-ui {
+          background: var(--glass-bg-dark);
+          border: 1px solid var(--glass-border-dark);
+          box-shadow: var(--shadow-dark);
+        }
+
+        /* =============================================
+           NAVBAR & MENU (MOBILE FIRST)
+           ============================================= */
+        .navbar {
+          position: fixed; top: 1rem; left: 1rem; right: 1rem;
+          z-index: 1000; border-radius: 999px; padding: 0.5rem;
+          transition: transform var(--transition-medium);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .nav-brand { display: flex; align-items: center; gap: 0.75rem; z-index: 1001;}
+        .nav-logo-emoji { font-size: 1.8rem; }
+        .nav-title { font-weight: 600; font-size: 1.2rem; }
+        .desktop-menu { display: none; }
+        .nav-actions .phone-text { display: none; }
+        .mobile-menu-btn {
+          background: none; border: none; cursor: pointer; z-index: 1001; padding: 0.5rem;
+          display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+          width: 44px; height: 44px;
+        }
+        .mobile-menu-btn span {
+          display: block; width: 22px; height: 2px;
+          background-color: var(--text-light);
+          transition: transform 0.3s ease, opacity 0.3s ease; border-radius: 1px;
+        }
+        body.dark-mode .mobile-menu-btn span { background-color: var(--text-dark); }
+        .mobile-menu-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* =============================================
+           MOBILE MENU OVERLAY (iOS STYLE) V2
+           ============================================= */
+        .mobile-menu-overlay {
+          position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999;
+          background-color: rgba(0, 0, 0, 0.3);
+          opacity: 0; visibility: hidden;
+          transition: opacity var(--transition-medium), visibility var(--transition-medium);
+          display: flex; justify-content: center; align-items: flex-end;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-menu-wrapper {
+          width: calc(100% - 2rem); max-width: 500px;
+          margin-bottom: 1rem;
+          position: relative;
+          height: auto;
+          max-height: 80vh;
+        }
+        .mobile-menu-panel {
+          border-radius: 20px; padding: 1rem; display: flex; flex-direction: column; gap: 1rem;
+          position: absolute; bottom: 0; width: 100%;
+          transition: transform var(--transition-medium) cubic-bezier(0.16, 1, 0.3, 1), opacity var(--transition-medium);
+        }
+        #mobile-menu-main { transform: translateY(100%); }
+        .mobile-menu-overlay.active #mobile-menu-main { transform: translateY(0); }
+        #mobile-menu-comuni, #mobile-menu-servizi { transform: translateX(100%); opacity: 0; }
+        .mobile-menu-wrapper.show-comuni #mobile-menu-main, .mobile-menu-wrapper.show-servizi #mobile-menu-main { transform: translateX(-100%); opacity: 0; }
+        .mobile-menu-wrapper.show-comuni #mobile-menu-comuni, .mobile-menu-wrapper.show-servizi #mobile-menu-servizi { transform: translateX(0); opacity: 1; }
+        .mobile-menu-header { display: flex; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--glass-border-light); }
+        body.dark-mode .mobile-menu-header { border-color: var(--glass-border-dark); }
+        .mobile-menu-header h4 { font-size: 1.1rem; margin: 0 auto; }
+        .back-btn { background: none; border: none; color: inherit; font-size: 1rem; font-weight: 500; cursor: pointer; }
+        .mobile-menu-quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--glass-border-light); }
+        body.dark-mode .mobile-menu-quick-actions { border-color: var(--glass-border-dark); }
+        .quick-action-item { display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; color: inherit; padding: 0.75rem 0.25rem; border-radius: 12px; transition: background var(--transition-fast); }
+        .quick-action-item:hover { background: rgba(0, 0, 0, 0.05); }
+        body.dark-mode .quick-action-item:hover { background: rgba(255, 255, 255, 0.1); }
+        .action-emoji { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .action-text { font-size: 0.8rem; font-weight: 500; text-align: center; }
+        .mobile-menu-links { display: flex; flex-direction: column; }
+        .mobile-menu-links.scrollable { max-height: 45vh; overflow-y: auto; }
+        .mobile-menu-item { display: flex; align-items: center; text-decoration: none; color: inherit; padding: 0.8rem 1rem; border-radius: 12px; transition: background var(--transition-fast); font-weight: 500; background: none; border: none; width: 100%; text-align: left; }
+        .mobile-menu-item:hover { background: rgba(0, 0, 0, 0.05); }
+        body.dark-mode .mobile-menu-item:hover { background: rgba(255, 255, 255, 0.1); }
+        .mobile-call-action { color: var(--primary-color); }
+        .menu-divider { border: none; border-top: 1px solid var(--glass-border-light); margin: 0.5rem 0; }
+        body.dark-mode .menu-divider { border-color: var(--glass-border-dark); }
+
+        /* Desktop Styles */
+        @media (min-width: 992px) {
+          .mobile-menu-btn, .mobile-menu-overlay { display: none !important; }
+          .desktop-menu { display: flex; align-items: center; gap: 0.5rem; }
+          .nav-actions { display: flex; }
+          .nav-actions .phone-text { display: inline; }
+          .nav-link { font-size: 1rem; padding: 0.5rem 1rem; border-radius: 999px; text-decoration: none; color: inherit; font-weight: 500; transition: background var(--transition-fast); }
+          .nav-link:hover, .nav-link.active { background: rgba(0,0,0,0.05); }
+          body.dark-mode .nav-link:hover, body.dark-mode .nav-link.active { background: rgba(255,255,255,0.1); }
+        }
+
+        /* =============================================
+           HERO SECTION & CONTENT
+           ============================================= */
+        .hero { min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10rem 1rem 4rem; }
+        .hero-content { max-width: 800px; }
+        .hero-title { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.05em; line-height: 1.1; }
+        .hero-subtitle { font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 400; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.8; }
+        
+        .section { padding: 5rem 1rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .section h2 { text-align: left; font-size: clamp(2.2rem, 5vw, 3rem); margin-bottom: 1.5rem; letter-spacing: -0.03em; }
+        .section > p { text-align: left; max-width: 700px; margin-bottom: 3rem; font-size: 1.1rem; opacity: 0.8; }
+        
+        /* =============================================
+           BUTTONS & INTERACTIVE
+           ============================================= */
+        .btn, .icon-btn {
+          text-decoration: none; font-weight: 500; border-radius: 999px;
+          transition: all var(--transition-fast); cursor: pointer;
+          display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+          border: none; font-size: 1rem;
+        }
+        .btn:hover, .icon-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn:active, .icon-btn:active { transform: translateY(-1px) scale(0.98); }
+        .btn-primary { background: var(--primary-color); color: white !important; }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn { padding: 0.8rem 1.8rem; font-weight: 600; }
+        .btn-link { color: var(--primary-color); font-weight: 600; text-decoration: none; }
+        .btn-link:hover { text-decoration: underline; }
+        .icon-btn, .phone-btn { width: 44px; height: 44px; }
+        .icon-btn span, .phone-btn span:first-child { font-size: 1.5rem; }
+        .phone-btn { padding: 0; }
+        @media (min-width: 992px) { .phone-btn { width: auto; padding: 0.6rem 1.2rem; } }
+        .dark-mode-toggle .moon-icon { display: none; }
+        body.dark-mode .dark-mode-toggle .sun-icon { display: none; }
+        body.dark-mode .dark-mode-toggle .moon-icon { display: inline; }
+        .dark-mode-toggle .sun-icon { display: inline; }
+
+        /* =============================================
+           DESKTOP DROPDOWN MENU
+           ============================================= */
+        .nav-dropdown { position: relative; }
+        .dropdown-toggle { background: none; border: none; cursor: pointer; display: flex; align-items: center; color: inherit; font-family: inherit; }
+        .dropdown-menu {
+          position: absolute; top: calc(100% + 1rem); left: 50%;
+          min-width: 220px; padding: 0.5rem; border-radius: 16px;
+          opacity: 0; visibility: hidden;
+          transform: translateX(-50%) translateY(-10px);
+          transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+        }
+        .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-item {
+          display: block; text-decoration: none; color: inherit;
+          padding: 0.75rem 1rem; border-radius: 12px;
+          transition: background var(--transition-fast); white-space: nowrap; font-weight: 500;
+        }
+        .dropdown-item:hover { background: rgba(0, 0, 0, 0.05); }
+        body.dark-mode .dropdown-item:hover { background: rgba(255, 255, 255, 0.1); }
+        .comuni-menu { max-height: 40vh; overflow-y: auto; }
+
+        /* =============================================
+           CHI SIAMO - SPECIFIC STYLES
+           ============================================= */
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .value-item { padding: 2rem; border-radius: 20px; text-align: center; }
+        .value-item h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .value-item h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .partner-highlight { padding: 2rem; border-radius: 20px; margin: 2rem 0; }
+        .partner-highlight h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-color); }
+        .partner-highlight a { font-weight: 600; color: var(--primary-color); }
+
+        /* =============================================
+           FOOTER
+           ============================================= */
+        .footer { text-align: center; padding: 3rem 1rem; margin: 1rem; border-radius: 20px; }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+
+    <nav class="navbar glass-ui" role="navigation">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="Sgombero Sicilia Logo" class="nav-logo">
+                <span class="nav-logo-emoji">🌋</span>
                 <span class="nav-title">Sgombero Sicilia</span>
             </div>
-
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav-menu" id="nav-menu">
+            <div class="desktop-menu" id="desktop-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">Servizi
-                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6,9 12,15 18,9"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="sgombero-case.html" class="dropdown-item">Sgombero Case</a>
-                        <a href="sgombero-garage.html" class="dropdown-item">Sgombero Cantine</a>
-                        <a href="trasporti-catania.html" class="dropdown-item">Traslochi</a>
-                        <a href="sgombero-uffici.html" class="dropdown-item">Sgombero Uffici</a>
+                    <button class="nav-link dropdown-toggle">Servizi</button>
+                    <div class="dropdown-menu glass-ui">
+                        <a href="sgombero-gratuito-catania.html" class="dropdown-item">Sgombero Gratuito</a>
+                        <a href="trasporti-catania.html" class="dropdown-item">Trasporti</a>
+                        <a href="ritiro-mobili-usati-catania.html" class="dropdown-item">Ritiro Mobili Usati</a>
                     </div>
                 </div>
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">Dove Operiamo
-                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6,9 12,15 18,9"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu comuni-menu">
-                        <a href="catania.html" class="dropdown-item">Provincia Catania</a>
-                        <a href="#" class="dropdown-item">Provincia Siracusa</a>
-                        <a href="#" class="dropdown-item">Provincia Ragusa</a>
-                        <a href="#" class="dropdown-item">Provincia Messina</a>
+                    <button class="nav-link dropdown-toggle" id="desktop-dove-operiamo">Dove Operiamo</button>
+                    <div class="dropdown-menu comuni-menu glass-ui">
+                        <a href="catania.html" class="dropdown-item">Catania</a>
+                        <a href="acireale.html" class="dropdown-item">Acireale</a>
+                        <a href="giarre.html" class="dropdown-item">Giarre</a>
+                        <a href="paterno.html" class="dropdown-item">Paternò</a>
+                        <a href="adrano.html" class="dropdown-item">Adrano</a>
+                        <a href="belpasso.html" class="dropdown-item">Belpasso</a>
                     </div>
                 </div>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="chi-siamo.html" class="nav-link active">Chi Siamo</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="contatti.html" class="nav-link">Contatti</a>
             </div>
-
             <div class="nav-actions">
-                <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Attiva/Disattiva modalità scura">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"/>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>
+                <button class="icon-btn glass-ui dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
                 </button>
-                <a href="tel:3497500613" class="phone-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                    <span>349 750 0613</span>
-                </a>
-                <a href="https://wa.me/393497500613" target="_blank" class="whatsapp-btn">
-                    <svg viewBox="0 0 32 32" fill="currentColor" width="24" height="24">
-                        <path d="M19.11 17.47c-.3-.15-1.77-.87-2.05-.97-.27-.1-.46-.15-.65.15-.19.3-.75.97-.92 1.17-.17.2-.34.22-.63.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37 0-.52-.07-.15-.65-1.55-.9-2.13-.24-.58-.48-.5-.65-.5h-.56c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.5 1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.26.5 1.7.63.71.23 1.36.2 1.87.13.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM16 3a13 13 0 0 0-11.34 19.43L3 29l6.75-1.77A13 13 0 1 0 16 3zm0 23.4c-1.96 0-3.79-.57-5.33-1.55l-.38-.24-4.01 1.05 1.07-3.91-.25-.4a10.42 10.42 0 1 1 8.9 4.05z"/>
-                    </svg>
+                <a href="tel:3497500613" class="phone-btn btn glass-ui">
+                    <span>📞</span>
+                    <span class="phone-text">349 750 0613</span>
                 </a>
             </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
+    
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay-bg">
+        <div class="mobile-menu-wrapper">
+            <div class="mobile-menu-panel glass-ui" id="mobile-menu-main">
+                <div class="mobile-menu-quick-actions">
+                    <a href="index.html" class="quick-action-item"><span class="action-emoji">🏠</span><span class="action-text">Home</span></a>
+                    <a href="sgombero-gratuito-catania.html" class="quick-action-item"><span class="action-emoji">🆓</span><span class="action-text">Gratuito</span></a>
+                    <a href="trasporti-catania.html" class="quick-action-item"><span class="action-emoji">🚚</span><span class="action-text">Trasporti</span></a>
+                    <a href="contatti.html" class="quick-action-item"><span class="action-emoji">💬</span><span class="action-text">Contatti</span></a>
+                </div>
+                <div class="mobile-menu-links">
+                    <button class="mobile-menu-item" id="open-servizi-menu">Servizi &rarr;</button>
+                    <button class="mobile-menu-item" id="open-comuni-menu">Dove Operiamo &rarr;</button>
+                    <hr class="menu-divider">
+                    <a href="blog.html" class="mobile-menu-item">Blog</a>
+                    <a href="chi-siamo.html" class="mobile-menu-item active">Chi Siamo</a>
+                    <a href="contatti.html" class="mobile-menu-item">Contatti</a>
+                    <a href="tel:3497500613" class="mobile-menu-item mobile-call-action">📞 Chiama Ora</a>
+                </div>
+            </div>
+            <div class="mobile-menu-panel glass-ui" id="mobile-menu-servizi">
+                <div class="mobile-menu-header">
+                    <button class="back-btn" id="back-to-main-from-servizi">&larr; Indietro</button>
+                    <h4>Servizi</h4>
+                </div>
+                <div class="mobile-menu-links scrollable">
+                    <a href="sgombero-gratuito-catania.html" class="mobile-menu-item">Sgombero Gratuito</a>
+                    <a href="trasporti-catania.html" class="mobile-menu-item">Trasporti</a>
+                    <a href="ritiro-mobili-usati-catania.html" class="mobile-menu-item">Ritiro Mobili Usati</a>
+                </div>
+            </div>
+            <div class="mobile-menu-panel glass-ui" id="mobile-menu-comuni">
+                <div class="mobile-menu-header">
+                    <button class="back-btn" id="back-to-main-from-comuni">&larr; Indietro</button>
+                    <h4>Dove Operiamo</h4>
+                </div>
+                <div class="mobile-menu-links scrollable">
+                    <a href="catania.html" class="mobile-menu-item">Catania</a>
+                    <a href="acireale.html" class="mobile-menu-item">Acireale</a>
+                    <a href="giarre.html" class="mobile-menu-item">Giarre</a>
+                    <a href="paterno.html" class="mobile-menu-item">Paternò</a>
+                    <a href="adrano.html" class="mobile-menu-item">Adrano</a>
+                    <a href="belpasso.html" class="mobile-menu-item">Belpasso</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero hero-etna-improved">
+        <section class="hero hero-contact">
             <div class="hero-content">
-                <h1>Chi Siamo - Sgombero Sicilia Orientale</h1>
-                <p>La storia della nostra rete di specialisti per sgomberi professionali in Sicilia orientale</p>
+                <h1 class="hero-title">La Nostra Storia</h1>
+                <p class="hero-subtitle">Una rete di specialisti nata dalla passione per il nostro territorio.</p>
             </div>
         </section>
 
-        <!-- Content -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="about-content">
-                    <h2>La Nostra Storia</h2>
-                    <p>Sgombero Sicilia nasce dall'esperienza maturata negli anni nel settore degli sgomberi e dei traslochi in Sicilia orientale. La nostra missione è quella di coordinare una rete di specialisti qualificati che possano garantire servizi professionali e affidabili in tutto il territorio che va da Catania a Messina, da Siracusa a Ragusa.</p>
-                    
-                    <p>Nel corso degli anni abbiamo compreso che ogni zona della Sicilia orientale ha le sue specificità: dalle zone etnee con le loro caratteristiche geologiche uniche, alle aree costiere con le problematiche legate alla salsedine, dalle città storiche con i loro vincoli architettonici ai moderni centri industriali. Per questo motivo abbiamo scelto di creare una rete di partner locali, ognuno specializzato nel proprio territorio.</p>
+        <section class="section">
+            <div class="container about-content">
+                <h2>Una Rete Radicata in Sicilia</h2>
+                <p>
+                    Sgombero Sicilia nasce dall'esperienza maturata in anni di lavoro nel settore degli sgomberi e dei traslochi in Sicilia orientale. La nostra missione è coordinare una rete di specialisti qualificati per garantire servizi professionali e affidabili in tutto il territorio, da Catania a Messina, da Siracusa a Ragusa.
+                </p>
+                <p>
+                    Abbiamo compreso che ogni zona ha le sue specificità: dalle pendici dell'Etna alle coste, dalle città storiche ai moderni centri industriali. Per questo abbiamo scelto di creare una rete di partner locali, ognuno esperto del proprio territorio.
+                </p>
 
-                    <h2>La Nostra Filosofia</h2>
-                    <p>Crediamo fermamente che la qualità del servizio nasca dalla conoscenza approfondita del territorio e dalla specializzazione locale. Per questo motivo, invece di operare direttamente in tutte le zone, preferiamo coordinare una rete di partner selezionati che possano garantire la massima competenza in ogni area specifica della Sicilia orientale.</p>
-
-                    <div class="mission-values">
-                        <div class="value-item">
-                            <h3>🎯 Coordinamento Centralizzato</h3>
-                            <p>Un unico punto di contatto per tutta la Sicilia orientale, con assegnazione automatica al partner più qualificato per la tua zona specifica.</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>🏆 Qualità Garantita</h3>
-                            <p>Tutti i nostri partner sono selezionati secondo rigorosi criteri di qualità, esperienza e affidabilità. Monitoriamo costantemente la soddisfazione dei clienti.</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>🌍 Copertura Capillare</h3>
-                            <p>Dalla grande città al piccolo centro, garantiamo copertura completa in tutta la Sicilia orientale con tempi di intervento ridotti.</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>💡 Innovazione Continua</h3>
-                            <p>Investiamo costantemente in tecnologie e metodologie innovative per migliorare l'efficienza e la qualità dei servizi offerti dalla nostra rete.</p>
-                        </div>
+                <div class="values-grid">
+                    <div class="value-item glass-ui">
+                        <h3>🎯</h3>
+                        <h4>Coordinamento</h4>
+                        <p>Un unico punto di contatto per tutta la Sicilia orientale, con assegnazione automatica al partner più qualificato per la tua zona.</p>
                     </div>
-
-                    <h2>I Nostri Partner Specializzati</h2>
-                    <p>La forza di Sgombero Sicilia risiede nella qualità dei partner che compongono la nostra rete. Ogni operatore è stato selezionato per la sua competenza specifica, l'esperienza nel territorio di riferimento e la capacità di garantire standard qualitativi elevati.</p>
-
-                    <div class="partners-section">
-                        <div class="partner-highlight">
-                            <h3>🏛️ Zona di Catania e Provincia Etnea</h3>
-                            <p>Per l'area di Catania e tutta la provincia etnea, collaboriamo con specialisti che hanno maturato anni di esperienza nel territorio vulcanico. Le zone etnee presentano sfide uniche che richiedono competenze specifiche e attrezzature adeguate.</p>
-                            <p><strong>Partner di riferimento:</strong> <a href="https://www.sgomberocatania.it" rel="dofollow" target="_blank">Sgombero Catania</a> - Specializzato in sgomberi completi su tutta la provincia di Catania</p>
-                            <p><strong>Partner specializzato:</strong> <a href="https://www.sgomberocantinecatania.it" rel="dofollow" target="_blank">Sgombero Cantine Catania</a> - Esperto in svuotamento cantine, garage e locali interrati</p>
-                        </div>
-
-                        <div class="partner-highlight">
-                            <h3>🌊 Zone Costiere e Altre Province</h3>
-                            <p>Per le province di Siracusa, Ragusa e Messina, la nostra rete include operatori specializzati nelle specificità delle zone costiere, delle aree archeologiche e dei centri storici. Ogni zona richiede approcci differenziati e competenze locali.</p>
-                            <p><strong>Collaborazione storica:</strong> <a href="https://francescostrano1989.wixsite.com/traslochi-e-sgomberi" rel="dofollow" target="_blank">Traslochi e Sgomberi</a> - Il nostro sito storico per traslochi completi e sgomberi in collaborazione</p>
-                        </div>
+                    <div class="value-item glass-ui">
+                        <h3>🏆</h3>
+                        <h4>Qualità</h4>
+                        <p>Tutti i nostri partner sono selezionati secondo rigorosi criteri di qualità, esperienza e affidabilità.</p>
                     </div>
-
-                    <h2>Perché Scegliere la Nostra Rete</h2>
-                    <p>Scegliere Sgombero Sicilia significa affidarsi a un sistema consolidato che combina la comodità di un unico interlocutore con la competenza di specialisti locali. Non dovrai più cercare operatori diversi per zone diverse: un'unica chiamata ti metterà in contatto con il partner più qualificato per la tua specifica esigenza.</p>
-
-                    <div class="why-choose-us">
-                        <div class="reason-item">
-                            <div class="reason-icon">📞</div>
-                            <h4>Unico Numero per Tutta la Sicilia Orientale</h4>
-                            <p>Un solo contatto per Catania, Siracusa, Ragusa e Messina. Noi ci occupiamo di trovare lo specialista giusto per te.</p>
-                        </div>
-                        <div class="reason-item">
-                            <div class="reason-icon">⚡</div>
-                            <h4>Tempi di Risposta Garantiti</h4>
-                            <p>Grazie alla nostra rete capillare, garantiamo sopralluoghi entro 24 ore in tutta la Sicilia orientale.</p>
-                        </div>
-                        <div class="reason-item">
-                            <div class="reason-icon">🛡️</div>
-                            <h4>Qualità Controllata</h4>
-                            <p>Tutti i partner sono selezionati e monitorati costantemente per garantire standard qualitativi elevati.</p>
-                        </div>
-                        <div class="reason-item">
-                            <div class="reason-icon">💰</div>
-                            <h4>Prezzi Competitivi</h4>
-                            <p>La specializzazione locale dei nostri partner permette di offrire prezzi competitivi e trasparenti.</p>
-                        </div>
+                    <div class="value-item glass-ui">
+                        <h3>🌍</h3>
+                        <h4>Copertura</h4>
+                        <p>Dalla grande città al piccolo centro, garantiamo una copertura completa con tempi di intervento ridotti.</p>
                     </div>
-
-                    <div class="final-cta">
-                        <h3>La Nostra Rete di Siti Specializzati</h3>
-                        <p><strong>Lavoriamo da anni nel settore grazie a una rete di siti tematici. Scopri di più sui nostri servizi visitando:</strong></p>
-                        <div class="partner-links">
-                            <div class="partner-link-item">
-                                <h4>👉 <a href="https://www.sgomberocatania.it" rel="dofollow" target="_blank">Sgombero Catania</a></h4>
-                                <p>Il sito principale per sgomberi completi in tutta la provincia di Catania. Specializzato nel territorio etneo con oltre 2500 interventi completati.</p>
-                            </div>
-                            <div class="partner-link-item">
-                                <h4>👉 <a href="https://www.sgomberocantinecatania.it" rel="dofollow" target="_blank">Sgombero Cantine Catania</a></h4>
-                                <p>Specializzato in cantine, garage, soffitte e locali interrati. Competenza specifica per spazi difficili e problematiche di umidità.</p>
-                            </div>
-                            <div class="partner-link-item">
-                                <h4>👉 <a href="https://francescostrano1989.wixsite.com/traslochi-e-sgomberi" rel="dofollow" target="_blank">Traslochi e Sgomberi</a></h4>
-                                <p>Il nostro sito storico su Wix per traslochi completi e sgomberi in collaborazione. Anni di esperienza nel settore.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-cta">
-                        <h3>Contattaci per Maggiori Informazioni</h3>
-                        <p>Vuoi saperne di più sulla nostra rete o hai bisogno di un servizio specifico? Contattaci e ti metteremo in contatto con lo specialista più adatto alle tue esigenze.</p>
-                        <div class="cta-buttons">
-                            <a href="tel:3497500613" class="btn btn-primary">Chiama: 349 750 0613</a>
-                            <a href="https://wa.me/393497500613" target="_blank" class="btn btn-secondary">WhatsApp</a>
-                        </div>
+                     <div class="value-item glass-ui">
+                        <h3>💡</h3>
+                        <h4>Innovazione</h4>
+                        <p>Investiamo in tecnologie e metodologie innovative per migliorare l'efficienza e la qualità dei servizi offerti.</p>
                     </div>
                 </div>
+
+                <h2>I Nostri Partner Specializzati</h2>
+                <p>
+                    La forza di Sgombero Sicilia risiede nella qualità dei partner che compongono la nostra rete. Ogni operatore è selezionato per competenza, esperienza e capacità di garantire standard elevati.
+                </p>
+                <div class="partner-highlight glass-ui">
+                    <h3>🏛️ Provincia di Catania e Zone Etnee</h3>
+                    <p>
+                        Per l'area di Catania e la provincia etnea, collaboriamo con specialisti che hanno maturato anni di esperienza nel territorio vulcanico, affrontando sfide uniche che richiedono competenze e attrezzature adeguate.
+                    </p>
+                    <p>
+                        <strong>Partner di riferimento:</strong> <a href="https://www.sgomberocatania.it" target="_blank" rel="noopener">Sgombero Catania</a>
+                        <br>
+                        <strong>Partner specializzato:</strong> <a href="https://www.sgomberocantinecatania.it" target="_blank" rel="noopener">Sgombero Cantine Catania</a>
+                    </p>
+                </div>
+                 <div class="partner-highlight glass-ui">
+                    <h3>🌊 Zone Costiere e Altre Province</h3>
+                    <p>
+                       Per le province di Siracusa, Ragusa e Messina, la nostra rete include operatori specializzati nelle specificità delle zone costiere, delle aree archeologiche e dei centri storici.
+                    </p>
+                    <p>
+                        <strong>Collaborazione storica:</strong> <a href="https://francescostrano1989.wixsite.com/traslochi-e-sgomberi" target="_blank" rel="noopener">Traslochi e Sgomberi</a>
+                    </p>
+                </div>
+
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="Sgombero Sicilia Logo" class="footer-logo">
-                <h3>Sgombero Sicilia Orientale</h3>
-                <p>Rete di specialisti per sgomberi professionali in Sicilia orientale. Partner: <a href="https://www.sgomberocatania.it" rel="dofollow" target="_blank">Sgombero Catania</a> | <a href="https://www.sgomberocantinecatania.it" rel="dofollow" target="_blank">Sgombero Cantine</a> | <a href="https://francescostrano1989.wixsite.com/traslochi-e-sgomberi" rel="dofollow" target="_blank">Traslochi</a></p>
-            </div>
+    <footer class="footer glass-ui">
+        <div class="container">
+            <p>&copy; 2024 Sgombero Sicilia Orientale. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay-bg');
+            const mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper');
+            const openComuniBtn = document.getElementById('open-comuni-menu');
+            const backToMainFromComuniBtn = document.getElementById('back-to-main-from-comuni');
+            const openServiziBtn = document.getElementById('open-servizi-menu');
+            const backToMainFromServiziBtn = document.getElementById('back-to-main-from-servizi');
+
+            function applyTheme(theme) {
+                body.classList.toggle('dark-mode', theme === 'dark');
+            }
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(savedTheme);
+
+            darkModeToggle.addEventListener('click', () => {
+                const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+                applyTheme(newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+
+            if (mobileMenuBtn && mobileMenuOverlay && mobileMenuWrapper) {
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isActive = mobileMenuOverlay.classList.toggle('active');
+                    mobileMenuBtn.classList.toggle('active');
+                    body.style.overflow = isActive ? 'hidden' : '';
+                });
+
+                const closeMenu = () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    body.style.overflow = '';
+                    setTimeout(() => {
+                        mobileMenuWrapper.classList.remove('show-comuni', 'show-servizi');
+                    }, 300);
+                };
+                
+                mobileMenuOverlay.addEventListener('click', (e) => { if (e.target === mobileMenuOverlay) closeMenu(); });
+                
+                // Close only if it's a direct link, not a submenu button
+                mobileMenuOverlay.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+                
+                if (openComuniBtn) {
+                     openComuniBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobileMenuWrapper.classList.add('show-comuni');
+                    });
+                }
+               if (backToMainFromComuniBtn) {
+                    backToMainFromComuniBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobileMenuWrapper.classList.remove('show-comuni');
+                    });
+               }
+
+                if(openServiziBtn){
+                    openServiziBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobileMenuWrapper.classList.add('show-servizi');
+                    });
+                }
+                
+                if(backToMainFromServiziBtn){
+                    backToMainFromServiziBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobileMenuWrapper.classList.remove('show-servizi');
+                    });
+                }
+            }
+            
+            const navbar = document.querySelector('.navbar');
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                if (!navbar) return;
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+                
+                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                    if (mobileMenuOverlay && !mobileMenuOverlay.classList.contains('active')) {
+                         navbar.style.transform = 'translateY(-120%)';
+                    }
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = window.scrollY;
+            }, { passive: true });
+        });
+    </script>
+
 </body>
 </html>
