@@ -1,20 +1,53 @@
 <footer class="footer glass-ui">
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-grid">
             <div class="footer-brand">
                 <h3>🌋 Sgombero Sicilia</h3>
-                <p>La tua rete di specialisti per sgomberi professionali in tutta la Sicilia Orientale.</p>
+                <p>La tua rete di specialisti per sgomberi professionali in tutta la Sicilia Orientale. Contattaci per un preventivo gratuito e senza impegno.</p>
+                <div class="footer-cta">
+                    <a href="tel:3497500613" class="btn btn-primary glass-ui">📞 Chiama Ora</a>
+                    <a href="https://wa.me/393497500613" target="_blank" class="btn btn-secondary glass-ui">💬 WhatsApp</a>
+                </div>
             </div>
+
             <div class="footer-links">
-                <h4>Link Utili</h4>
-                <a href="chi-siamo.html">Chi Siamo</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contatti.html">Contattaci</a>
-            </div>
-            <div class="footer-partners">
-                <h4>I Nostri Partner</h4>
-                <a href="https://www.sgomberocatania.it" target="_blank" rel="noopener">Sgombero Catania</a>
-                <a href="https://www.sgomberocantinecatania.it" target="_blank" rel="noopener">Sgombero Cantine Catania</a>
+                <div class="footer-column">
+                    <h4 class="footer-title">Servizi</h4>
+                    <ul class="footer-list">
+                        <li><a href="sgombero-gratuito-catania.html">Sgombero Gratuito</a></li>
+                        <li><a href="trasporti-catania.html">Trasporti e Piccoli Traslochi</a></li>
+                        <li><a href="ritiro-mobili-usati-catania.html">Ritiro Mobili Usati</a></li>
+                        <li><a href="smaltimento-catania.html">Smaltimento Certificato</a></li>
+                        <li><a href="sgombero-case.html">Sgombero Case e Ville</a></li>
+                        <li><a href="sgombero-garage.html">Sgombero Cantine e Garage</a></li>
+                        <li><a href="sgombero-uffici.html">Sgombero Uffici e Negozi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Dove Operiamo</h4>
+                    <ul class="footer-list">
+                        <li><a href="catania.html">Catania</a></li>
+                        <li><a href="acireale.html">Acireale</a></li>
+                        <li><a href="giarre.html">Giarre</a></li>
+                        <li><a href="paterno.html">Paternò</a></li>
+                        <li><a href="mascalucia.html">Mascalucia</a></li>
+                        <li><a href="adrano.html">Adrano</a></li>
+                        <li><a href="belpasso.html">Belpasso</a></li>
+                        <li><a href="gravina_di_catania.html">Gravina di Catania</a></li>
+                        <li><a href="san_giovanni_la_punta.html">San Giovanni la Punta</a></li>
+                        </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Informazioni</h4>
+                    <ul class="footer-list">
+                        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                        <li><a href="blog.html">Blog & Guide</a></li>
+                        <li><a href="faq.html">Domande Frequenti (FAQ)</a></li>
+                        <li><a href="contatti.html">Contattaci</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -22,3 +55,216 @@
         </div>
     </div>
 </footer>
+<style>
+    /* =============================================
+   NUOVI STILI PER IL FOOTER MODERNO
+   ============================================= */
+.footer {
+    padding: 4rem 1rem 2rem; /* Aumentato padding */
+    margin: 1rem;
+    border-radius: 24px; /* Raggio più grande */
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first */
+    gap: 3rem;
+    text-align: left;
+}
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+}
+.footer-brand h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.footer-brand p {
+    opacity: 0.8;
+    line-height: 1.6;
+}
+.footer-cta {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+.footer-cta .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .footer-links {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column: 2 / 5;
+    }
+}
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    cursor: pointer; /* Per il toggle mobile */
+    position: relative;
+    padding-right: 20px; /* Spazio per l'icona */
+}
+.footer-title::after { /* Icona per accordion */
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+    transition: transform var(--transition-fast);
+}
+@media (min-width: 768px) {
+    .footer-title { cursor: default; }
+    .footer-title::after { display: none; }
+}
+
+.footer-column.active .footer-title::after {
+    transform: rotate(45deg);
+}
+
+.footer-list {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@media (min-width: 768px) {
+    .footer-list {
+        max-height: none; /* Sempre visibile su desktop */
+        overflow: visible;
+    }
+}
+.footer-column.active .footer-list {
+    max-height: 500px; /* Valore ampio per permettere l'apertura */
+}
+.footer-list li {
+    margin-bottom: 0.75rem;
+}
+.footer-list a {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+.footer-list a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.footer-bottom {
+    border-top: 1px solid var(--glass-border-light);
+    padding-top: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    opacity: 0.7;
+}
+body.dark-mode .footer-bottom { border-top-color: var(--glass-border-dark); }
+</style>
+<script>
+    // Aggiungi questa funzione dentro l'evento 'DOMContentLoaded' del tuo script esistente
+
+// 4. Footer Accordion Logic (for mobile)
+function initializeFooterAccordion() {
+    const footerTitles = document.querySelectorAll('.footer-title');
+    footerTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                const column = title.parentElement;
+                column.classList.toggle('active');
+            }
+        });
+    });
+}
+
+// Assicurati di chiamare la nuova funzione
+initializeFooterAccordion();
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const body = document.body;
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay-bg');
+        const mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper');
+        
+        // Submenu Buttons
+        const openComuniBtn = document.getElementById('open-comuni-menu');
+        const backToMainFromComuniBtn = document.getElementById('back-to-main-from-comuni');
+        const openServiziBtn = document.getElementById('open-servizi-menu');
+        const backToMainFromServiziBtn = document.getElementById('back-to-main-from-servizi');
+
+        // 1. Dark Mode Logic
+        function applyTheme(theme) { body.classList.toggle('dark-mode', theme === 'dark'); }
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(savedTheme);
+
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+                applyTheme(newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
+
+        // 2. Mobile Menu Logic
+        if (mobileMenuBtn && mobileMenuOverlay && mobileMenuWrapper) {
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isActive = mobileMenuOverlay.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+                body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            const closeMenu = () => {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                body.style.overflow = '';
+                setTimeout(() => { mobileMenuWrapper.classList.remove('show-comuni', 'show-servizi'); }, 300);
+            };
+            
+            mobileMenuOverlay.addEventListener('click', (e) => { if (e.target === mobileMenuOverlay) closeMenu(); });
+            mobileMenuOverlay.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+            
+            if (openComuniBtn) openComuniBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.add('show-comuni'); });
+            if (backToMainFromComuniBtn) backToMainFromComuniBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.remove('show-comuni'); });
+            if (openServiziBtn) openServiziBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.add('show-servizi'); });
+            if (backToMainFromServiziBtn) backToMainFromServiziBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.remove('show-servizi'); });
+        }
+        
+        // 3. Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            if (!navbar) return;
+            if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                if (mobileMenuOverlay && !mobileMenuOverlay.classList.contains('active')) navbar.style.transform = 'translateY(-120%)';
+            } else { navbar.style.transform = 'translateY(0)'; }
+            lastScrollY = window.scrollY;
+        }, { passive: true });
+
+        // 4. Footer Accordion Logic (for mobile)
+        function initializeFooterAccordion() {
+            const footerTitles = document.querySelectorAll('.footer-title');
+            footerTitles.forEach(title => {
+                title.addEventListener('click', () => {
+                    if (window.innerWidth < 768) {
+                        const column = title.parentElement;
+                        column.classList.toggle('active');
+                    }
+                });
+            });
+        }
+        initializeFooterAccordion();
+    });
+</script>
