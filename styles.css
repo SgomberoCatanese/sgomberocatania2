@@ -283,6 +283,72 @@ body.dark-mode .dropdown-item:hover { background: rgba(255, 255, 255, 0.1); }
 
 
 /* =============================================
+   HERO ENHANCEMENTS
+   ============================================= */
+.hero-logo { margin-bottom: 2rem; display: flex; justify-content: center; }
+.logo-img { max-width: 180px; height: auto; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2)); }
+.hero-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+.badge { padding: 0.6rem 1.2rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500; }
+
+/* =============================================
+   PARTNER BANNER
+   ============================================= */
+.partner-banner { padding: 2rem 1rem; }
+.partner-box { padding: 2rem; text-align: center; border-radius: 20px; }
+.partner-box h3 { font-size: 1.2rem; margin-bottom: 0.5rem; opacity: 0.8; }
+.partner-link { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); text-decoration: none; display: block; margin: 0.5rem 0; }
+.partner-link:hover { text-decoration: underline; }
+.partner-box p { margin-top: 0.5rem; opacity: 0.7; }
+
+/* =============================================
+   SERVICE CARDS ENHANCED
+   ============================================= */
+.service-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+/* =============================================
+   GALLERY SECTION
+   ============================================= */
+.gallery-section { background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.02) 100%); }
+body.dark-mode .gallery-section { background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.02) 100%); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.gallery-item { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-medium); }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* =============================================
+   FEATURES GRID
+   ============================================= */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.feature-card { padding: 2rem; border-radius: 20px; position: relative; }
+.feature-number { font-size: 3rem; font-weight: 800; opacity: 0.15; position: absolute; top: 1rem; right: 1.5rem; }
+.feature-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+.feature-card p { opacity: 0.8; line-height: 1.6; }
+
+/* =============================================
+   TESTIMONIALS ENHANCED
+   ============================================= */
+.stars { font-size: 1.2rem; margin-bottom: 1rem; }
+
+/* =============================================
+   COVERAGE SECTION
+   ============================================= */
+.coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+.coverage-card { padding: 2rem; border-radius: 20px; }
+.coverage-card h3 { font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary-color); }
+.comuni-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.comuni-list a { text-decoration: none; color: inherit; padding: 0.5rem 0; transition: opacity var(--transition-fast); opacity: 0.8; }
+.comuni-list a:hover { opacity: 1; text-decoration: underline; }
+.coverage-cta { text-align: center; }
+
+/* =============================================
+   CTA SECTION
+   ============================================= */
+.cta-section { padding: 4rem 1rem; }
+.cta-box { padding: 3rem 2rem; border-radius: 24px; text-align: center; }
+.cta-box h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+.cta-box p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8; }
+
+/* =============================================
    FOOTER
    ============================================= */
 .footer { text-align: center; padding: 3rem 1rem; margin: 1rem; border-radius: 20px; }
