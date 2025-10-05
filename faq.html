@@ -4,26 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags Ottimizzati per FAQ Catania -->
-    <title>FAQ Sgomberi Catania | Domande Frequenti STR Sgomberi - Risposte su Sgombero Gratuito e Trasporti</title>
-    <meta name="description" content="Domande frequenti sui servizi di sgombero gratuito a Catania. STR Sgomberi risponde alle tue domande su costi, tempi, procedure e servizi nel territorio etneo. 9 anni di esperienza, oltre 2500 interventi completati.">
+    <title>FAQ Sgomberi Catania | Domande Frequenti su Sgombero Gratuito e Trasporti</title>
+    <meta name="description" content="Domande frequenti sui servizi di sgombero gratuito a Catania. Risposte su costi, tempi, procedure e servizi nel territorio etneo. 9 anni di esperienza.">
     <meta name="keywords" content="FAQ sgomberi Catania, domande sgombero gratis Catania, costi sgombero Catania, quanto costa sgomberare Catania, tempi sgombero Catania, come funziona sgombero gratuito, STR Sgomberi domande, sgombero merce riutilizzabile FAQ">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="FAQ Sgomberi Catania | Domande Frequenti STR Sgomberi">
-    <meta property="og:description" content="Tutte le risposte alle domande più frequenti sui nostri servizi di sgombero gratuito a Catania">
-    <meta property="og:url" content="https://www.sgomberosicilia.it/faq.html">
-    
-    <!-- Canonical -->
     <link rel="canonical" href="https://www.sgomberosicilia.it/faq.html">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Structured Data per FAQ -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -31,411 +20,319 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Quando lo sgombero è veramente gratuito?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Lo sgombero è completamente gratuito quando il valore della merce riutilizzabile presente copre i costi operativi. Nel 75% dei casi a Catania riusciamo a offrire il servizio gratuitamente."
-                }
+                "name": "Quando lo sgombero è veramente gratuito a Catania?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Lo sgombero è gratuito quando il valore della merce riutilizzabile (mobili, elettrodomestici, oggettistica) copre i nostri costi operativi. Valutiamo tutto gratuitamente e senza impegno." }
             },
             {
                 "@type": "Question", 
-                "name": "Quanto tempo serve per uno sgombero a Catania?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Dipende dalle dimensioni: appartamento 2-4 ore, villa 1-2 giorni, ufficio 3-6 ore. Sopralluogo gratuito entro 24 ore dalla chiamata."
-                }
+                "name": "Quanto tempo ci vuole per uno sgombero a Catania?",
+                "acceptedAnswer": { "@type": "Answer", "text": "I tempi variano: un appartamento richiede 2-4 ore, una villa 1-2 giorni. Offriamo un sopralluogo gratuito entro 24 ore per una stima precisa." }
             },
             {
                 "@type": "Question",
-                "name": "Operate in tutte le zone di Catania?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sì, operiamo in tutta Catania e provincia, dalle zone difficili dell'Etna alla costa ionica. Oltre 22 comuni serviti con la stessa professionalità."
-                }
+                "name": "Operate in tutta la provincia di Catania?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sì, la nostra rete copre tutta Catania e provincia, dalle zone costiere alle pendici dell'Etna, con partner specializzati per ogni comune." }
+            },
+            {
+                "@type": "Question",
+                "name": "Cosa succede se i miei oggetti non hanno valore commerciale?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Se il valore della merce non copre i costi, ti forniremo un preventivo chiaro e competitivo per il servizio di sgombero e smaltimento a pagamento." }
             }
         ]
     }
     </script>
+    
+    <style>
+        /* =============================================
+           DESIGN SYSTEM & STILI GLOBALI (TUTTO INCLUSO)
+           ============================================= */
+        :root {
+          --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          --bg-light: #f0f2f5; --text-light: #1c1c1e; --glass-bg-light: rgba(255, 255, 255, 0.5); --glass-border-light: rgba(255, 255, 255, 0.7); --shadow-light: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+          --primary-color: #007aff; --primary-hover: #0056b3; --secondary-color: #30d158; --secondary-hover: #28a745;
+          --bg-dark: #121212; --text-dark: #f0f2f5; --glass-bg-dark: rgba(28, 28, 30, 0.5); --glass-border-dark: rgba(60, 60, 67, 0.4); --shadow-dark: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+          --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1); --transition-medium: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); background-color: var(--bg-light); color: var(--text-light); transition: background-color var(--transition-medium), color var(--transition-medium); position: relative; overflow-x: hidden; }
+        body.dark-mode { background-color: var(--bg-dark); color: var(--text-dark); }
+        .background--blobs { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; z-index: -1; filter: blur(120px); opacity: 0.4; transition: opacity var(--transition-medium); }
+        body.dark-mode .background--blobs { opacity: 0.2; }
+        .blob { position: absolute; border-radius: 50%; will-change: transform; }
+        .blob:nth-child(1) { width: 40vw; height: 40vw; background: #ff7e5f; top: 5vh; left: 5vw; animation: move 20s infinite alternate; }
+        .blob:nth-child(2) { width: 50vw; height: 50vw; background: var(--primary-color); bottom: 10vh; right: 10vw; animation: move 25s infinite alternate-reverse; }
+        @keyframes move { from { transform: translate(0, 0) rotate(0deg) scale(1); } to { transform: translate(10vw, -10vh) rotate(180deg) scale(1.2); } }
+        .glass-ui { background: var(--glass-bg-light); -webkit-backdrop-filter: blur(25px) saturate(180%); backdrop-filter: blur(25px) saturate(180%); border: 1px solid var(--glass-border-light); box-shadow: var(--shadow-light); transition: background var(--transition-medium), border var(--transition-medium), box-shadow var(--transition-medium); }
+        body.dark-mode .glass-ui { background: var(--glass-bg-dark); border: 1px solid var(--glass-border-dark); box-shadow: var(--shadow-dark); }
+        .navbar { position: fixed; top: 1rem; left: 1rem; right: 1rem; z-index: 1000; border-radius: 999px; padding: 0.5rem; transition: transform var(--transition-medium); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .nav-brand { display: flex; align-items: center; gap: 0.75rem; z-index: 1001; text-decoration: none; color: inherit;}
+        .nav-logo-emoji { font-size: 1.8rem; } .nav-title { font-weight: 600; font-size: 1.2rem; } .desktop-menu { display: none; } .nav-actions .phone-text { display: none; }
+        .mobile-menu-btn { background: none; border: none; cursor: pointer; z-index: 1001; padding: 0.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background-color: var(--text-light); transition: transform 0.3s ease, opacity 0.3s ease; border-radius: 1px; }
+        body.dark-mode .mobile-menu-btn span { background-color: var(--text-dark); }
+        .mobile-menu-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .mobile-menu-btn.active span:nth-child(2) { opacity: 0; } .mobile-menu-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .mobile-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; background-color: rgba(0, 0, 0, 0.3); opacity: 0; visibility: hidden; transition: opacity var(--transition-medium), visibility var(--transition-medium); display: flex; justify-content: center; align-items: flex-end; }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-menu-wrapper { width: calc(100% - 2rem); max-width: 500px; margin-bottom: 1rem; position: relative; height: auto; max-height: 80vh; }
+        .mobile-menu-panel { border-radius: 20px; padding: 1rem; display: flex; flex-direction: column; gap: 1rem; position: absolute; bottom: 0; width: 100%; transition: transform var(--transition-medium) cubic-bezier(0.16, 1, 0.3, 1), opacity var(--transition-medium); }
+        #mobile-menu-main { transform: translateY(100%); } .mobile-menu-overlay.active #mobile-menu-main { transform: translateY(0); }
+        #mobile-menu-comuni, #mobile-menu-servizi { transform: translateX(100%); opacity: 0; pointer-events: none; }
+        .mobile-menu-wrapper.show-comuni #mobile-menu-main, .mobile-menu-wrapper.show-servizi #mobile-menu-main { transform: translateX(-100%); opacity: 0; pointer-events: none; }
+        .mobile-menu-wrapper.show-comuni #mobile-menu-comuni, .mobile-menu-wrapper.show-servizi #mobile-menu-servizi { transform: translateX(0); opacity: 1; pointer-events: auto; }
+        .mobile-menu-header { display: flex; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--glass-border-light); }
+        body.dark-mode .mobile-menu-header { border-color: var(--glass-border-dark); } .mobile-menu-header h4 { font-size: 1.1rem; margin: 0 auto; }
+        .back-btn { background: none; border: none; color: inherit; font-size: 1rem; font-weight: 500; cursor: pointer; }
+        .mobile-menu-links { display: flex; flex-direction: column; } .mobile-menu-links.scrollable { max-height: 45vh; overflow-y: auto; }
+        .mobile-menu-item { display: flex; align-items: center; text-decoration: none; color: inherit; padding: 0.8rem 1rem; border-radius: 12px; transition: background var(--transition-fast); font-weight: 500; background: none; border: none; width: 100%; text-align: left; }
+        .mobile-menu-item:hover { background: rgba(0, 0, 0, 0.05); } body.dark-mode .mobile-menu-item:hover { background: rgba(255, 255, 255, 0.1); }
+        .mobile-menu-item.active { color: var(--primary-color); font-weight: 700; }
+        .menu-divider { border: none; border-top: 1px solid var(--glass-border-light); margin: 0.5rem 0; } body.dark-mode .menu-divider { border-color: var(--glass-border-dark); }
+        @media (min-width: 992px) { .mobile-menu-btn, .mobile-menu-overlay { display: none !important; } .desktop-menu { display: flex; align-items: center; gap: 0.5rem; } .nav-actions { display: flex; } .nav-actions .phone-text { display: inline; } .nav-link { font-size: 1rem; padding: 0.5rem 1rem; border-radius: 999px; text-decoration: none; color: inherit; font-weight: 500; transition: background var(--transition-fast); } .nav-link:hover, .nav-link.active { background: rgba(0,0,0,0.05); } body.dark-mode .nav-link:hover, body.dark-mode .nav-link.active { background: rgba(255,255,255,0.1); } }
+        .hero { min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10rem 1rem 4rem; }
+        .hero-content { max-width: 800px; } .hero-title { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.05em; line-height: 1.1; }
+        .hero-subtitle { font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 400; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.8; }
+        .section { padding: 5rem 1rem; } .container { max-width: 900px; margin: 0 auto; } .section h2 { text-align: center; font-size: clamp(2.2rem, 5vw, 3rem); margin-bottom: 1rem; letter-spacing: -0.03em; }
+        .section > p { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-bottom: 4rem; font-size: 1.1rem; opacity: 0.8; }
+        .btn, .icon-btn { text-decoration: none; font-weight: 500; border-radius: 999px; transition: all var(--transition-fast); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border: none; font-size: 1rem; }
+        .btn:hover, .icon-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn:active, .icon-btn:active { transform: translateY(-1px) scale(0.98); } .btn-primary { background: var(--primary-color); color: white !important; } .btn-primary:hover { background: var(--primary-hover); } .btn-secondary { background: var(--secondary-color); color: white !important; } .btn-secondary:hover { background: var(--secondary-hover); }
+        .btn { padding: 0.8rem 1.8rem; font-weight: 600; } .btn-link { color: var(--primary-color); font-weight: 600; text-decoration: none; } .btn-link:hover { text-decoration: underline; }
+        .icon-btn, .phone-btn { width: 44px; height: 44px; } .icon-btn span, .phone-btn span:first-child { font-size: 1.5rem; } .phone-btn { padding: 0; }
+        @media (min-width: 992px) { .phone-btn { width: auto; padding: 0.6rem 1.2rem; } }
+        .dark-mode-toggle .moon-icon { display: none; } body.dark-mode .dark-mode-toggle .sun-icon { display: none; } body.dark-mode .dark-mode-toggle .moon-icon { display: inline; } .dark-mode-toggle .sun-icon { display: inline; }
+        .nav-dropdown { position: relative; } .dropdown-toggle { background: none; border: none; cursor: pointer; display: flex; align-items: center; color: inherit; font-family: inherit; }
+        .dropdown-menu { position: absolute; top: calc(100% + 1rem); left: 50%; min-width: 220px; padding: 0.5rem; border-radius: 16px; opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(-10px); transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast); }
+        .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-item { display: block; text-decoration: none; color: inherit; padding: 0.75rem 1rem; border-radius: 12px; transition: background var(--transition-fast); white-space: nowrap; font-weight: 500; }
+        .dropdown-item:hover, .dropdown-item.active { background: rgba(0, 0, 0, 0.05); } body.dark-mode .dropdown-item:hover, body.dark-mode .dropdown-item.active { background: rgba(255, 255, 255, 0.1); } .comuni-menu { max-height: 40vh; overflow-y: auto; }
+        .footer { text-align: center; padding: 3rem 1rem; margin: 1rem; border-radius: 20px; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        
+        /* Stili specifici per la pagina FAQ */
+        .faq-accordion { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 1rem; border-radius: 20px; overflow: hidden; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; cursor: pointer; }
+        .faq-question h3 { font-size: 1.2rem; margin: 0; }
+        .faq-toggle { font-size: 1.5rem; font-weight: 500; transition: transform var(--transition-fast); }
+        .faq-item.active .faq-toggle { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height var(--transition-medium), padding var(--transition-medium); }
+        .faq-answer p { padding: 0 1.5rem 1.5rem; margin: 0; line-height: 1.6; opacity: 0.8; }
+        .faq-item.active .faq-answer { max-height: 500px; } /* Adjust as needed */
+        .cta-section { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 20px; }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="nav-logo">
-                <span class="nav-title">STR Sgomberi</span>
-            </div>
 
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">Servizi
-                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6,9 12,15 18,9"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="sgombero-gratuito-catania.html" class="dropdown-item">Sgombero Gratuito</a>
-                        <a href="trasporti-catania.html" class="dropdown-item">Trasporti</a>
-                    </div>
-                </div>
-                <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">Dove Operiamo
-                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6,9 12,15 18,9"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu comuni-menu">
-                        <a href="catania.html" class="dropdown-item">Catania</a>
-                        <a href="acireale.html" class="dropdown-item">Acireale</a>
-                        <a href="giarre.html" class="dropdown-item">Giarre</a>
-                        <a href="paterno.html" class="dropdown-item">Paternò</a>
-                        <a href="adrano.html" class="dropdown-item">Adrano</a>
-                        <a href="belpasso.html" class="dropdown-item">Belpasso</a>
-                        <a href="mascalucia.html" class="dropdown-item">Mascalucia</a>
-                        <a href="gravina_di_catania.html" class="dropdown-item">Gravina di Catania</a>
-                        <a href="san_giovanni_la_punta.html" class="dropdown-item">San Giovanni la Punta</a>
-                        <a href="tremestieri_etneo.html" class="dropdown-item">Tremestieri Etneo</a>
-                        <a href="santagata_li_battiati.html" class="dropdown-item">Sant'Agata li Battiati</a>
-                        <a href="valverde.html" class="dropdown-item">Valverde</a>
-                        <a href="aci_catena.html" class="dropdown-item">Aci Catena</a>
-                        <a href="aci_santantonio.html" class="dropdown-item">Aci Sant'Antonio</a>
-                        <a href="viagrande.html" class="dropdown-item">Viagrande</a>
-                        <a href="zafferana_etnea.html" class="dropdown-item">Zafferana Etnea</a>
-                        <a href="nicolosi.html" class="dropdown-item">Nicolosi</a>
-                        <a href="pedara.html" class="dropdown-item">Pedara</a>
-                        <a href="trecastagni.html" class="dropdown-item">Trecastagni</a>
-                        <a href="aci_castello.html" class="dropdown-item">Aci Castello</a>
-                        <a href="san_gregorio_di_catania.html" class="dropdown-item">San Gregorio di Catania</a>
-                        <a href="camporotondo_etneo.html" class="dropdown-item">Camporotondo Etneo</a>
-                    </div>
-                </div>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="chi-siamo.html" class="nav-link">Chi Siamo</a>
-                <a href="faq.html" class="nav-link active">FAQ</a>
-                <a href="contatti.html" class="nav-link">Contatti</a>
-            </div>
-
-            <div class="nav-actions">
-                <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Attiva/Disattiva modalità scura">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"/>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>
-                </button>
-                <a href="tel:3497500613" class="phone-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                    <span>349 750 0613</span>
-                </a>
-                <a href="https://wa.me/393497500613" target="_blank" class="whatsapp-btn">
-                    <svg viewBox="0 0 32 32" fill="currentColor" width="24" height="24">
-                        <path d="M19.11 17.47c-.3-.15-1.77-.87-2.05-.97-.27-.1-.46-.15-.65.15-.19.3-.75.97-.92 1.17-.17.2-.34.22-.63.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37 0-.52-.07-.15-.65-1.55-.9-2.13-.24-.58-.48-.5-.65-.5h-.56c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.5 1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.26.5 1.7.63.71.23 1.36.2 1.87.13.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM16 3a13 13 0 0 0-11.34 19.43L3 29l6.75-1.77A13 13 0 1 0 16 3zm0 23.4c-1.96 0-3.79-.57-5.33-1.55l-.38-.24-4.01 1.05 1.07-3.91-.25-.4a10.42 10.42 0 1 1 8.9 4.05z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-container"></div>
+    <div id="mobile-menu-container"></div>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero hero-etna-improved">
+        <section class="hero hero-contact">
             <div class="hero-content">
-                <h1>FAQ Sgomberi Catania</h1>
-                <p>Domande frequenti sui nostri servizi di sgombero gratuito e trasporti nel territorio etneo</p>
+                <h1 class="hero-title">Domande Frequenti</h1>
+                <p class="hero-subtitle">Trova qui le risposte ai dubbi più comuni sui nostri servizi di sgombero e trasporto a Catania e provincia.</p>
             </div>
         </section>
 
-        <!-- FAQ Content -->
-        <section class="section section-light">
+        <section class="section">
             <div class="container">
-                <div class="faq-intro">
-                    <h2>Domande Frequenti sui Nostri Servizi a Catania</h2>
-                    <p>Con oltre 2500 interventi completati nel territorio etneo, abbiamo raccolto le domande più frequenti dei nostri clienti. Qui trovi tutte le risposte sui nostri servizi di sgombero gratuito, trasporti e procedure operative a Catania e provincia.</p>
-                </div>
-
-                <div class="faq-grid">
-                    <!-- Sgombero Gratuito -->
-                    <div class="faq-category">
-                        <h3>🆓 Sgombero Gratuito</h3>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Quando lo sgombero è veramente gratuito?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Lo sgombero è completamente gratuito quando il valore della merce riutilizzabile presente nell'immobile copre i costi operativi dell'intervento. I nostri esperti valutatori analizzano mobili, elettrodomestici, oggetti d'arte, libri, abbigliamento e altri beni per determinare il loro valore di riutilizzo nel mercato catanese.</p>
-                                <p><strong>Nel 75% dei casi a Catania riusciamo a offrire il servizio gratuitamente.</strong> Questo è possibile grazie alla nostra esperienza novennale e alla rete di 50+ partner per il riutilizzo.</p>
-                            </div>
+                <h2>Le Tue Domande, le Nostre Risposte</h2>
+                <p>Abbiamo raccolto le domande che ci vengono poste più spesso per darti tutte le informazioni di cui hai bisogno in modo chiaro e trasparente.</p>
+                
+                <div class="faq-accordion">
+                    <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Quando lo sgombero è veramente gratuito?</h3>
+                            <span class="faq-toggle">+</span>
                         </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Cosa succede se la merce non ha abbastanza valore?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Se il valore della merce non copre completamente i costi, proponiamo un preventivo trasparente e altamente competitivo. Spesso riusciamo comunque a ridurre significativamente il costo grazie al valore parziale degli oggetti recuperabili.</p>
-                                <p>Il sopralluogo e la valutazione sono sempre gratuiti e senza impegno.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Che tipo di oggetti hanno valore per il riutilizzo?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Valutiamo una vasta gamma di oggetti:</p>
-                                <ul>
-                                    <li><strong>Mobili:</strong> divani, armadi, tavoli, sedie, librerie in buono stato</li>
-                                    <li><strong>Elettrodomestici:</strong> frigoriferi, lavatrici, condizionatori funzionanti</li>
-                                    <li><strong>Oggetti d'arte:</strong> quadri, sculture, ceramiche, oggetti d'epoca</li>
-                                    <li><strong>Libri:</strong> enciclopedie, libri di valore, collezioni</li>
-                                    <li><strong>Abbigliamento:</strong> capi di marca, pellicce, accessori di lusso</li>
-                                    <li><strong>Strumenti musicali:</strong> pianoforti, chitarre, strumenti d'epoca</li>
-                                    <li><strong>Oggetti da collezione:</strong> monete, francobolli, vinili</li>
-                                </ul>
-                            </div>
+                        <div class="faq-answer">
+                            <p>Lo sgombero è 100% gratuito quando il valore della merce che ritiriamo (mobili, elettrodomestici, oggettistica di valore) è sufficiente a coprire i costi del nostro intervento. La valutazione è sempre gratuita e senza impegno.</p>
                         </div>
                     </div>
-
-                    <!-- Tempi e Procedure -->
-                    <div class="faq-category">
-                        <h3>⏰ Tempi e Procedure</h3>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Quanto tempo serve per uno sgombero a Catania?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>I tempi dipendono dalle dimensioni e dalla complessità:</p>
-                                <ul>
-                                    <li><strong>Appartamento 2-3 locali:</strong> 2-4 ore</li>
-                                    <li><strong>Appartamento 4-5 locali:</strong> 4-6 ore</li>
-                                    <li><strong>Villa o casa indipendente:</strong> 1-2 giorni</li>
-                                    <li><strong>Ufficio piccolo:</strong> 3-6 ore</li>
-                                    <li><strong>Magazzino o capannone:</strong> 1-3 giorni</li>
-                                </ul>
-                                <p><strong>Sopralluogo gratuito entro 24 ore dalla chiamata</strong> in tutta la provincia di Catania.</p>
-                            </div>
+                    <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Cosa succede se i miei oggetti non hanno valore commerciale?</h3>
+                            <span class="faq-toggle">+</span>
                         </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Come si svolge il sopralluogo?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Il sopralluogo è completamente gratuito e senza impegno. I nostri esperti valutatori:</p>
-                                <ol>
-                                    <li>Analizzano tutti gli oggetti presenti</li>
-                                    <li>Valutano il valore di riutilizzo nel mercato catanese</li>
-                                    <li>Calcolano i costi operativi dell'intervento</li>
-                                    <li>Forniscono un preventivo trasparente</li>
-                                    <li>Spiegano le modalità di intervento</li>
-                                </ol>
-                                <p>Il sopralluogo dura generalmente 30-60 minuti a seconda delle dimensioni dell'immobile.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Posso essere presente durante lo sgombero?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Assolutamente sì! Anzi, è consigliabile essere presenti per:</p>
-                                <ul>
-                                    <li>Indicare eventuali oggetti da conservare</li>
-                                    <li>Verificare che tutto proceda secondo accordi</li>
-                                    <li>Ricevere la ricevuta di avvenuto sgombero</li>
-                                </ul>
-                                <p>Se non puoi essere presente, possiamo operare con le chiavi, previo accordo scritto.</p>
-                            </div>
+                        <div class="faq-answer">
+                            <p>Nessun problema. Se il valore della merce non copre i costi, ti forniremo un preventivo chiaro, trasparente e senza impegno per il servizio di sgombero e smaltimento a pagamento. Sarai sempre tu a decidere.</p>
                         </div>
                     </div>
-
-                    <!-- Zone e Copertura -->
-                    <div class="faq-category">
-                        <h3>📍 Zone e Copertura</h3>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Operate in tutte le zone di Catania?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Sì, operiamo in tutta Catania e provincia, incluse le zone più difficili:</p>
-                                <ul>
-                                    <li><strong>Catania città:</strong> centro storico, periferia, zone industriali</li>
-                                    <li><strong>Zone etnee:</strong> fino a 1500m di quota con attrezzature 4x4</li>
-                                    <li><strong>Costa ionica:</strong> Acireale, Giarre, Riposto</li>
-                                    <li><strong>Entroterra:</strong> Paternò, Adrano, Belpasso</li>
-                                </ul>
-                                <p><strong>Oltre 22 comuni serviti</strong> con la stessa professionalità e puntualità.</p>
-                            </div>
+                    <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>In quanto tempo intervenite a Catania e provincia?</h3>
+                            <span class="faq-toggle">+</span>
                         </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Ci sono costi aggiuntivi per le zone difficili?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Per le zone etnee più impervie o difficilmente accessibili potrebbe essere applicato un piccolo supplemento per:</p>
-                                <ul>
-                                    <li>Utilizzo di veicoli 4x4 specializzati</li>
-                                    <li>Attrezzature aggiuntive per terreni difficili</li>
-                                    <li>Tempi di percorrenza maggiori</li>
-                                </ul>
-                                <p>Ogni eventuale costo aggiuntivo viene sempre comunicato durante il sopralluogo gratuito.</p>
-                            </div>
+                        <div class="faq-answer">
+                            <p>Generalmente, riusciamo a fissare un sopralluogo gratuito entro 24-48 ore dalla tua chiamata. L'intervento di sgombero viene poi pianificato nel giorno e nell'orario a te più comodo.</p>
                         </div>
                     </div>
-
-                    <!-- Sostenibilità -->
-                    <div class="faq-category">
-                        <h3>♻️ Sostenibilità e Ambiente</h3>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Cosa fate con gli oggetti recuperati?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Abbiamo sviluppato una rete di oltre 50 partner per il riutilizzo:</p>
-                                <ul>
-                                    <li><strong>Enti benefici:</strong> 15 associazioni catanesi ricevono mobili e oggetti</li>
-                                    <li><strong>Mercato dell'usato:</strong> negozi specializzati e antiquari</li>
-                                    <li><strong>Restauratori:</strong> per mobili d'epoca e oggetti di valore</li>
-                                    <li><strong>Riciclo materiali:</strong> per componenti non riutilizzabili</li>
-                                </ul>
-                                <p><strong>Recuperiamo l'85% dei materiali dalla discarica</strong>, contribuendo concretamente all'economia circolare.</p>
-                            </div>
+                    <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Quali tipi di oggetti sgomberate?</h3>
+                            <span class="faq-toggle">+</span>
                         </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Avete certificazioni ambientali?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Sì, siamo certificati per:</p>
-                                <ul>
-                                    <li>Trasporto e smaltimento rifiuti speciali</li>
-                                    <li>Gestione RAEE (elettrodomestici)</li>
-                                    <li>Tracciabilità dei materiali recuperati</li>
-                                </ul>
-                                <p>Forniamo sempre la documentazione di avvenuto smaltimento secondo le normative vigenti.</p>
-                            </div>
+                        <div class="faq-answer">
+                            <p>Sgomberiamo praticamente di tutto: mobili, elettrodomestici, vestiti, libri, macerie, rifiuti ingombranti e materiali di risulta. Gestiamo ogni tipo di rifiuto nel pieno rispetto delle normative.</p>
                         </div>
                     </div>
-
-                    <!-- Costi e Pagamenti -->
-                    <div class="faq-category">
-                        <h3>💰 Costi e Pagamenti</h3>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Quanto costa mediamente uno sgombero a Catania?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>I costi variano in base a diversi fattori:</p>
-                                <ul>
-                                    <li><strong>Volume da sgomberare:</strong> da 200€ (monolocale) a 2000€ (villa)</li>
-                                    <li><strong>Accessibilità:</strong> piano, presenza ascensore, distanza dal mezzo</li>
-                                    <li><strong>Tipologia oggetti:</strong> mobili pesanti, elettrodomestici, materiali speciali</li>
-                                    <li><strong>Valore riutilizzo:</strong> può ridurre o azzerare completamente il costo</li>
-                                </ul>
-                                <p><strong>Nel 75% dei casi il servizio è completamente gratuito</strong> grazie al valore della merce recuperata.</p>
-                            </div>
+                    <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Operate in tutta la provincia di Catania?</h3>
+                            <span class="faq-toggle">+</span>
                         </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <h4>Quali metodi di pagamento accettate?</h4>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Accettiamo tutti i principali metodi di pagamento:</p>
-                                <ul>
-                                    <li>Contanti</li>
-                                    <li>Bonifico bancario</li>
-                                    <li>Carte di credito e debito</li>
-                                    <li>Assegni (solo per importi elevati)</li>
-                                </ul>
-                                <p>Il pagamento avviene sempre a lavoro completato e con regolare fattura.</p>
-                            </div>
+                        <div class="faq-answer">
+                            <p>Sì, la nostra rete di partner copre capillarmente tutta la provincia di Catania, dai comuni sulla costa ionica a quelli alle pendici dell'Etna, garantendo un servizio locale e specializzato ovunque.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Come gestite lo smaltimento dei rifiuti?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Siamo iscritti all'Albo Nazionale Gestori Ambientali. Tutto ciò che non può essere riutilizzato viene trasportato in discariche autorizzate. Rilasciamo sempre il Formulario di Identificazione del Rifiuto (FIR) che certifica il corretto smaltimento.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Posso richiedere anche un servizio di pulizia?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Certo. Al termine dello sgombero, su richiesta, possiamo effettuare un servizio di pulizia approfondita dei locali, lasciando gli ambienti pronti per essere riutilizzati o venduti.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Effettuate anche piccoli traslochi?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sì, offriamo un servizio di piccoli traslochi e trasporti a Catania e provincia. È la soluzione ideale se devi spostare solo alcuni mobili o elettrodomestici. Visita la nostra pagina <a href="trasporti-catania.html" class="btn-link">Trasporti</a> per maggiori dettagli.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item glass-ui">
+                        <div class="faq-question">
+                            <h3>Devo essere presente durante lo sgombero?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Non è strettamente necessario, ma è consigliabile, almeno all'inizio, per indicare con precisione cosa sgomberare e cosa conservare. Possiamo anche operare in tua assenza previo accordo.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- CTA Section -->
-                <div class="cta-section">
-                    <h3>Non hai trovato la risposta che cercavi?</h3>
-                    <p>Il nostro team è sempre disponibile per rispondere alle tue domande specifiche sui servizi di sgombero a Catania. Contattaci per una consulenza personalizzata e gratuita.</p>
+                <div class="cta-section glass-ui">
+                    <h2>Non hai trovato la risposta?</h2>
+                    <p>Il nostro team è a tua completa disposizione per rispondere a ogni domanda. Contattaci senza impegno!</p>
                     <div class="cta-buttons">
-                        <a href="tel:3497500613" class="btn btn-primary">Chiama: 349 750 0613</a>
-                        <a href="https://wa.me/393497500613" target="_blank" class="btn btn-secondary">WhatsApp</a>
+                        <a href="tel:3497500613" class="btn btn-primary glass-ui">📞 Chiamaci Ora</a>
+                        <a href="contatti.html" class="btn btn-secondary glass-ui">📝 Scrivici</a>
                     </div>
-                    <p><a href="https://sgomberocatania.it/faq-complete" target="_blank" rel="noopener">Consulta le FAQ complete sul nostro sito specializzato</a></p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="public/OIG1-removebg-preview_1_-removebg-preview.png" alt="STR Sgomberi Logo" class="footer-logo">
-                <h3>STR Sgomberi Catania</h3>
-                <p>FAQ complete sui nostri servizi di sgombero gratuito a Catania. <a href="https://sgomberocatania.it" target="_blank" rel="noopener">Maggiori informazioni</a></p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
-    <script src="script.js"></script>
     <script>
-        // FAQ Accordion functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
+        // Funzione per caricare componenti HTML esterni e inizializzare gli script
+        async function loadAndInitialize() {
+            const loadComponent = async (url, containerId) => {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`Failed to load ${url}`);
+                    const data = await response.text();
+                    document.getElementById(containerId).innerHTML = data;
+                } catch (error) { console.error(`Error:`, error); }
+            };
+
+            await Promise.all([
+                loadComponent('nav.html', 'navbar-container'),
+                loadComponent('footer.html', 'footer-container')
+            ]);
             
+            initializeMainScript();
+        }
+
+        // Script principale per l'interattività della pagina
+        function initializeMainScript() {
+            const body = document.body;
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay-bg');
+            const mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper');
+            const openComuniBtn = document.getElementById('open-comuni-menu');
+            const backToMainFromComuniBtn = document.getElementById('back-to-main-from-comuni');
+            const openServiziBtn = document.getElementById('open-servizi-menu');
+            const backToMainFromServiziBtn = document.getElementById('back-to-main-from-servizi');
+
+            // 1. Dark Mode Logic
+            function applyTheme(theme) { body.classList.toggle('dark-mode', theme === 'dark'); }
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(savedTheme);
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+                    applyTheme(newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+
+            // 2. Mobile Menu Logic
+            if (mobileMenuBtn && mobileMenuOverlay && mobileMenuWrapper) {
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isActive = mobileMenuOverlay.classList.toggle('active');
+                    mobileMenuBtn.classList.toggle('active');
+                    body.style.overflow = isActive ? 'hidden' : '';
+                });
+                const closeMenu = () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    body.style.overflow = '';
+                    setTimeout(() => { mobileMenuWrapper.classList.remove('show-comuni', 'show-servizi'); }, 300);
+                };
+                mobileMenuOverlay.addEventListener('click', (e) => { if (e.target === mobileMenuOverlay) closeMenu(); });
+                mobileMenuOverlay.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+                if (openComuniBtn) openComuniBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.add('show-comuni'); });
+                if (backToMainFromComuniBtn) backToMainFromComuniBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.remove('show-comuni'); });
+                if (openServiziBtn) openServiziBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.add('show-servizi'); });
+                if (backToMainFromServiziBtn) backToMainFromServiziBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenuWrapper.classList.remove('show-servizi'); });
+            }
+            
+            // 3. Navbar Scroll Effect
+            const navbar = document.querySelector('.navbar');
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                if (!navbar) return;
+                if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                    if (mobileMenuOverlay && !mobileMenuOverlay.classList.contains('active')) navbar.style.transform = 'translateY(-120%)';
+                } else { navbar.style.transform = 'translateY(0)'; }
+                lastScrollY = window.scrollY;
+            }, { passive: true });
+            
+            // 4. FAQ Accordion Logic
+            const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const toggle = item.querySelector('.faq-toggle');
-                
-                question.addEventListener('click', function() {
-                    const isOpen = item.classList.contains('active');
-                    
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-toggle').textContent = '+';
-                    });
-                    
-                    // Toggle current item
-                    if (!isOpen) {
+                question.addEventListener('click', () => {
+                    const wasOpen = item.classList.contains('active');
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    if (!wasOpen) {
                         item.classList.add('active');
-                        toggle.textContent = '−';
                     }
                 });
             });
-        });
+        }
+
+        // Avvia il caricamento e l'inizializzazione
+        document.addEventListener('DOMContentLoaded', loadAndInitialize);
     </script>
 </body>
 </html>
